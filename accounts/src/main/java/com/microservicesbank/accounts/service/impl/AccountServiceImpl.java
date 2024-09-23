@@ -1,8 +1,11 @@
 package com.microservicesbank.accounts.service.impl;
 
 import com.microservicesbank.accounts.constants.AccountConstants;
+import com.microservicesbank.accounts.dto.AccountDTO;
 import com.microservicesbank.accounts.dto.CustomerDTO;
 import com.microservicesbank.accounts.exception.CustomerAlreadyExistsException;
+import com.microservicesbank.accounts.exception.ResourceNotFoundException;
+import com.microservicesbank.accounts.mapper.AccountMapper;
 import com.microservicesbank.accounts.mapper.CustomerMapper;
 import com.microservicesbank.accounts.model.Account;
 import com.microservicesbank.accounts.model.Customer;
@@ -36,10 +39,26 @@ public class AccountServiceImpl implements IAccountService {
         accountRepository.save(createNewAccount(savedCustomer));
     }
 
+    @Override
+    public CustomerDTO fetchAccount(String mobileNumber) {
+
+        Customer customer = customerRepository.findByMobileNumber(mobileNumber).orElseThrow(
+                () -> new ResourceNotFoundException("Customer","mobileNumber", mobileNumber)
+        );
+
+        Account account = accountRepository.findByCustomerId(customer.getId()).orElseThrow(
+                () -> new ResourceNotFoundException("Account", "customerId", customer.getId().toString())
+        );
+
+        CustomerDTO customerDTO = CustomerMapper.mapToCustomerDTO(customer, new CustomerDTO());
+        customerDTO.setAccountDto(AccountMapper.mapToAccountDTO(account, new AccountDTO()));
+        return customerDTO;
+    }
+
     private Account createNewAccount(Customer customer) {
 
         Account account = new Account();
-        account.setId(customer.getId());
+        account.setCustomerId(customer.getId());
         long randomAccNumber = 1000000000L + new Random().nextInt(900000000);
         account.setAccountNumber(randomAccNumber);
         account.setAccountType(AccountConstants.SAVINGS);

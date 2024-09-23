@@ -7,7 +7,8 @@ import lombok.*;
 @Getter @Setter @ToString @AllArgsConstructor @NoArgsConstructor
 public class Account extends SuperEntity{
 
-    private Long id;
+    @Column(name = "customer_id", nullable = false)
+    private Long customerId;
 
     @Id
     @Column(name = "account_number", unique = true)

@@ -18,4 +18,6 @@ public interface IAccountService {
      * @param customerDTO This is the object that contains the customer's information
      */
     void createAccount(CustomerDTO customerDTO);
+
+    CustomerDTO fetchAccount(String mobileNumber);
 }

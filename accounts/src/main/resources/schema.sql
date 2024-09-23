@@ -10,7 +10,7 @@ CREATE TABLE IF NOT EXISTS `customer` (
 );
 
 CREATE TABLE IF NOT EXISTS `account` (
-  `id` int NOT NULL,
+  `customer_id` int NOT NULL,
   `account_number` int AUTO_INCREMENT  PRIMARY KEY,
   `account_type` varchar(100) NOT NULL,
   `branch_address` varchar(200) NOT NULL,
