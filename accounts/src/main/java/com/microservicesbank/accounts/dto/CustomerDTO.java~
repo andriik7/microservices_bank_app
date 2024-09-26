@@ -2,7 +2,6 @@ package com.microservicesbank.accounts.dto;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
 
@@ -18,7 +17,7 @@ public class CustomerDTO {
     private String email;
 
     @NotEmpty
-    @Pattern(regexp = "^\\d{10}$", message = "Invalid mobile number")
+    
     private String mobileNumber;
 
     private AccountDTO accountDto;

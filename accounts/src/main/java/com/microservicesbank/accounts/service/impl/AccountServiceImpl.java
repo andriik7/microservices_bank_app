@@ -15,7 +15,6 @@ import com.microservicesbank.accounts.service.IAccountService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
 import java.util.Random;
 
 @Service
@@ -33,9 +32,6 @@ public class AccountServiceImpl implements IAccountService {
             throw new CustomerAlreadyExistsException(
                     "Customer already exists with mobile number " + customer.getMobileNumber());
         }
-        ;
-        customer.setCreatedAt(LocalDateTime.now());
-        customer.setCreatedBy("admin");
         Customer savedCustomer = customerRepository.save(customer);
 
         accountRepository.save(createNewAccount(savedCustomer));
@@ -66,17 +62,12 @@ public class AccountServiceImpl implements IAccountService {
                     () -> new ResourceNotFoundException("Account", "accountNumber",
                                                         accountDTO.getAccountNumber().toString()));
             AccountMapper.mapToAccount(accountDTO, account);
-            account.setUpdatedAt(LocalDateTime.now());
-            account.setUpdatedBy("admin");
             accountRepository.save(account);
 
             Long customerId = account.getCustomerId();
             Customer customer = customerRepository.findById(customerId).orElseThrow(
                     () -> new ResourceNotFoundException("Customer", "customerId", customerId.toString()));
-
             CustomerMapper.mapToCustomer(customerDTO, customer);
-            customer.setUpdatedAt(LocalDateTime.now());
-            customer.setUpdatedBy("admin");
             customerRepository.save(customer);
             isUpdated = true;
 
@@ -103,8 +94,6 @@ public class AccountServiceImpl implements IAccountService {
         account.setAccountNumber(randomAccNumber);
         account.setAccountType(AccountConstants.SAVINGS);
         account.setBranchAddress(AccountConstants.ADDRESS);
-        account.setCreatedAt(LocalDateTime.now());
-        account.setCreatedBy("admin");
         return account;
     }
 }
