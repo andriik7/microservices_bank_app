@@ -10,10 +10,16 @@
         <module name="accounts" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="card" target="21" />
+      <module name="loan" target="21" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="accounts" options="-parameters" />
+      <module name="card" options="-parameters" />
+      <module name="loan" options="-parameters" />
     </option>
   </component>
 </project>
