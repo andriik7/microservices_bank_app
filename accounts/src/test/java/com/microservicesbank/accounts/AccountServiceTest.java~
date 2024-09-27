@@ -30,7 +30,7 @@ import static org.mockito.Mockito.*;
 @TestPropertySource("/application-test.yml")
 @DisplayNameGeneration(CamelCaseDisplay.class)
 @AutoConfigureMockMvc
-@SpringBootTest(classes = AccountsApplication.class)
+@SpringBootTest
 @Transactional
 public class AccountServiceTest {
 

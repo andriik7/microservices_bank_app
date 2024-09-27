@@ -1,0 +1,262 @@
+Index: loan/pom.xml
+===================================================================
+diff --git a/loan/pom.xml b/loan/pom.xml
+deleted file mode 100644
+--- a/loan/pom.xml	
++++ /dev/null	
+@@ -1,86 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+-	<modelVersion>4.0.0</modelVersion>
+-	<parent>
+-		<groupId>org.springframework.boot</groupId>
+-		<artifactId>spring-boot-starter-parent</artifactId>
+-		<version>3.3.4</version>
+-		<relativePath/> <!-- lookup parent from repository -->
+-	</parent>
+-	<groupId>microsevicesbank</groupId>
+-	<artifactId>loan</artifactId>
+-	<version>0.0.1-SNAPSHOT</version>
+-	<name>loan</name>
+-	<description>Demo project for Spring Boot</description>
+-	<url/>
+-	<licenses>
+-		<license/>
+-	</licenses>
+-	<developers>
+-		<developer/>
+-	</developers>
+-	<scm>
+-		<connection/>
+-		<developerConnection/>
+-		<tag/>
+-		<url/>
+-	</scm>
+-	<properties>
+-		<java.version>21</java.version>
+-	</properties>
+-	<dependencies>
+-		<dependency>
+-			<groupId>org.springframework.boot</groupId>
+-			<artifactId>spring-boot-starter-data-jpa</artifactId>
+-		</dependency>
+-		<dependency>
+-			<groupId>org.springframework.boot</groupId>
+-			<artifactId>spring-boot-starter-validation</artifactId>
+-		</dependency>
+-		<dependency>
+-			<groupId>org.springframework.boot</groupId>
+-			<artifactId>spring-boot-starter-web</artifactId>
+-		</dependency>
+-
+-		<dependency>
+-			<groupId>org.springframework.boot</groupId>
+-			<artifactId>spring-boot-devtools</artifactId>
+-			<scope>runtime</scope>
+-			<optional>true</optional>
+-		</dependency>
+-		<dependency>
+-			<groupId>com.h2database</groupId>
+-			<artifactId>h2</artifactId>
+-			<scope>runtime</scope>
+-		</dependency>
+-		<dependency>
+-			<groupId>org.projectlombok</groupId>
+-			<artifactId>lombok</artifactId>
+-			<optional>true</optional>
+-		</dependency>
+-		<dependency>
+-			<groupId>org.springframework.boot</groupId>
+-			<artifactId>spring-boot-starter-test</artifactId>
+-			<scope>test</scope>
+-		</dependency>
+-	</dependencies>
+-
+-	<build>
+-		<plugins>
+-			<plugin>
+-				<groupId>org.springframework.boot</groupId>
+-				<artifactId>spring-boot-maven-plugin</artifactId>
+-				<configuration>
+-					<excludes>
+-						<exclude>
+-							<groupId>org.projectlombok</groupId>
+-							<artifactId>lombok</artifactId>
+-						</exclude>
+-					</excludes>
+-				</configuration>
+-			</plugin>
+-		</plugins>
+-	</build>
+-
+-</project>
+Index: loan/src/main/resources/application.properties
+===================================================================
+diff --git a/loan/src/main/resources/application.properties b/loan/src/main/resources/application.properties
+deleted file mode 100644
+--- a/loan/src/main/resources/application.properties	
++++ /dev/null	
+@@ -1,1 +0,0 @@
+-spring.application.name=loan
+Index: loan/src/test/java/microsevicesbank/loan/LoanApplicationTests.java
+===================================================================
+diff --git a/loan/src/test/java/microsevicesbank/loan/LoanApplicationTests.java b/loan/src/test/java/microsevicesbank/loan/LoanApplicationTests.java
+deleted file mode 100644
+--- a/loan/src/test/java/microsevicesbank/loan/LoanApplicationTests.java	
++++ /dev/null	
+@@ -1,13 +0,0 @@
+-package microsevicesbank.loan;
+-
+-import org.junit.jupiter.api.Test;
+-import org.springframework.boot.test.context.SpringBootTest;
+-
+-@SpringBootTest
+-class LoanApplicationTests {
+-
+-	@Test
+-	void contextLoads() {
+-	}
+-
+-}
+Index: loan/src/main/java/com/microsevicesbank/loan/LoanApplication.java
+===================================================================
+diff --git a/loan/src/main/java/com/microsevicesbank/loan/LoanApplication.java b/loan/src/main/java/com/microsevicesbank/loan/LoanApplication.java
+deleted file mode 100644
+--- a/loan/src/main/java/com/microsevicesbank/loan/LoanApplication.java	
++++ /dev/null	
+@@ -1,13 +0,0 @@
+-package microsevicesbank.loan;
+-
+-import org.springframework.boot.SpringApplication;
+-import org.springframework.boot.autoconfigure.SpringBootApplication;
+-
+-@SpringBootApplication
+-public class LoanApplication {
+-
+-	public static void main(String[] args) {
+-		SpringApplication.run(LoanApplication.class, args);
+-	}
+-
+-}
+Index: loan/.gitignore
+===================================================================
+diff --git a/loan/.gitignore b/loan/.gitignore
+deleted file mode 100644
+--- a/loan/.gitignore	
++++ /dev/null	
+@@ -1,33 +0,0 @@
+-HELP.md
+-target/
+-!.mvn/wrapper/maven-wrapper.jar
+-!**/src/main/**/target/
+-!**/src/test/**/target/
+-
+-### STS ###
+-.apt_generated
+-.classpath
+-.factorypath
+-.project
+-.settings
+-.springBeans
+-.sts4-cache
+-
+-### IntelliJ IDEA ###
+-.idea
+-*.iws
+-*.iml
+-*.ipr
+-
+-### NetBeans ###
+-/nbproject/private/
+-/nbbuild/
+-/dist/
+-/nbdist/
+-/.nb-gradle/
+-build/
+-!**/src/main/**/build/
+-!**/src/test/**/build/
+-
+-### VS Code ###
+-.vscode/
+Index: loan/.mvn/wrapper/maven-wrapper.properties
+===================================================================
+diff --git a/loan/.mvn/wrapper/maven-wrapper.properties b/loan/.mvn/wrapper/maven-wrapper.properties
+deleted file mode 100644
+--- a/loan/.mvn/wrapper/maven-wrapper.properties	
++++ /dev/null	
+@@ -1,19 +0,0 @@
+-# Licensed to the Apache Software Foundation (ASF) under one
+-# or more contributor license agreements.  See the NOTICE file
+-# distributed with this work for additional information
+-# regarding copyright ownership.  The ASF licenses this file
+-# to you under the Apache License, Version 2.0 (the
+-# "License"); you may not use this file except in compliance
+-# with the License.  You may obtain a copy of the License at
+-#
+-#   http://www.apache.org/licenses/LICENSE-2.0
+-#
+-# Unless required by applicable law or agreed to in writing,
+-# software distributed under the License is distributed on an
+-# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+-# KIND, either express or implied.  See the License for the
+-# specific language governing permissions and limitations
+-# under the License.
+-wrapperVersion=3.3.2
+-distributionType=only-script
+-distributionUrl=https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/3.9.9/apache-maven-3.9.9-bin.zip
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ExternalStorageConfigurationManager\" enabled=\"true\" />\r\n  <component name=\"MavenProjectsManager\">\r\n    <option name=\"originalFiles\">\r\n      <list>\r\n        <option value=\"$PROJECT_DIR$/accounts/pom.xml\" />\r\n        <option value=\"$PROJECT_DIR$/card/pom.xml\" />\r\n        <option value=\"$PROJECT_DIR$/loan/pom.xml\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_22\" default=\"true\" project-jdk-name=\"openjdk-22\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/out\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	
++++ b/.idea/misc.xml	
+@@ -4,9 +4,9 @@
+   <component name="MavenProjectsManager">
+     <option name="originalFiles">
+       <list>
++        <option value="$PROJECT_DIR$/loans/pom.xml" />
+         <option value="$PROJECT_DIR$/accounts/pom.xml" />
+-        <option value="$PROJECT_DIR$/card/pom.xml" />
+-        <option value="$PROJECT_DIR$/loan/pom.xml" />
++        <option value="$PROJECT_DIR$/cards/pom.xml" />
+       </list>
+     </option>
+   </component>
+Index: .idea/compiler.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"CompilerConfiguration\">\r\n    <annotationProcessing>\r\n      <profile default=\"true\" name=\"Default\" enabled=\"true\" />\r\n      <profile name=\"Maven default annotation processors profile\" enabled=\"true\">\r\n        <sourceOutputDir name=\"target/generated-sources/annotations\" />\r\n        <sourceTestOutputDir name=\"target/generated-test-sources/test-annotations\" />\r\n        <outputRelativeToContentRoot value=\"true\" />\r\n        <module name=\"accounts\" />\r\n      </profile>\r\n    </annotationProcessing>\r\n    <bytecodeTargetLevel>\r\n      <module name=\"card\" target=\"21\" />\r\n      <module name=\"loan\" target=\"21\" />\r\n    </bytecodeTargetLevel>\r\n  </component>\r\n  <component name=\"JavacSettings\">\r\n    <option name=\"ADDITIONAL_OPTIONS_OVERRIDE\">\r\n      <module name=\"accounts\" options=\"-parameters\" />\r\n      <module name=\"card\" options=\"-parameters\" />\r\n      <module name=\"loan\" options=\"-parameters\" />\r\n    </option>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/compiler.xml b/.idea/compiler.xml
+--- a/.idea/compiler.xml	
++++ b/.idea/compiler.xml	
+@@ -7,11 +7,13 @@
+         <sourceOutputDir name="target/generated-sources/annotations" />
+         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+         <outputRelativeToContentRoot value="true" />
++        <module name="loans" />
+         <module name="accounts" />
+       </profile>
+     </annotationProcessing>
+     <bytecodeTargetLevel>
+       <module name="card" target="21" />
++      <module name="cards" target="21" />
+       <module name="loan" target="21" />
+     </bytecodeTargetLevel>
+   </component>
+@@ -20,6 +22,7 @@
+       <module name="accounts" options="-parameters" />
+       <module name="card" options="-parameters" />
+       <module name="loan" options="-parameters" />
++      <module name="loans" options="-parameters" />
+     </option>
+   </component>
+ </project>
+\ No newline at end of file

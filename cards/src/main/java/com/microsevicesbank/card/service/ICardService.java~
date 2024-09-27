@@ -10,5 +10,5 @@ public interface ICardService {
 
     boolean updateCard(CardDTO updatedCard);
 
-    boolean deleteCard(String cardNumber);
+    boolean deleteCard(String mobileNumber);
 }
