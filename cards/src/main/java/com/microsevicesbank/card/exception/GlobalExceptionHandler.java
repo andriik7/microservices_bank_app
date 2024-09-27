@@ -1,6 +1,6 @@
 package com.microsevicesbank.card.exception;
 
-import com.microservicesbank.accounts.dto.ErrorResponseDTO;
+import com.microsevicesbank.card.dto.ErrorResponseDTO;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;

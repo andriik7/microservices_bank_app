@@ -1,8 +1,155 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="2f272a15-b657-4e69-b58b-9c5039112b57" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/cards/src/main/java/com/microsevicesbank/card/CardsApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cards/src/main/resources/schema.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cards/src/test/java/microsevicesbank/card/display/CamelCaseDisplay.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans/src/main/resources/schema.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/src/main/java/com/microservicesbank/accounts/dto/ResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/src/main/java/com/microservicesbank/accounts/dto/ResponseDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/src/test/java/com/microservicesbank/accounts/AccountServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/src/test/java/com/microservicesbank/accounts/AccountServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards/src/main/java/com/microsevicesbank/card/CardApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards/src/main/java/com/microsevicesbank/card/constants/CardConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/java/com/microsevicesbank/card/constants/CardConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards/src/main/java/com/microsevicesbank/card/dto/CardDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/java/com/microsevicesbank/card/dto/CardDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards/src/main/java/com/microsevicesbank/card/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/java/com/microsevicesbank/card/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards/src/main/java/com/microsevicesbank/card/mapper/CardMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/java/com/microsevicesbank/card/mapper/CardMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards/src/main/java/com/microsevicesbank/card/model/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/java/com/microsevicesbank/card/model/Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards/src/main/java/com/microsevicesbank/card/repository/CardRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/java/com/microsevicesbank/card/repository/CardRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards/src/main/java/com/microsevicesbank/card/service/ICardService.java" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/java/com/microsevicesbank/card/service/ICardService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards/src/main/java/com/microsevicesbank/card/service/impl/CardServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/java/com/microsevicesbank/card/service/impl/CardServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards/src/test/java/microsevicesbank/card/CardApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/test/java/microsevicesbank/card/CardsApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards/src/test/java/microsevicesbank/card/CardServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/test/java/microsevicesbank/card/CardServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loan/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/loan/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loan/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/loan/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loan/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/loan/mvnw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loan/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/loan/mvnw.cmd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loan/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/loan/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loan/src/main/java/com/microsevicesbank/loan/LoanApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/loan/src/main/java/com/microsevicesbank/loan/LoanApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loan/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/loan/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loan/src/test/java/microsevicesbank/loan/LoanApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/loan/src/test/java/microsevicesbank/loan/LoanApplicationTests.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="account_branch" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{}</component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JUnit.AccountServiceTest.executor": "Run",
+    "JUnit.CardServiceTest.deleteCardTest.executor": "Run",
+    "JUnit.CardServiceTest.executor": "Run",
+    "JUnit.CardServiceTest.testCreateCardMobileNumberIsNotValid.executor": "Run",
+    "com.codeium.enabled": "true",
+    "git-widget-placeholder": "card__branch",
+    "last_opened_file_path": "C:/ANDREW/Study/Pogramming/JAVA/Spring/Microservices/EazyBytes_Course/bank_app/cards/src/test/java/microsevicesbank/card",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\ANDREW\Study\Pogramming\JAVA\Spring\Microservices\EazyBytes_Course\bank_app\cards\src\test\java\microsevicesbank\card" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.CardServiceTest">
+    <configuration name="AccountServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="accounts" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.microservicesbank.accounts.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.microservicesbank.accounts" />
+      <option name="MAIN_CLASS_NAME" value="com.microservicesbank.accounts.AccountServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CardServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="cards" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="microsevicesbank.card.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="microsevicesbank.card" />
+      <option name="MAIN_CLASS_NAME" value="microsevicesbank.card.CardServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CardServiceTest.deleteCardTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="cards" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="microsevicesbank.card.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="microsevicesbank.card" />
+      <option name="MAIN_CLASS_NAME" value="microsevicesbank.card.CardServiceTest" />
+      <option name="METHOD_NAME" value="deleteCardTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CardServiceTest.testCreateCardMobileNumberIsNotValid" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="cards" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="microsevicesbank.card.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="microsevicesbank.card" />
+      <option name="MAIN_CLASS_NAME" value="microsevicesbank.card.CardServiceTest" />
+      <option name="METHOD_NAME" value="testCreateCardMobileNumberIsNotValid" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.CardServiceTest" />
+        <item itemvalue="JUnit.CardServiceTest.deleteCardTest" />
+        <item itemvalue="JUnit.CardServiceTest.testCreateCardMobileNumberIsNotValid" />
+        <item itemvalue="JUnit.AccountServiceTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="TaskManager">
+    <servers />
+  </component>
 </project>

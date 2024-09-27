@@ -3,14 +3,13 @@ package com.microservicesbank.accounts.dto;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Schema(
         name = "Response",
         description = "Response object for REST APIs"
 )
 @Data
-@AllArgsConstructor @NoArgsConstructor
+@AllArgsConstructor
 public class ResponseDTO {
 
     @Schema(
