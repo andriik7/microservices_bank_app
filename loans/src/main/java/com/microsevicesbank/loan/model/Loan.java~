@@ -1,0 +1,12 @@
+package com.microsevicesbank.loan.model;
+
+import jakarta.persistence.Entity;
+import lombok.*;
+
+@Entity
+@Getter @Setter @ToString @AllArgsConstructor @NoArgsConstructor
+public class Loan extends SuperEntity {
+
+    
+
+}
