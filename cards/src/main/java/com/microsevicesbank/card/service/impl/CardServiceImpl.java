@@ -21,6 +21,11 @@ public class CardServiceImpl implements ICardService {
 
     private CardRepository cardRepository;
 
+    /**
+     * Service method to create a new card.
+     * If the card already exists, throws a CardAlreadyExistsException.
+     * @param mobileNumber the mobile number of the card owner.
+     */
     @Override
     public void createCard(String mobileNumber) {
 
@@ -33,8 +38,15 @@ public class CardServiceImpl implements ICardService {
         cardRepository.save(createNewCard(mobileNumber));
     }
 
+    /**
+     * Service method to fetch a card by its mobile number.
+     * If the card does not exist, throws a ResourceNotFoundException.
+     * @param mobileNumber the mobile number of the card owner.
+     * @return the card details.
+     */
     @Override
     public CardDTO fetchCard(String mobileNumber) {
+
         Card card = cardRepository.findByMobileNumber(mobileNumber).orElseThrow(
                 () -> new ResourceNotFoundException("Card", "mobileNumber", mobileNumber)
         );
@@ -42,8 +54,15 @@ public class CardServiceImpl implements ICardService {
         return CardMapper.mapToCardDTO(card, new CardDTO());
     }
 
+    /**
+     * Service method to update a card.
+     * If the card does not exist, throws a ResourceNotFoundException.
+     * @param updatedCard the updated card details.
+     * @return true if the card is updated successfully, false otherwise.
+     */
     @Override
     public boolean updateCard(CardDTO updatedCard) {
+
 
         Card card = cardRepository.findByCardNumber(updatedCard.getCardNumber()).orElseThrow(
                 () -> new ResourceNotFoundException("Card", "cardNumber", updatedCard.getCardNumber())
@@ -51,12 +70,18 @@ public class CardServiceImpl implements ICardService {
 
         CardMapper.mapToCard(updatedCard, card);
         cardRepository.save(card);
-
         return true;
     }
 
+    /**
+     * Service method to delete a card by its mobile number.
+     * If the card does not exist, throws a ResourceNotFoundException.
+     * @param mobileNumber the mobile number of the card owner.
+     * @return true if the card is deleted successfully, false otherwise.
+     */
     @Override
     public boolean deleteCard(String mobileNumber) {
+
         Card card = cardRepository.findByMobileNumber(mobileNumber).orElseThrow(
                 () -> new ResourceNotFoundException("Card", "mobileNumber", mobileNumber)
         );
@@ -66,8 +91,13 @@ public class CardServiceImpl implements ICardService {
         return true;
     }
 
-
+    /**
+     * Private method to create a new card object, used in the createCard service.
+     * @param mobileNumber the mobile number of the card owner.
+     * @return the new card object.
+     */
     private Card createNewCard(String mobileNumber) {
+
         Card card = new Card();
         Long randomCardNumber = (1000000000000000L + new Random().nextLong(900000000000000L));
         card.setMobileNumber(mobileNumber);
