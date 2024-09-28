@@ -56,9 +56,9 @@ public class CardServiceImpl implements ICardService {
     }
 
     @Override
-    public boolean deleteCard(String cardNumber) {
-        Card card = cardRepository.findByCardNumber(cardNumber).orElseThrow(
-                () -> new ResourceNotFoundException("Card", "cardNumber", cardNumber)
+    public boolean deleteCard(String mobileNumber) {
+        Card card = cardRepository.findByMobileNumber(mobileNumber).orElseThrow(
+                () -> new ResourceNotFoundException("Card", "mobileNumber", mobileNumber)
         );
 
         cardRepository.delete(card);
@@ -69,7 +69,7 @@ public class CardServiceImpl implements ICardService {
 
     private Card createNewCard(String mobileNumber) {
         Card card = new Card();
-        Long randomCardNumber = 100000000000L + new Random().nextInt(900000000);
+        Long randomCardNumber = (1000000000000000L + new Random().nextLong(900000000000000L));
         card.setMobileNumber(mobileNumber);
         card.setCardNumber(randomCardNumber.toString());
         card.setCardType(CardConstants.CREDIT_CARD);
