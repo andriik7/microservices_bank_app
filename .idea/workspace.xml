@@ -4,8 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2f272a15-b657-4e69-b58b-9c5039112b57" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/loans/target/classes/schema.sql" beforeDir="false" />
+    <list default="true" id="2f272a15-b657-4e69-b58b-9c5039112b57" name="Changes" comment="Merge branch 'refs/heads/card_branch'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <change afterPath="$PROJECT_DIR$/loans/src/test/java/microsevicesbank/loan/LoanControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans/src/test/java/microsevicesbank/loan/LoanTestSuite.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans/target/test-classes/microsevicesbank/loan/LoanControllerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/loans/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/src/main/java/com/microsevicesbank/loan/controller/LoanController.java" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/java/com/microsevicesbank/loan/controller/LoanController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/src/main/java/com/microsevicesbank/loan/dto/LoanDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/java/com/microsevicesbank/loan/dto/LoanDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/classes/com/microsevicesbank/loan/controller/LoanController.class" beforeDir="false" afterPath="$PROJECT_DIR$/loans/target/classes/com/microsevicesbank/loan/controller/LoanController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/classes/com/microsevicesbank/loan/dto/LoanDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/loans/target/classes/com/microsevicesbank/loan/dto/LoanDTO.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +25,13 @@
   </component>
   <component name="CompilerWorkspaceConfiguration">
     <option name="MAKE_PROJECT_ON_SAVE" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -38,9 +53,10 @@
     &quot;accountId&quot;: &quot;ed6a863c-8c50-4243-bbd4-9c708e760707&quot;
   }
 }</component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 7
-}</component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "ff3c3cff",
+  "associatedIndex": 7
+}]]></component>
   <component name="ProjectId" id="2mhUu0utENj63tCZSF0BXf9SEGj" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -53,6 +69,8 @@
   "keyToString": {
     "Application.AccountsApplication.executor": "Run",
     "Application.CardsApplication.executor": "Run",
+    "Application.LoansApplication.executor": "Run",
+    "JUnit.AccountControllerTest.executor": "Run",
     "JUnit.AccountServiceTest.executor": "Run",
     "JUnit.CardControllerTest.createCardPositiveRESTApiTest.executor": "Run",
     "JUnit.CardControllerTest.createCardRESTApiTest.executor": "Run",
@@ -70,63 +88,34 @@
     "JUnit.CardServiceTest.deleteCardTest.executor": "Run",
     "JUnit.CardServiceTest.executor": "Run",
     "JUnit.CardServiceTest.testCreateCardMobileNumberIsNotValid.executor": "Run",
+    "JUnit.LoanApplicationTests.executor": "Run",
+    "JUnit.LoanControllerTest.executor": "Run",
+    "JUnit.LoanControllerTest.fetchLoanNotFoundTest.executor": "Run",
+    "JUnit.LoanControllerTest.fetchLoanTest.executor": "Run",
+    "JUnit.LoanControllerTest.updateLoanInvalidMobileNumberTest.executor": "Run",
+    "JUnit.LoanServiceTest.executor": "Run",
+    "JUnit.LoanServiceTest.updateLoanNotFoundTest.executor": "Run",
+    "JUnit.LoanServiceTest.updateLoanTest.executor": "Run",
+    "JUnit.LoanTestSuite.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "com.codeium.enabled": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "loan__branch",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/ANDREW/Study/Pogramming/JAVA/Spring/Microservices/EazyBytes_Course/bank_app/cards/src/test/java/microsevicesbank/card",
-    "project.structure.last.edited": "Modules",
+    "last_opened_file_path": "C:/ANDREW/Study/Pogramming/JAVA/Spring/Microservices/EazyBytes_Course/bank_app/loans/src/test/java/microsevicesbank/loan",
+    "project.structure.last.edited": "Global Libraries",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "project.propCompiler"
+    "settings.editor.selected.configurable": "reference.settings.ide.settings.notifications"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\ANDREW\Study\Pogramming\JAVA\Spring\Microservices\EazyBytes_Course\bank_app\loans\src\test\java\microsevicesbank\loan" />
       <recent name="C:\ANDREW\Study\Pogramming\JAVA\Spring\Microservices\EazyBytes_Course\bank_app\cards\src\test\java\microsevicesbank\card" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.AccountsApplication">
-    <configuration name="AccountsApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.microservicesbank.accounts.AccountsApplication" />
-      <module name="accounts" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.microservicesbank.accounts.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CardsApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.microsevicesbank.card.CardsApplication" />
-      <module name="cards" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.microsevicesbank.card.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LoansApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.microsevicesbank.loan.LoansApplication" />
-      <module name="loans" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.microsevicesbank.loan.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CardControllerTest.updateCardInvalidMobileNumberTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.LoanTestSuite">
+    <configuration name="CardControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="cards" />
       <extension name="coverage">
         <pattern>
@@ -136,22 +125,66 @@
       </extension>
       <option name="PACKAGE_NAME" value="microsevicesbank.card" />
       <option name="MAIN_CLASS_NAME" value="microsevicesbank.card.CardControllerTest" />
-      <option name="METHOD_NAME" value="updateCardInvalidMobileNumberTest" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CardServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="cards" />
+    <configuration name="LoanApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="loans" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="microsevicesbank.card.*" />
+          <option name="PATTERN" value="microsevicesbank.loan.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="microsevicesbank.card" />
-      <option name="MAIN_CLASS_NAME" value="microsevicesbank.card.CardServiceTest" />
+      <option name="PACKAGE_NAME" value="microsevicesbank.loan" />
+      <option name="MAIN_CLASS_NAME" value="microsevicesbank.loan.LoanApplicationTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LoanControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="loans" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="microsevicesbank.loan.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="microsevicesbank.loan" />
+      <option name="MAIN_CLASS_NAME" value="microsevicesbank.loan.LoanControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LoanServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="loans" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="microsevicesbank.loan.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="microsevicesbank.loan" />
+      <option name="MAIN_CLASS_NAME" value="microsevicesbank.loan.LoanServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LoanTestSuite" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="loans" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="microsevicesbank.loan.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="microsevicesbank.loan" />
+      <option name="MAIN_CLASS_NAME" value="microsevicesbank.loan.LoanTestSuite" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -159,11 +192,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.AccountsApplication" />
-        <item itemvalue="Application.LoansApplication" />
-        <item itemvalue="Application.CardsApplication" />
-        <item itemvalue="JUnit.CardServiceTest" />
-        <item itemvalue="JUnit.CardControllerTest.updateCardInvalidMobileNumberTest" />
+        <item itemvalue="JUnit.LoanTestSuite" />
+        <item itemvalue="JUnit.LoanApplicationTests" />
+        <item itemvalue="JUnit.LoanServiceTest" />
+        <item itemvalue="JUnit.CardControllerTest" />
+        <item itemvalue="JUnit.LoanControllerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -176,6 +209,15 @@
       <option name="presentableId" value="Default" />
       <updated>1727528523720</updated>
     </task>
+    <task id="LOCAL-00001" summary="Merge branch 'refs/heads/card_branch'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <option name="closed" value="true" />
+      <created>1727531302999</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1727531302999</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -191,6 +233,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="TDD with CardController and refactoring&#10;&#10;Creating CardController and CardControllerTest to get all these endpoints working properly. Also here I am updating and fixing some exception handling, services and service tests for Cards microservice." />
-    <option name="LAST_COMMIT_MESSAGE" value="" />
+    <MESSAGE value="Merge branch 'refs/heads/card_branch'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'refs/heads/card_branch'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
   </component>
 </project>

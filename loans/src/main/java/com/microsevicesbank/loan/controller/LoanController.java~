@@ -27,8 +27,7 @@ public class LoanController {
     private ILoanService loanService;
 
     @PostMapping("/createLoan")
-    public ResponseEntity<ResponseDTO> createLoan(@RequestParam @Pattern(regexp = "^\\d{10}$",
-            message = "Mobile number must be 10 digits") String mobileNumber) {
+    public ResponseEntity<ResponseDTO> createLoan(@RequestParam @Pattern(regexp = "^\\d{10}$", message = "Mobile number must be 10 digits") String mobileNumber) {
 
         loanService.createLoan(mobileNumber);
 
@@ -38,8 +37,7 @@ public class LoanController {
     }
 
     @GetMapping("/fetchLoan")
-    public ResponseEntity<ResponseDTO> fetchLoanDetails(@RequestParam @Pattern(regexp = "^\\d{10}$",
-            message = "Mobile number must be 10 digits") String mobileNumber) {
+    public ResponseEntity<ResponseDTO> fetchLoanDetails(@RequestParam @Pattern(regexp = "^\\d{10}$", message = "Mobile number must be 10 digits") String mobileNumber) {
 
         loanService.fetchLoan(mobileNumber);
 
@@ -63,20 +61,5 @@ public class LoanController {
                 .body(new ResponseDTO(LoanConstants.STATUS_417, LoanConstants.MESSAGE_417_UPDATE));
     }
 
-    @DeleteMapping("/deleteLoan")
-    public ResponseEntity<ResponseDTO> deleteLoanDetails(@RequestParam @Pattern(regexp = "^\\d{10}$",
-            message = "Mobile number must be 10 digits") String mobileNumber) {
-
-        boolean isDeleted = loanService.deleteLoan(mobileNumber);
-
-        if (isDeleted) {
-            return ResponseEntity
-                    .status(HttpStatus.OK)
-                    .body(new ResponseDTO(LoanConstants.STATUS_200, LoanConstants.MESSAGE_200));
-        }
-        return ResponseEntity
-                .status(HttpStatus.EXPECTATION_FAILED)
-                .body(new ResponseDTO(LoanConstants.STATUS_417, LoanConstants.MESSAGE_417_DELETE));
-    }
 
 }
