@@ -5,16 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2f272a15-b657-4e69-b58b-9c5039112b57" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/loans/src/main/java/com/microsevicesbank/loan/LoansApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards/src/main/java/com/microsevicesbank/card/CardsApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/java/com/microsevicesbank/card/CardsApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards/src/main/java/com/microsevicesbank/card/controller/CardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/java/com/microsevicesbank/card/controller/CardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards/src/main/java/com/microsevicesbank/card/service/impl/CardServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/java/com/microsevicesbank/card/service/impl/CardServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cards/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/loans/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/src/main/java/com/microsevicesbank/loan/LoanApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/src/main/java/com/microsevicesbank/loan/model/Loan.java" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/java/com/microsevicesbank/loan/model/Loan.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/src/main/java/com/microsevicesbank/loan/repository/LoanRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/java/com/microsevicesbank/loan/repository/LoanRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loan/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loan/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loan/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loan/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loan/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loan/src/main/java/com/microsevicesbank/loan/LoanApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loan/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loan/src/test/java/microsevicesbank/loan/LoanApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/src/main/resources/schema.sql" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +37,24 @@
         <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "andriik7"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/andriik7/microservices_bank_app.git",
+    "accountId": "ed6a863c-8c50-4243-bbd4-9c708e760707"
+  }
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 7
+}]]></component>
+  <component name="ProjectId" id="2mhUu0utENj63tCZSF0BXf9SEGj" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
@@ -45,7 +66,6 @@
   "keyToString": {
     "Application.AccountsApplication.executor": "Run",
     "Application.CardsApplication.executor": "Run",
-    "Application.LoansApplication.executor": "Run",
     "JUnit.AccountServiceTest.executor": "Run",
     "JUnit.CardControllerTest.createCardPositiveRESTApiTest.executor": "Run",
     "JUnit.CardControllerTest.createCardRESTApiTest.executor": "Run",
@@ -63,13 +83,15 @@
     "JUnit.CardServiceTest.deleteCardTest.executor": "Run",
     "JUnit.CardServiceTest.executor": "Run",
     "JUnit.CardServiceTest.testCreateCardMobileNumberIsNotValid.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
     "com.codeium.enabled": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "card__branch",
+    "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/ANDREW/Study/Pogramming/JAVA/Spring/Microservices/EazyBytes_Course/bank_app/cards/src/test/java/microsevicesbank/card",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "editor.preferences.import"
+    "settings.editor.selected.configurable": "project.propCompiler"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -77,7 +99,20 @@
       <recent name="C:\ANDREW\Study\Pogramming\JAVA\Spring\Microservices\EazyBytes_Course\bank_app\cards\src\test\java\microsevicesbank\card" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.LoansApplication">
+  <component name="RunManager" selected="Application.AccountsApplication">
+    <configuration name="AccountsApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.microservicesbank.accounts.AccountsApplication" />
+      <module name="accounts" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.microservicesbank.accounts.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="CardsApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.microsevicesbank.card.CardsApplication" />
       <module name="cards" />
@@ -91,20 +126,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LoansApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.microsevicesbank.loan.LoansApplication" />
-      <module name="loans" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.microsevicesbank.loan.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CardControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CardControllerTest.fetchCardDetailsInvalidMobileNumberTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="cards" />
       <extension name="coverage">
         <pattern>
@@ -114,12 +136,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="microsevicesbank.card" />
       <option name="MAIN_CLASS_NAME" value="microsevicesbank.card.CardControllerTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="METHOD_NAME" value="fetchCardDetailsInvalidMobileNumberTest" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CardControllerTest.createCardSuccessTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CardControllerTest.updateCardInvalidMobileNumberTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="cards" />
       <extension name="coverage">
         <pattern>
@@ -129,7 +152,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="microsevicesbank.card" />
       <option name="MAIN_CLASS_NAME" value="microsevicesbank.card.CardControllerTest" />
-      <option name="METHOD_NAME" value="createCardSuccessTest" />
+      <option name="METHOD_NAME" value="updateCardInvalidMobileNumberTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -152,15 +175,23 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.LoansApplication" />
+        <item itemvalue="Application.AccountsApplication" />
         <item itemvalue="Application.CardsApplication" />
-        <item itemvalue="JUnit.CardControllerTest" />
         <item itemvalue="JUnit.CardServiceTest" />
-        <item itemvalue="JUnit.CardControllerTest.createCardSuccessTest" />
+        <item itemvalue="JUnit.CardControllerTest.updateCardInvalidMobileNumberTest" />
+        <item itemvalue="JUnit.CardControllerTest.fetchCardDetailsInvalidMobileNumberTest" />
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2f272a15-b657-4e69-b58b-9c5039112b57" name="Changes" comment="" />
+      <created>1727528523720</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1727528523720</updated>
+    </task>
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -175,6 +206,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="TDD with CardController and refactoring&#10;&#10;Creating CardController and CardControllerTest to get all these endpoints working properly. Also here I am updating and fixing some exception handling, services and service tests for Cards microservice." />
     <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
 </project>

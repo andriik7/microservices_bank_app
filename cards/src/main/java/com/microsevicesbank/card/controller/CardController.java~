@@ -107,7 +107,10 @@ public class CardController {
         ),
             @ApiResponse(
                     responseCode = "404",
-                    description = "HTTP Status 404 NOT FOUND"
+                    description = "HTTP Status 404 NOT FOUND",
+                    content = @Content(
+                            schema = @Schema(implementation = ResponseDTO.class)
+                    )
             ),
             @ApiResponse(
                     responseCode = "417",
@@ -145,6 +148,9 @@ public class CardController {
             @ApiResponse(
                     responseCode = "404",
                     description = "HTTP Status 404 NOT FOUND"
+//                    content = @Content(
+//                            schema = @Schema(implementation = ResponseDTO.class)
+//                    )
             ),
             @ApiResponse(
                     responseCode = "417",
