@@ -46,7 +46,7 @@ public class LoanDTO {
     )
     private int amountPaid;
 
-    @PositiveOrZero(message = "Total outstanding loan amount should be equal or greater than 0")
+    @PositiveOrZero(message = "Total outstanding amount should be equal or greater than 0")
     @Schema(
             description = "Total outstanding amount against a loan", example = "99000"
     )
