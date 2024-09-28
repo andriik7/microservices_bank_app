@@ -15,7 +15,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 		description = "Documentation Card REST API",
 		contact = @Contact(name = "Andrii Kuchera", email = "ak47.10.07.06@gmail.com", url = "https://github.com/andriik7"),
 		license = @License(name = "Apache 2.0", url = "https://www.apache.org/licenses/LICENSE-2.0.html")),
-		externalDocs = @ExternalDocumentation(description = "Bank Cards microservice REST API documentation", url = "http://localhost:8090/swagger-ui/index.html"))
+		externalDocs = @ExternalDocumentation(description = "Bank Cards microservice REST API documentation", url = "http://localhost:8080/swagger-ui/index.html"))
 public class CardsApplication {
 
 	public static void main(String[] args) {
