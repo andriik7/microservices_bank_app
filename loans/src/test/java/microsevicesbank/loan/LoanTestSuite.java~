@@ -1,0 +1,8 @@
+package microsevicesbank.loan;
+
+import org.junit.platform.suite.api.Suite;
+
+@Suite
+@TestClass
+public class LoanTestSuite {
+}
