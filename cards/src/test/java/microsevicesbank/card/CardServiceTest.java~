@@ -37,49 +37,47 @@ public class CardServiceTest {
     @InjectMocks
     private CardServiceImpl cardService;
 
-    private static final String TEST_MOBILE_NUMBER = "0666992283";
-
-    private static final String NON_EXISTENT_MOBILE_NUMBER = "0666992284";
-
-    private static final String TEST_CARD_NUMBER = "1234123412341234";
-
-    private static final String NON_EXISTENT_CARD_NUMBER = "1234123412341235";
-
     @Test
     public void testCreateCardTest() {
 
-        when(cardRepository.findByMobileNumber(TEST_MOBILE_NUMBER)).thenReturn(Optional.empty());
+        when(cardRepository.findByMobileNumber("0666992283")).thenReturn(Optional.empty());
 
-        cardService.createCard(TEST_MOBILE_NUMBER);
+        cardService.createCard("0666992283");
 
         verify(cardRepository, times(1)).save(any());
 
-        when(cardRepository.findByMobileNumber(TEST_MOBILE_NUMBER)).thenReturn(Optional.of(new Card()));
+        when(cardRepository.findByMobileNumber("0666992283")).thenReturn(Optional.of(new Card()));
 
-        assertThrows(CardAlreadyExistsException.class, () -> cardService.createCard(TEST_MOBILE_NUMBER));
+        assertThrows(CardAlreadyExistsException.class, () -> cardService.createCard("0666992283"));
     }
 
 
     @Test
     public void fetchCardTest() {
 
-        Card fetchCard = new Card(1L, TEST_MOBILE_NUMBER, TEST_CARD_NUMBER, "Credit Card", 1000, 100, 900);
+        Card fetchCard = new Card(1L, "0666992283",
+                                  "1234123412341234",
+                                  "Credit Card", 1000,
+                                  100, 900);
 
-        when(cardRepository.findByMobileNumber(TEST_MOBILE_NUMBER))
+        when(cardRepository.findByMobileNumber("0666992283"))
                 .thenReturn(Optional.of(fetchCard));
 
-        assertEquals(cardService.fetchCard(TEST_MOBILE_NUMBER), CardMapper.mapToCardDTO(fetchCard, new CardDTO()));
+        assertEquals(cardService.fetchCard("0666992283"), CardMapper.mapToCardDTO(fetchCard, new CardDTO()));
 
-        when(cardRepository.findByMobileNumber(NON_EXISTENT_MOBILE_NUMBER))
+        when(cardRepository.findByMobileNumber("0666992284"))
                 .thenReturn(Optional.empty());
 
-        assertThrows(ResourceNotFoundException.class , () -> cardService.fetchCard(NON_EXISTENT_MOBILE_NUMBER));
+        assertThrows(ResourceNotFoundException.class , () -> cardService.fetchCard("0666992284"));
     }
 
     @Test
     public void updateCardTest() {
 
-        Card toUpdate = new Card(1L, TEST_MOBILE_NUMBER, TEST_CARD_NUMBER, "Credit Card", 1000, 100, 900);
+        Card toUpdate = new Card(1L, "0666992283",
+                                 "1234123412341234",
+                                 "Credit Card", 1000,
+                                 100, 900);
         when(cardRepository.findByCardNumber(anyString())).thenReturn(Optional.of(toUpdate));
 
         CardDTO updatedCard = CardMapper.mapToCardDTO(toUpdate, new CardDTO());
@@ -89,23 +87,27 @@ public class CardServiceTest {
 
         assertTrue(cardService.updateCard(updatedCard));
 
-        when(cardRepository.findByCardNumber(NON_EXISTENT_CARD_NUMBER)).thenReturn(Optional.empty());
+        when(cardRepository.findByCardNumber("1234123412341235")).thenReturn(Optional.empty());
 
-        updatedCard.setCardNumber(NON_EXISTENT_CARD_NUMBER);
+        updatedCard.setCardNumber("1234123412341235");
 
         assertThrows(ResourceNotFoundException.class, () -> cardService.updateCard(updatedCard));
     }
 
     @Test
     public void deleteCardTest() {
-        Card toDelete = new Card(1L, TEST_MOBILE_NUMBER, TEST_CARD_NUMBER, "Credit Card", 1000, 100, 900);
+        Card toDelete = new Card(1L, "0666992283",
+                                 "1234123412341234",
+                                 "Credit Card", 1000,
+                                 100, 900);
 
-        when(cardRepository.findByMobileNumber(TEST_MOBILE_NUMBER)).thenReturn(Optional.of(toDelete));
+        when(cardRepository.findByMobileNumber("0666992283")).thenReturn(Optional.of(toDelete));
 
-        assertTrue(cardService.deleteCard(TEST_MOBILE_NUMBER));
+        assertTrue(cardService.deleteCard("0666992283"));
         verify(cardRepository, times(1)).delete(any(Card.class));
 
-        when(cardRepository.findByMobileNumber(TEST_MOBILE_NUMBER)).thenReturn(Optional.empty());
-        assertThrows(ResourceNotFoundException.class, () -> cardService.deleteCard(TEST_MOBILE_NUMBER));
+        when(cardRepository.findByMobileNumber("0666992283")).thenReturn(Optional.empty());
+        assertThrows(ResourceNotFoundException.class, () -> cardService.deleteCard("0666992283"));
     }
+
 }
