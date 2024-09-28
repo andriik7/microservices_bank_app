@@ -4,16 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2f272a15-b657-4e69-b58b-9c5039112b57" name="Changes" comment="Merge branch 'refs/heads/card_branch'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
-      <change afterPath="$PROJECT_DIR$/loans/src/test/java/microsevicesbank/loan/LoanControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans/src/test/java/microsevicesbank/loan/LoanTestSuite.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans/target/test-classes/microsevicesbank/loan/LoanControllerTest.class" afterDir="false" />
+    <list default="true" id="2f272a15-b657-4e69-b58b-9c5039112b57" name="Changes" comment="Create LoanController and LoanControllerTest using TDD to resolve all possible issues from the start. Add some correction to the LoanDTO and using new dependency I provide @Suite to run all my tests at the same moment right before every commit.">
+      <change afterPath="$PROJECT_DIR$/loans/src/main/resources/schema.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/loans/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/src/main/java/com/microsevicesbank/loan/controller/LoanController.java" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/java/com/microsevicesbank/loan/controller/LoanController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/src/main/java/com/microsevicesbank/loan/dto/LoanDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/java/com/microsevicesbank/loan/dto/LoanDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/classes/com/microsevicesbank/loan/controller/LoanController.class" beforeDir="false" afterPath="$PROJECT_DIR$/loans/target/classes/com/microsevicesbank/loan/controller/LoanController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/classes/com/microsevicesbank/loan/dto/LoanDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/loans/target/classes/com/microsevicesbank/loan/dto/LoanDTO.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +94,7 @@
     "com.codeium.enabled": "true",
     "git-widget-placeholder": "loan__branch",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/ANDREW/Study/Pogramming/JAVA/Spring/Microservices/EazyBytes_Course/bank_app/loans/src/test/java/microsevicesbank/loan",
+    "last_opened_file_path": "C:/ANDREW/Study/Pogramming/JAVA/Spring/Microservices/EazyBytes_Course/bank_app/loans/src/main/resources",
     "project.structure.last.edited": "Global Libraries",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -110,6 +103,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\ANDREW\Study\Pogramming\JAVA\Spring\Microservices\EazyBytes_Course\bank_app\loans\src\main\resources" />
       <recent name="C:\ANDREW\Study\Pogramming\JAVA\Spring\Microservices\EazyBytes_Course\bank_app\loans\src\test\java\microsevicesbank\loan" />
       <recent name="C:\ANDREW\Study\Pogramming\JAVA\Spring\Microservices\EazyBytes_Course\bank_app\cards\src\test\java\microsevicesbank\card" />
     </key>
@@ -217,7 +211,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727531302999</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Create LoanController and LoanControllerTest using TDD to resolve all possible issues from the start. Add some correction to the LoanDTO and using new dependency I provide @Suite to run all my tests at the same moment right before every commit.">
+      <option name="closed" value="true" />
+      <created>1727542763704</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1727542763704</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -234,6 +236,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="TDD with CardController and refactoring&#10;&#10;Creating CardController and CardControllerTest to get all these endpoints working properly. Also here I am updating and fixing some exception handling, services and service tests for Cards microservice." />
     <MESSAGE value="Merge branch 'refs/heads/card_branch'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'refs/heads/card_branch'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
+    <MESSAGE value="Create LoanController and LoanControllerTest using TDD to resolve all possible issues from the start. Add some correction to the LoanDTO and using new dependency I provide @Suite to run all my tests at the same moment right before every commit." />
+    <option name="LAST_COMMIT_MESSAGE" value="Create LoanController and LoanControllerTest using TDD to resolve all possible issues from the start. Add some correction to the LoanDTO and using new dependency I provide @Suite to run all my tests at the same moment right before every commit." />
   </component>
 </project>
