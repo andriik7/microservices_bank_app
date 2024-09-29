@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2f272a15-b657-4e69-b58b-9c5039112b57" name="Changes" comment="Create LoanController and LoanControllerTest using TDD to resolve all possible issues from the start. Add some correction to the LoanDTO and using new dependency I provide @Suite to run all my tests at the same moment right before every commit.">
-      <change afterPath="$PROJECT_DIR$/loans/src/main/resources/schema.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="2f272a15-b657-4e69-b58b-9c5039112b57" name="Changes" comment="Create test suites for Accounts and Cards microservices.&#10;&#10;Add JUnit suite dependency to the pom.xml files. So that allowed us to implement TestSuites to run all needed tests in one click" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -46,10 +43,10 @@
     &quot;accountId&quot;: &quot;ed6a863c-8c50-4243-bbd4-9c708e760707&quot;
   }
 }</component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "ff3c3cff",
-  "associatedIndex": 7
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;ff3c3cff&quot;,
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="2mhUu0utENj63tCZSF0BXf9SEGj" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -65,6 +62,9 @@
     "Application.LoansApplication.executor": "Run",
     "JUnit.AccountControllerTest.executor": "Run",
     "JUnit.AccountServiceTest.executor": "Run",
+    "JUnit.All in accounts.executor": "Run",
+    "JUnit.All in cards.executor": "Run",
+    "JUnit.All in loans.executor": "Run",
     "JUnit.CardControllerTest.createCardPositiveRESTApiTest.executor": "Run",
     "JUnit.CardControllerTest.createCardRESTApiTest.executor": "Run",
     "JUnit.CardControllerTest.createCardRESTTest.executor": "Run",
@@ -92,7 +92,7 @@
     "JUnit.LoanTestSuite.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "com.codeium.enabled": "true",
-    "git-widget-placeholder": "loan__branch",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/ANDREW/Study/Pogramming/JAVA/Spring/Microservices/EazyBytes_Course/bank_app/loans/src/main/resources",
     "project.structure.last.edited": "Global Libraries",
@@ -107,19 +107,32 @@
       <recent name="C:\ANDREW\Study\Pogramming\JAVA\Spring\Microservices\EazyBytes_Course\bank_app\loans\src\test\java\microsevicesbank\loan" />
       <recent name="C:\ANDREW\Study\Pogramming\JAVA\Spring\Microservices\EazyBytes_Course\bank_app\cards\src\test\java\microsevicesbank\card" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="microsevicesbank.card" />
+      <recent name="com.microservicesbank.accounts" />
+    </key>
   </component>
-  <component name="RunManager" selected="JUnit.LoanTestSuite">
-    <configuration name="CardControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.All in accounts">
+    <configuration name="All in accounts" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="accounts" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All in cards" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="cards" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="microsevicesbank.card.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="microsevicesbank.card" />
-      <option name="MAIN_CLASS_NAME" value="microsevicesbank.card.CardControllerTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All in loans" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="loans" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -134,36 +147,6 @@
       </extension>
       <option name="PACKAGE_NAME" value="microsevicesbank.loan" />
       <option name="MAIN_CLASS_NAME" value="microsevicesbank.loan.LoanApplicationTests" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LoanControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="loans" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="microsevicesbank.loan.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="microsevicesbank.loan" />
-      <option name="MAIN_CLASS_NAME" value="microsevicesbank.loan.LoanControllerTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LoanServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="loans" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="microsevicesbank.loan.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="microsevicesbank.loan" />
-      <option name="MAIN_CLASS_NAME" value="microsevicesbank.loan.LoanServiceTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -187,10 +170,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.LoanTestSuite" />
+        <item itemvalue="JUnit.All in accounts" />
+        <item itemvalue="JUnit.All in cards" />
+        <item itemvalue="JUnit.All in loans" />
         <item itemvalue="JUnit.LoanApplicationTests" />
-        <item itemvalue="JUnit.LoanServiceTest" />
-        <item itemvalue="JUnit.CardControllerTest" />
-        <item itemvalue="JUnit.LoanControllerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -219,7 +202,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727542763704</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Create test suites for Accounts and Cards microservices.&#10;&#10;Add JUnit suite dependency to the pom.xml files. So that allowed us to implement TestSuites to run all needed tests in one click">
+      <option name="closed" value="true" />
+      <created>1727619513591</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1727619513591</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -237,6 +228,8 @@
     <MESSAGE value="TDD with CardController and refactoring&#10;&#10;Creating CardController and CardControllerTest to get all these endpoints working properly. Also here I am updating and fixing some exception handling, services and service tests for Cards microservice." />
     <MESSAGE value="Merge branch 'refs/heads/card_branch'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
     <MESSAGE value="Create LoanController and LoanControllerTest using TDD to resolve all possible issues from the start. Add some correction to the LoanDTO and using new dependency I provide @Suite to run all my tests at the same moment right before every commit." />
-    <option name="LAST_COMMIT_MESSAGE" value="Create LoanController and LoanControllerTest using TDD to resolve all possible issues from the start. Add some correction to the LoanDTO and using new dependency I provide @Suite to run all my tests at the same moment right before every commit." />
+    <MESSAGE value="Creating documentation for LoanController using OpenAPI and Swagger.&#10;&#10;Commit contains many changes in documentation-related code in Loans, Cards and Accounts microservice. There were updated ErrorResponseDTOs and slightly changed controllers' documentations." />
+    <MESSAGE value="Create test suites for Accounts and Cards microservices.&#10;&#10;Add JUnit suite dependency to the pom.xml files. So that allowed us to implement TestSuites to run all needed tests in one click" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create test suites for Accounts and Cards microservices.&#10;&#10;Add JUnit suite dependency to the pom.xml files. So that allowed us to implement TestSuites to run all needed tests in one click" />
   </component>
 </project>
