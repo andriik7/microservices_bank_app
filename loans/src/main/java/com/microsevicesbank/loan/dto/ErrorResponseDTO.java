@@ -21,13 +21,12 @@ public class ErrorResponseDTO {
 
     @Schema(
             description = "Error code representing the error happened",
-            example = "500"
+            example = "XXX"
     )
     private HttpStatus errorCode;
 
     @Schema(
-            description = "Error message representing the error happened",
-            example = "Mobile number must be 10 digits"
+            description = "Error message representing the error happened"
     )
     private String errorMessage;
 

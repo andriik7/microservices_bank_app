@@ -11,11 +11,11 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 @SpringBootApplication
 @EnableJpaAuditing(auditorAwareRef = "auditAwareImpl")
-@OpenAPIDefinition(info = @Info(title = "Cards microservice REST API documentation", version = "1.0",
+@OpenAPIDefinition(info = @Info(title = "Loans microservice REST API documentation", version = "1.0",
         description = "Documentation Card REST API",
         contact = @Contact(name = "Andrii Kuchera", email = "ak47.10.07.06@gmail.com", url = "https://github.com/andriik7"),
         license = @License(name = "Apache 2.0", url = "https://www.apache.org/licenses/LICENSE-2.0.html")),
-        externalDocs = @ExternalDocumentation(description = "Bank Cards microservice REST API documentation", url = "http://localhost:9000/swagger-ui/index.html"))
+        externalDocs = @ExternalDocumentation(description = "Bank Loans microservice REST API documentation", url = "http://localhost:9000/swagger-ui/index.html"))
 public class LoansApplication {
 
     public static void main(String[] args) {
