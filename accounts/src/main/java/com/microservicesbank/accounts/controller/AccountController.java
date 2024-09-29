@@ -21,8 +21,8 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 @Tag(
-        name = "REST APIs for Account Microservice",
-        description = "Account REST APIs to perform CRUD operations on Account Microservice"
+        name = "REST APIs for Accounts Microservice",
+        description = "Accounts REST APIs to perform CRUD operations on Accounts Microservice"
 )
 @RestController
 @RequestMapping(path = "/api", produces = MediaType.APPLICATION_JSON_VALUE)
@@ -34,12 +34,21 @@ public class AccountController {
 
     @Operation(
             summary = "Create new account REST API",
-            description = "Creates a new account based on provided customer details"
+            description = "Creates a new account based on provided customer details and connect them"
     )
-    @ApiResponse(
-            responseCode = "201",
-            description = "HTTP Status 201 CREATED"
-    )
+    @ApiResponses({
+            @ApiResponse(
+                    responseCode = "201",
+                    description = "HTTP Status 201 CREATED"
+            ),
+            @ApiResponse(
+                    responseCode = "400",
+                    description = "HTTP Status 400 BAD REQUEST",
+                    content = @Content(
+                            schema = @Schema(implementation = ErrorResponseDTO.class)
+                    )
+            )
+    })
     @PostMapping("/createAccount")
     public ResponseEntity<ResponseDTO> createAccount(@Valid @RequestBody CustomerDTO customerDTO) {
 
@@ -51,13 +60,29 @@ public class AccountController {
 
     @Operation(
             summary = "Fetch account REST API",
-            description = "Fetches account details based on provided mobile number"
+            description = "Fetches account and customer details based on provided 10-digit mobile number"
     )
-    @ApiResponse(
-            responseCode = "200",
-            description = "HTTP Status 200 OK"
-    )
-    @GetMapping("/fetch")
+    @ApiResponses({
+            @ApiResponse(
+                    responseCode = "200",
+                    description = "HTTP Status 200 OK"
+            ),
+            @ApiResponse(
+                    responseCode = "404",
+                    description = "HTTP Status 404 NOT FOUND",
+                    content = @Content(
+                            schema = @Schema(implementation = ErrorResponseDTO.class)
+                    )
+            ),
+            @ApiResponse(
+                    responseCode = "500",
+                    description = "HTTP Status 500 INTERNAL SERVER ERROR",
+                    content = @Content(
+                            schema = @Schema(implementation = ErrorResponseDTO.class)
+                    )
+            )
+    })
+    @GetMapping("/fetchAccount")
     public ResponseEntity<CustomerDTO> fetchAccountDetails(@RequestParam @Pattern(regexp = "^\\d{10}$", message = "Mobile number must be 10 digits") String mobileNumber) {
 
         CustomerDTO customerDTO = accountService.fetchAccount(mobileNumber);
@@ -67,7 +92,7 @@ public class AccountController {
 
     @Operation(
             summary = "Update account REST API",
-            description = "Updates account details based on provided customer details"
+            description = "Updates account details based on provided customer details with appropriate account number"
     )
     @ApiResponses({
             @ApiResponse(
@@ -75,10 +100,21 @@ public class AccountController {
                     description = "HTTP Status 200 OK"
             ),
             @ApiResponse(
-                    responseCode = "417",
-                    description = "HTTP Status 417 CONFLICT"
+                    responseCode = "404",
+                    description = "HTTP Status 404 NOT FOUND",
+                    content = @Content(
+                            schema = @Schema(implementation = ErrorResponseDTO.class)
+                    )
             ),
-            @ApiResponse(responseCode = "500",
+            @ApiResponse(
+                    responseCode = "417",
+                    description = "HTTP Status 417 CONFLICT",
+                    content = @Content(
+                            schema = @Schema(implementation = ErrorResponseDTO.class)
+                    )
+            ),
+            @ApiResponse(
+                    responseCode = "500",
                     description = "HTTP Status 500 INTERNAL SERVER ERROR",
                     content = @Content(
                             schema = @Schema(implementation = ErrorResponseDTO.class)
@@ -100,17 +136,29 @@ public class AccountController {
 
     @Operation(
             summary = "Delete account REST API",
-            description = "Deletes account details based on provided mobile number"
+            description = "Deletes account and customer details based on provided 10-digit mobile number"
     )
     @ApiResponses({
             @ApiResponse(
                     responseCode = "200",
                     description = "HTTP Status 200 OK"
             ),
-            @ApiResponse(responseCode = "417",
-                    description = "HTTP Status 417 CONFLICT"
+            @ApiResponse(
+                    responseCode = "404",
+                    description = "HTTP Status 404 NOT FOUND",
+                    content = @Content(
+                            schema = @Schema(implementation = ErrorResponseDTO.class)
+                    )
             ),
-            @ApiResponse(responseCode = "500",
+            @ApiResponse(
+                    responseCode = "417",
+                    description = "HTTP Status 417 CONFLICT",
+                    content = @Content(
+                            schema = @Schema(implementation = ErrorResponseDTO.class)
+                    )
+            ),
+            @ApiResponse(
+                    responseCode = "500",
                     description = "HTTP Status 500 INTERNAL SERVER ERROR",
                     content = @Content(
                             schema = @Schema(implementation = ErrorResponseDTO.class)
