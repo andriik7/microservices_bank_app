@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2f272a15-b657-4e69-b58b-9c5039112b57" name="Changes" comment="Create LoanController and LoanControllerTest using TDD to resolve all possible issues from the start. Add some correction to the LoanDTO and using new dependency I provide @Suite to run all my tests at the same moment right before every commit.">
-      <change afterPath="$PROJECT_DIR$/loans/src/main/resources/schema.sql" afterDir="false" />
+    <list default="true" id="2f272a15-b657-4e69-b58b-9c5039112b57" name="Changes" comment="Creating documentation for LoanController using OpenAPI and Swagger.&#10;&#10;Commit contains many changes in documentation-related code in Loans, Cards and Accounts microservice. There were updated ErrorResponseDTOs and slightly changed controllers' documentations.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/src/main/java/com/microsevicesbank/loan/service/impl/LoanServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/java/com/microsevicesbank/loan/service/impl/LoanServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,10 +46,10 @@
     &quot;accountId&quot;: &quot;ed6a863c-8c50-4243-bbd4-9c708e760707&quot;
   }
 }</component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "ff3c3cff",
-  "associatedIndex": 7
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;ff3c3cff&quot;,
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="2mhUu0utENj63tCZSF0BXf9SEGj" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -58,49 +58,49 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.AccountsApplication.executor": "Run",
-    "Application.CardsApplication.executor": "Run",
-    "Application.LoansApplication.executor": "Run",
-    "JUnit.AccountControllerTest.executor": "Run",
-    "JUnit.AccountServiceTest.executor": "Run",
-    "JUnit.CardControllerTest.createCardPositiveRESTApiTest.executor": "Run",
-    "JUnit.CardControllerTest.createCardRESTApiTest.executor": "Run",
-    "JUnit.CardControllerTest.createCardRESTTest.executor": "Run",
-    "JUnit.CardControllerTest.createCardSuccessTest.executor": "Run",
-    "JUnit.CardControllerTest.executor": "Run",
-    "JUnit.CardControllerTest.fetchCardDetailsInvalidMobileNumberTest.executor": "Run",
-    "JUnit.CardControllerTest.fetchCardDetailsSuccessTest.executor": "Run",
-    "JUnit.CardControllerTest.fetchCardInvalidMobileNumberTest.executor": "Run",
-    "JUnit.CardControllerTest.testCreateCardInvalidMobileNumber.executor": "Run",
-    "JUnit.CardControllerTest.testCreateCardSuccess.executor": "Run",
-    "JUnit.CardControllerTest.updateCardInvalidMobileNumberTest.executor": "Run",
-    "JUnit.CardControllerTest.updateCardSuccessTest.executor": "Run",
-    "JUnit.CardControllerTest.сreateCardInvalidMobileNumberTest.executor": "Run",
-    "JUnit.CardServiceTest.deleteCardTest.executor": "Run",
-    "JUnit.CardServiceTest.executor": "Run",
-    "JUnit.CardServiceTest.testCreateCardMobileNumberIsNotValid.executor": "Run",
-    "JUnit.LoanApplicationTests.executor": "Run",
-    "JUnit.LoanControllerTest.executor": "Run",
-    "JUnit.LoanControllerTest.fetchLoanNotFoundTest.executor": "Run",
-    "JUnit.LoanControllerTest.fetchLoanTest.executor": "Run",
-    "JUnit.LoanControllerTest.updateLoanInvalidMobileNumberTest.executor": "Run",
-    "JUnit.LoanServiceTest.executor": "Run",
-    "JUnit.LoanServiceTest.updateLoanNotFoundTest.executor": "Run",
-    "JUnit.LoanServiceTest.updateLoanTest.executor": "Run",
-    "JUnit.LoanTestSuite.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "com.codeium.enabled": "true",
-    "git-widget-placeholder": "loan__branch",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/ANDREW/Study/Pogramming/JAVA/Spring/Microservices/EazyBytes_Course/bank_app/loans/src/main/resources",
-    "project.structure.last.edited": "Global Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settings.ide.settings.notifications"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.AccountsApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.CardsApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.LoansApplication.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AccountControllerTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AccountServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardControllerTest.createCardPositiveRESTApiTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardControllerTest.createCardRESTApiTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardControllerTest.createCardRESTTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardControllerTest.createCardSuccessTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardControllerTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardControllerTest.fetchCardDetailsInvalidMobileNumberTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardControllerTest.fetchCardDetailsSuccessTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardControllerTest.fetchCardInvalidMobileNumberTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardControllerTest.testCreateCardInvalidMobileNumber.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardControllerTest.testCreateCardSuccess.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardControllerTest.updateCardInvalidMobileNumberTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardControllerTest.updateCardSuccessTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardControllerTest.сreateCardInvalidMobileNumberTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardServiceTest.deleteCardTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardServiceTest.testCreateCardMobileNumberIsNotValid.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LoanApplicationTests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LoanControllerTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LoanControllerTest.fetchLoanNotFoundTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LoanControllerTest.fetchLoanTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LoanControllerTest.updateLoanInvalidMobileNumberTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LoanServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LoanServiceTest.updateLoanNotFoundTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LoanServiceTest.updateLoanTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LoanTestSuite.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;com.codeium.enabled&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;loan__branch&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/ANDREW/Study/Pogramming/JAVA/Spring/Microservices/EazyBytes_Course/bank_app/loans/src/main/resources&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Global Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.notifications&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\ANDREW\Study\Pogramming\JAVA\Spring\Microservices\EazyBytes_Course\bank_app\loans\src\main\resources" />
@@ -109,47 +109,41 @@
     </key>
   </component>
   <component name="RunManager" selected="JUnit.LoanTestSuite">
-    <configuration name="CardControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AccountsApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.microservicesbank.accounts.AccountsApplication" />
+      <module name="accounts" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.microservicesbank.accounts.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CardsApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.microsevicesbank.card.CardsApplication" />
       <module name="cards" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="microsevicesbank.card.*" />
+          <option name="PATTERN" value="com.microsevicesbank.card.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="microsevicesbank.card" />
-      <option name="MAIN_CLASS_NAME" value="microsevicesbank.card.CardControllerTest" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LoanApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LoansApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.microsevicesbank.loan.LoansApplication" />
       <module name="loans" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="microsevicesbank.loan.*" />
+          <option name="PATTERN" value="com.microsevicesbank.loan.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="microsevicesbank.loan" />
-      <option name="MAIN_CLASS_NAME" value="microsevicesbank.loan.LoanApplicationTests" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LoanControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="loans" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="microsevicesbank.loan.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="microsevicesbank.loan" />
-      <option name="MAIN_CLASS_NAME" value="microsevicesbank.loan.LoanControllerTest" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -187,10 +181,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.LoanTestSuite" />
-        <item itemvalue="JUnit.LoanApplicationTests" />
+        <item itemvalue="Application.LoansApplication" />
+        <item itemvalue="Application.CardsApplication" />
+        <item itemvalue="Application.AccountsApplication" />
         <item itemvalue="JUnit.LoanServiceTest" />
-        <item itemvalue="JUnit.CardControllerTest" />
-        <item itemvalue="JUnit.LoanControllerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -219,7 +213,39 @@
       <option name="project" value="LOCAL" />
       <updated>1727542763704</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Creating LoanController using TDD&#10;&#10;Create LoanController and LoanControllerTest using TDD to resolve all possible issues from the start. Add some correction to the LoanDTO and using new dependency I provide @Suite to run all my tests at the same moment right before every commit.">
+      <option name="closed" value="true" />
+      <created>1727544337974</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1727544337974</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Creating documentation for LoanController using OpenAPI and Swagger.&#10;&#10;Commit contains many changes in documentation-related code in Loans, Cards and Accounts microservice. There were updated ErrorResponseDTOs and slightly changed controllers' documentations.">
+      <option name="closed" value="true" />
+      <created>1727606552104</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1727606552104</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Creating documentation for LoanController using OpenAPI and Swagger.&#10;&#10;Commit contains many changes in documentation-related code in Loans, Cards and Accounts microservice. There were updated ErrorResponseDTOs and slightly changed controllers' documentations.">
+      <option name="closed" value="true" />
+      <created>1727606568875</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1727606568875</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Creating documentation for LoanController using OpenAPI and Swagger.&#10;&#10;Commit contains many changes in documentation-related code in Loans, Cards and Accounts microservice. There were updated ErrorResponseDTOs and slightly changed controllers' documentations.">
+      <option name="closed" value="true" />
+      <created>1727606579573</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1727606579573</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -237,6 +263,8 @@
     <MESSAGE value="TDD with CardController and refactoring&#10;&#10;Creating CardController and CardControllerTest to get all these endpoints working properly. Also here I am updating and fixing some exception handling, services and service tests for Cards microservice." />
     <MESSAGE value="Merge branch 'refs/heads/card_branch'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
     <MESSAGE value="Create LoanController and LoanControllerTest using TDD to resolve all possible issues from the start. Add some correction to the LoanDTO and using new dependency I provide @Suite to run all my tests at the same moment right before every commit." />
-    <option name="LAST_COMMIT_MESSAGE" value="Create LoanController and LoanControllerTest using TDD to resolve all possible issues from the start. Add some correction to the LoanDTO and using new dependency I provide @Suite to run all my tests at the same moment right before every commit." />
+    <MESSAGE value="Creating LoanController using TDD&#10;&#10;Create LoanController and LoanControllerTest using TDD to resolve all possible issues from the start. Add some correction to the LoanDTO and using new dependency I provide @Suite to run all my tests at the same moment right before every commit." />
+    <MESSAGE value="Creating documentation for LoanController using OpenAPI and Swagger.&#10;&#10;Commit contains many changes in documentation-related code in Loans, Cards and Accounts microservice. There were updated ErrorResponseDTOs and slightly changed controllers' documentations." />
+    <option name="LAST_COMMIT_MESSAGE" value="Creating documentation for LoanController using OpenAPI and Swagger.&#10;&#10;Commit contains many changes in documentation-related code in Loans, Cards and Accounts microservice. There were updated ErrorResponseDTOs and slightly changed controllers' documentations." />
   </component>
 </project>

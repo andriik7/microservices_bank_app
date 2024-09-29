@@ -42,7 +42,10 @@ public class CardController {
         ),
             @ApiResponse(
                     responseCode = "400",
-                    description = "HTTP Status 400 BAD REQUEST"
+                    description = "HTTP Status 400 BAD REQUEST",
+                    content = @Content(
+                    schema = @Schema(implementation = ErrorResponseDTO.class)
+            )
             ),
             @ApiResponse(
                     responseCode = "500",
@@ -75,7 +78,7 @@ public class CardController {
                     responseCode = "404",
                     description = "HTTP Status 404 NOT FOUND",
                     content = @Content(
-                        schema = @Schema(implementation = ResponseDTO.class)
+                        schema = @Schema(implementation = ErrorResponseDTO.class)
                     )
             ),
             @ApiResponse(
@@ -98,7 +101,7 @@ public class CardController {
 
     @Operation(
             summary = "Update card REST API",
-            description = "Updates card details based on provided card details"
+            description = "Updates card details based on provided card details with appropriate card number"
     )
     @ApiResponses({
         @ApiResponse(
@@ -107,11 +110,17 @@ public class CardController {
         ),
             @ApiResponse(
                     responseCode = "404",
-                    description = "HTTP Status 404 NOT FOUND"
+                    description = "HTTP Status 404 NOT FOUND",
+                    content = @Content(
+                            schema = @Schema(implementation = ErrorResponseDTO.class)
+                    )
             ),
             @ApiResponse(
                     responseCode = "417",
-                    description = "HTTP Status 417 CONFLICT"
+                    description = "HTTP Status 417 CONFLICT",
+                    content = @Content(
+                            schema = @Schema(implementation = ErrorResponseDTO.class)
+                    )
             ),
             @ApiResponse(
                     responseCode = "500",
@@ -144,11 +153,17 @@ public class CardController {
         ),
             @ApiResponse(
                     responseCode = "404",
-                    description = "HTTP Status 404 NOT FOUND"
+                    description = "HTTP Status 404 NOT FOUND",
+                    content = @Content(
+                    schema = @Schema(implementation = ErrorResponseDTO.class)
+            )
             ),
             @ApiResponse(
                     responseCode = "417",
-                    description = "HTTP Status 417 CONFLICT"
+                    description = "HTTP Status 417 CONFLICT",
+                    content = @Content(
+                            schema = @Schema(implementation = ErrorResponseDTO.class)
+                    )
             ),
             @ApiResponse(
                     responseCode = "500",
@@ -159,7 +174,8 @@ public class CardController {
             )
     })
     @DeleteMapping("/deleteCard")
-    public ResponseEntity<ResponseDTO> deleteCardDetails(@RequestParam @Pattern(regexp = "^\\d{10}$", message = "Mobile number must be 10 digits") String mobileNumber) {
+    public ResponseEntity<ResponseDTO> deleteCardDetails(@RequestParam @Pattern(regexp = "^\\d{10}$",
+            message = "Mobile number must be 10 digits") String mobileNumber) {
 
         boolean isDeleted = cardService.deleteCard(mobileNumber);
 
