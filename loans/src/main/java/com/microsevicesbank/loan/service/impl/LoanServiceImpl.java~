@@ -22,10 +22,6 @@ public class LoanServiceImpl implements ILoanService {
     private LoanRepository loanRepository;
 
     @Override
-    /**
-     * Creates a new loan based on provided 10-digit mobile number and stores it in the database.
-     * @param mobileNumber 10-digit mobile number of the customer
-     */
     public void createLoan(String mobileNumber) {
 
         Optional<Loan> optionalLoan = loanRepository.findByMobileNumber(mobileNumber);
@@ -37,11 +33,6 @@ public class LoanServiceImpl implements ILoanService {
     }
 
     @Override
-    /**
-     * Fetches the loan details from the database based on the provided 10-digit mobile number.
-     * @param mobileNumber 10-digit mobile number of the customer
-     * @return LoanDTO with loan details
-     */
     public LoanDTO fetchLoan(String mobileNumber) {
 
         Loan loan = loanRepository.findByMobileNumber(mobileNumber).orElseThrow(
@@ -52,11 +43,6 @@ public class LoanServiceImpl implements ILoanService {
     }
 
     @Override
-    /**
-     * Updates the loan details in the database based on the provided loan details.
-     * @param loanDto LoanDTO with updated loan details
-     * @return true if updated successfully
-     */
     public boolean updateLoan(LoanDTO loanDto) {
 
         Loan loan = loanRepository.findByLoanNumber(loanDto.getLoanNumber()).orElseThrow(
@@ -70,11 +56,6 @@ public class LoanServiceImpl implements ILoanService {
     }
 
     @Override
-    /**
-     * Deletes the loan details from the database based on the provided 10-digit mobile number.
-     * @param mobileNumber 10-digit mobile number of the customer
-     * @return true if deleted successfully
-     */
     public boolean deleteLoan(String mobileNumber) {
 
         Loan loan = loanRepository.findByMobileNumber(mobileNumber).orElseThrow(
