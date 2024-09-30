@@ -55,6 +55,8 @@ public class AccountControllerTest {
                .andExpect(status().isCreated())
                .andExpect(jsonPath("$.statusCode").value(AccountConstants.STATUS_201))
                .andExpect(jsonPath("$.statusMessage").value(AccountConstants.MESSAGE_201));
+
+        accountService.deleteAccount(customerDTO.getMobileNumber());
     }
 
     @Test
@@ -72,19 +74,21 @@ public class AccountControllerTest {
     public void fetchAccountDetailsTest() throws Exception {
         accountService.createAccount(customerDTO);
 
-        mockMvc.perform(get("/api/fetch")
+        mockMvc.perform(get("/api/fetchAccount")
                                 .param("mobileNumber", DEFAULT_MOBILE_NUMBER))
                .andExpect(status().isOk());
 
-        mockMvc.perform(get("/api/fetch")
+        mockMvc.perform(get("/api/fetchAccount")
                                 .param("mobileNumber", INVALID_MOBILE_NUMBER))
                .andExpect(status().is5xxServerError())
                .andExpect(jsonPath("$.errorMessage").value("fetchAccountDetails.mobileNumber: Mobile number must be 10 digits"));
 
-        mockMvc.perform(get("/api/fetch")
+        mockMvc.perform(get("/api/fetchAccount")
                                 .param("mobileNumber", NON_EXISTENT_MOBILE_NUMBER))
                .andExpect(status().isNotFound())
                .andExpect(jsonPath("$.errorMessage").value("Customer not found with mobileNumber : '" + NON_EXISTENT_MOBILE_NUMBER + "'"));
+
+        accountService.deleteAccount(DEFAULT_MOBILE_NUMBER);
     }
 
     @Test

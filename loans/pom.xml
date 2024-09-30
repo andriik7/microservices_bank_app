@@ -10,8 +10,9 @@
 	</parent>
 	<groupId>microsevicesbank</groupId>
 	<artifactId>loans</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>loan</name>
+	<version>2</version>
+	<packaging>jar</packaging>
+	<name>loans</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>
@@ -86,12 +87,25 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
+					<image>
+						<name>akuchera/${project.artifactId}:${project.version}</name>
+					</image>
 					<excludes>
 						<exclude>
 							<groupId>org.projectlombok</groupId>
 							<artifactId>lombok</artifactId>
 						</exclude>
 					</excludes>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>com.google.cloud.tools</groupId>
+				<artifactId>jib-maven-plugin</artifactId>
+				<version>3.4.3</version>
+				<configuration>
+					<to>
+						<image>akuchera/${project.artifactId}:${project.version}</image>
+					</to>
 				</configuration>
 			</plugin>
 		</plugins>

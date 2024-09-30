@@ -17,9 +17,11 @@ import org.springframework.http.MediaType;
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.web.servlet.MockMvc;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @TestPropertySource("/application-test.yml")
 @DisplayNameGeneration(CamelCaseDisplay.class)
@@ -105,14 +107,22 @@ public class LoanControllerTest {
 
         loanService.createLoan(DEFAULT_MOBILE_NUMBER);
 
+        LoanDTO fetchedLoan;
+
         assertDoesNotThrow(() -> loanService.fetchLoan(DEFAULT_MOBILE_NUMBER));
+
+        fetchedLoan = loanService.fetchLoan(DEFAULT_MOBILE_NUMBER);
 
         mockMvc.perform(get("/api/fetchLoan")
                                 .contentType(MediaType.APPLICATION_JSON)
                                 .param("mobileNumber", DEFAULT_MOBILE_NUMBER))
                .andExpect(status().isOk())
-               .andExpect(jsonPath("$.statusCode").value(LoanConstants.STATUS_200))
-               .andExpect(jsonPath("$.statusMessage").value(LoanConstants.MESSAGE_200));
+               .andExpect(jsonPath("$.mobileNumber").value(fetchedLoan.getMobileNumber()))
+               .andExpect(jsonPath("$.loanNumber").value(fetchedLoan.getLoanNumber()))
+               .andExpect(jsonPath("$.loanType").value(fetchedLoan.getLoanType()))
+               .andExpect(jsonPath("$.totalLoan").value(fetchedLoan.getTotalLoan()))
+               .andExpect(jsonPath("$.amountPaid").value(fetchedLoan.getAmountPaid()))
+               .andExpect(jsonPath("$.outstandingAmount").value(fetchedLoan.getOutstandingAmount()));
 
         assertDoesNotThrow(() -> loanService.fetchLoan(DEFAULT_MOBILE_NUMBER));
 
