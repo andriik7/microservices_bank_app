@@ -3,7 +3,7 @@ logging:
     console: "${LOGGER_PATTERN:%green(%d{HH:mm:ss.SSS}) %blue(%-5level) %red([%thread]) %yellow(%logger{15}) - %msg%n}}"
 
 server:
-    port: 8080
+  port: 8080
 spring:
   application:
     name: accounts
@@ -19,3 +19,18 @@ spring:
     database-platform: org.hibernate.dialect.H2Dialect
     hibernate.ddl-auto: update
   show-sql: true
+  config:
+    import:
+      - application_qa.yml
+      - application_prod.yml
+#  profiles:
+#    active: prod
+
+accounts:
+  message: Welcome to Microservices Bank Accounts
+  contactDetails:
+    name: John Doe Developer
+    email: john@example.com
+  onCallSupport:
+    - (555) 123-4567
+    - (555) 555-5555

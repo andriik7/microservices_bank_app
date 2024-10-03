@@ -1,6 +1,7 @@
 package com.microservicesbank.accounts.controller;
 
 import com.microservicesbank.accounts.constants.AccountConstants;
+import com.microservicesbank.accounts.dto.AccountsContactInfoDTO;
 import com.microservicesbank.accounts.dto.CustomerDTO;
 import com.microservicesbank.accounts.dto.ErrorResponseDTO;
 import com.microservicesbank.accounts.dto.ResponseDTO;
@@ -14,6 +15,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Pattern;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -30,7 +32,11 @@ import org.springframework.web.bind.annotation.*;
 @Validated
 public class AccountController {
 
+    @Autowired
     private IAccountService accountService;
+
+    @Autowired
+    private AccountsContactInfoDTO accountsContactInfoDTO;
 
     @Operation(
             summary = "Create new account REST API",
@@ -173,5 +179,13 @@ public class AccountController {
         }
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                              .body(new ResponseDTO(AccountConstants.STATUS_417, AccountConstants.MESSAGE_417_DELETE));
+    }
+
+    @GetMapping("/contactDetails")
+    public ResponseEntity<AccountsContactInfoDTO> getContactInfo() {
+
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(accountsContactInfoDTO);
     }
 }

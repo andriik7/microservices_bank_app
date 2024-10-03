@@ -1,0 +1,17 @@
+logging:
+  pattern:
+    console: "${LOGGER_PATTERN:%blue(%d{HH:mm:ss.SSS}) %green(%-5level) %yellow([%thread]) %red(%logger{15}) - %msg%n}}"
+
+spring:
+  config:
+    activate:
+      on-profile: prod
+
+cards:
+  message: Welcome to Microservices Bank Cards for production
+  contactDetails:
+    name: Andrii Kuchera - Product Owner
+    email: andrii@example.com
+  onCallSupport:
+    - (555) 367-2357
+    - (555) 777-7777
