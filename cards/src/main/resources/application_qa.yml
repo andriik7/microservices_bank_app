@@ -1,0 +1,17 @@
+logging:
+  pattern:
+    console: "${LOGGER_PATTERN:%red(%d{HH:mm:ss.SSS}) %yellow(%-5level) %blue([%thread]) %green(%logger{15}) - %msg%n}}"
+
+spring:
+  config:
+    activate:
+      on-profile: qa
+
+cards:
+  message: Welcome to Microservices Bank Cards for QA
+  contactDetails:
+    name: Jane Doe - QA Lead
+    email: jane@example.com
+  onCallSupport:
+    - (555) 432-5232
+    - (555) 666-6666

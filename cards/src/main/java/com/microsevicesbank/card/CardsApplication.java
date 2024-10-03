@@ -1,5 +1,6 @@
 package com.microsevicesbank.card;
 
+import com.microsevicesbank.card.dto.CardsContactInfoDTO;
 import io.swagger.v3.oas.annotations.ExternalDocumentation;
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.info.Contact;
@@ -7,10 +8,12 @@ import io.swagger.v3.oas.annotations.info.Info;
 import io.swagger.v3.oas.annotations.info.License;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 @SpringBootApplication
 @EnableJpaAuditing(auditorAwareRef = "auditAwareImpl")
+@EnableConfigurationProperties(value =  CardsContactInfoDTO.class)
 @OpenAPIDefinition(info = @Info(title = "Cards microservice REST API documentation", version = "1.0",
 		description = "Documentation Card REST API",
 		contact = @Contact(name = "Andrii Kuchera", email = "ak47.10.07.06@gmail.com", url = "https://github.com/andriik7"),

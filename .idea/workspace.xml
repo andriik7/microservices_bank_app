@@ -5,46 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2f272a15-b657-4e69-b58b-9c5039112b57" name="Changes" comment="Create test suites for Accounts and Cards microservices.&#10;&#10;Add JUnit suite dependency to the pom.xml files. So that allowed us to implement TestSuites to run all needed tests in one click">
-      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_27_09_2024_13_32__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_27_09_2024_13_32__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_27_09_2024_13_32__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_27_09_2024_13_32__Changes_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_28_09_2024_16_50__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_28_09_2024_16_50__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_28_09_2024_16_54__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_28_09_2024_16_54__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_28_09_2024_16_54__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_28_09_2024_16_54__Changes_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/src/main/java/com/microservicesbank/accounts/dto/AccountsContactInfoDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/src/main/resources/application_prod.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/src/main/resources/application_qa.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cards/src/main/java/com/microsevicesbank/card/dto/CardsContactInfoDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cards/src/main/resources/application_prod.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cards/src/main/resources/application_qa.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans/src/main/java/com/microsevicesbank/loan/dto/LoansContactInfoDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans/src/main/resources/application_prod.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans/src/main/resources/application_qa.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/src/test/java/com/microservicesbank/accounts/AccountControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/src/test/java/com/microservicesbank/accounts/AccountControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/src/test/java/com/microservicesbank/accounts/AccountsApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cards/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/cards/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cards/src/test/java/microsevicesbank/card/CardsApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/loans/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/src/main/java/com/microsevicesbank/loan/controller/LoanController.java" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/java/com/microsevicesbank/loan/controller/LoanController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/src/test/java/microsevicesbank/loan/LoanApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/src/test/java/microsevicesbank/loan/LoanControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/test/java/microsevicesbank/loan/LoanControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/classes/application-test.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/classes/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/classes/com/microsevicesbank/loan/LoansApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/classes/com/microsevicesbank/loan/audit/AuditAwareImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/classes/com/microsevicesbank/loan/constants/LoanConstants.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/classes/com/microsevicesbank/loan/controller/LoanController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/classes/com/microsevicesbank/loan/dto/ErrorResponseDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/classes/com/microsevicesbank/loan/dto/LoanDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/classes/com/microsevicesbank/loan/dto/ResponseDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/classes/com/microsevicesbank/loan/exception/GlobalExceptionHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/classes/com/microsevicesbank/loan/exception/LoanAlreadyExistsException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/classes/com/microsevicesbank/loan/exception/ResourceNotFoundException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/classes/com/microsevicesbank/loan/mapper/LoanMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/classes/com/microsevicesbank/loan/model/Loan.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/classes/com/microsevicesbank/loan/model/SuperEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/classes/com/microsevicesbank/loan/repository/LoanRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/classes/com/microsevicesbank/loan/service/ILoanService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/classes/com/microsevicesbank/loan/service/impl/LoanServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/classes/schema.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/test-classes/microsevicesbank/loan/LoanApplicationTests.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/test-classes/microsevicesbank/loan/LoanControllerTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/test-classes/microsevicesbank/loan/LoanServiceTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/test-classes/microsevicesbank/loan/LoanTestSuite.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/test-classes/microsevicesbank/loan/display/CamelCaseDisplay.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/src/main/java/com/microservicesbank/accounts/AccountsApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/src/main/java/com/microservicesbank/accounts/AccountsApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/src/main/java/com/microservicesbank/accounts/controller/AccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/src/main/java/com/microservicesbank/accounts/controller/AccountController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards/src/main/java/com/microsevicesbank/card/CardsApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/java/com/microsevicesbank/card/CardsApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/src/main/java/com/microsevicesbank/loan/LoansApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/java/com/microsevicesbank/loan/LoansApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +44,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="account_branch" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -136,18 +113,20 @@
     "JUnit.LoanTestSuite.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "com.codeium.enabled": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "v1__configurations",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/ANDREW/Study/Pogramming/JAVA/Spring/Microservices/EazyBytes_Course/bank_app/loans/src/main/resources",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settings.ide.settings.notifications"
+    "settings.editor.selected.configurable": "project.propCompiler"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\ANDREW\Study\Pogramming\JAVA\Spring\Microservices\EazyBytes_Course\bank_app\loans\src\main\resources" />
+      <recent name="C:\ANDREW\Study\Pogramming\JAVA\Spring\Microservices\EazyBytes_Course\bank_app\cards\src\main\resources" />
+      <recent name="C:\ANDREW\Study\Pogramming\JAVA\Spring\Microservices\EazyBytes_Course\bank_app\accounts\src\main\resources" />
       <recent name="C:\ANDREW\Study\Pogramming\JAVA\Spring\Microservices\EazyBytes_Course\bank_app\loans\src\test\java\microsevicesbank\loan" />
       <recent name="C:\ANDREW\Study\Pogramming\JAVA\Spring\Microservices\EazyBytes_Course\bank_app\cards\src\test\java\microsevicesbank\card" />
     </key>
@@ -156,17 +135,25 @@
       <recent name="com.microservicesbank.accounts" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.All in accounts">
-    <configuration name="All in accounts" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.AccountsApplication">
+    <configuration name="AccountsApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <envs>
+        <env name="SPRING_PROFILES_ACTIVE" value="prod" />
+      </envs>
+      <option name="MAIN_CLASS_NAME" value="com.microservicesbank.accounts.AccountsApplication" />
       <module name="accounts" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.microservicesbank.accounts.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="All in cards (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="cards" />
+    <configuration name="All in accounts" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="accounts" />
       <option name="PACKAGE_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
       <method v="2">
@@ -207,11 +194,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.AccountsApplication" />
         <item itemvalue="JUnit.All in accounts" />
-        <item itemvalue="JUnit.All in cards (1)" />
-        <item itemvalue="JUnit.All in cards" />
-        <item itemvalue="JUnit.All in loans" />
         <item itemvalue="JUnit.LoanControllerTest.fetchLoanTest" />
+        <item itemvalue="JUnit.All in loans" />
+        <item itemvalue="JUnit.All in cards" />
       </list>
     </recent_temporary>
   </component>
