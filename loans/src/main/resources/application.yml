@@ -19,3 +19,12 @@ spring:
     database-platform: org.hibernate.dialect.H2Dialect
     hibernate.ddl-auto: update
   show-sql: true
+
+Loans:
+  message: Welcome to Microservices Bank Loans
+  contactDetails:
+    name: John Doe Developer
+    email: john@example.com
+  onCallSupport:
+    - (555) 123-4567
+    - (555) 555-5555
