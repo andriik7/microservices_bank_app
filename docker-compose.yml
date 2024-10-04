@@ -32,6 +32,17 @@ services:
           memory: 700m
     networks:
       - microservice-bank
+  configserver:
+    image: akuchera/configserver:2
+    container_name: configserver
+    ports:
+      - "8071:8071"
+    deploy:
+      resources:
+        limits:
+          memory: 700m
+    networks:
+      - microservice-bank
 networks:
   microservice-bank:
     driver: bridge

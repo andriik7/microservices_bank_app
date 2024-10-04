@@ -3,6 +3,7 @@ C:\ANDREW\Study\Pogramming\JAVA\Spring\Microservices\EazyBytes_Course\bank_app\l
 C:\ANDREW\Study\Pogramming\JAVA\Spring\Microservices\EazyBytes_Course\bank_app\loans\src\main\java\com\microsevicesbank\loan\controller\LoanController.java
 C:\ANDREW\Study\Pogramming\JAVA\Spring\Microservices\EazyBytes_Course\bank_app\loans\src\main\java\com\microsevicesbank\loan\dto\ErrorResponseDTO.java
 C:\ANDREW\Study\Pogramming\JAVA\Spring\Microservices\EazyBytes_Course\bank_app\loans\src\main\java\com\microsevicesbank\loan\dto\LoanDTO.java
+C:\ANDREW\Study\Pogramming\JAVA\Spring\Microservices\EazyBytes_Course\bank_app\loans\src\main\java\com\microsevicesbank\loan\dto\LoansContactInfoDTO.java
 C:\ANDREW\Study\Pogramming\JAVA\Spring\Microservices\EazyBytes_Course\bank_app\loans\src\main\java\com\microsevicesbank\loan\dto\ResponseDTO.java
 C:\ANDREW\Study\Pogramming\JAVA\Spring\Microservices\EazyBytes_Course\bank_app\loans\src\main\java\com\microsevicesbank\loan\exception\GlobalExceptionHandler.java
 C:\ANDREW\Study\Pogramming\JAVA\Spring\Microservices\EazyBytes_Course\bank_app\loans\src\main\java\com\microsevicesbank\loan\exception\LoanAlreadyExistsException.java
