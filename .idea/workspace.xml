@@ -4,23 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2f272a15-b657-4e69-b58b-9c5039112b57" name="Changes" comment="Use different profiles for different environments with help of application.yml.">
+    <list default="true" id="2f272a15-b657-4e69-b58b-9c5039112b57" name="Changes" comment="Update config server and microservices to support instant updates of config files connected through GitHub. Here are implemented 2 ways: &#10;1. Use actuator/refresh endpoint for each microservice&#10;2. Use actuator/busrefresh endpoint that uses RabbitMQ to update all the configurations at once.">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_27_09_2024_13_32_[Changes]1/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_27_09_2024_13_32__Changes_1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/src/main/java/com/microservicesbank/accounts/dto/AccountsContactInfoDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/src/main/java/com/microservicesbank/accounts/dto/AccountsContactInfoDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cards/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/cards/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cards/src/main/java/com/microsevicesbank/card/dto/CardsContactInfoDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/java/com/microsevicesbank/card/dto/CardsContactInfoDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cards/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/configserver/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/configserver/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configserver/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configserver/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/loans/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/src/main/java/com/microsevicesbank/loan/dto/LoansContactInfoDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/java/com/microsevicesbank/loan/dto/LoansContactInfoDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-image.digest" beforeDir="false" afterPath="$PROJECT_DIR$/loans/target/jib-image.digest" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-image.id" beforeDir="false" afterPath="$PROJECT_DIR$/loans/target/jib-image.id" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-image.json" beforeDir="false" afterPath="$PROJECT_DIR$/loans/target/jib-image.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,60 +60,60 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.AccountsApplication.executor": "Run",
-    "Application.CardsApplication.executor": "Run",
-    "Application.ConfigserverApplication.executor": "Run",
-    "Application.LoansApplication.executor": "Run",
-    "Docker.docker-compose.yml.accounts: Compose Deployment.executor": "Run",
-    "Docker.docker-compose.yml.cards: Compose Deployment.executor": "Run",
-    "Docker.docker-compose.yml.loans: Compose Deployment.executor": "Run",
-    "Docker.docker-compose.yml: Compose Deployment.executor": "Run",
-    "JUnit.AccountControllerTest.executor": "Run",
-    "JUnit.AccountControllerTest.fetchAccountDetailsTest.executor": "Run",
-    "JUnit.AccountServiceTest.executor": "Run",
-    "JUnit.All in accounts (1).executor": "Run",
-    "JUnit.All in accounts.executor": "Run",
-    "JUnit.All in cards.executor": "Run",
-    "JUnit.All in loans (1).executor": "Run",
-    "JUnit.All in loans.executor": "Run",
-    "JUnit.CardControllerTest.createCardPositiveRESTApiTest.executor": "Run",
-    "JUnit.CardControllerTest.createCardRESTApiTest.executor": "Run",
-    "JUnit.CardControllerTest.createCardRESTTest.executor": "Run",
-    "JUnit.CardControllerTest.createCardSuccessTest.executor": "Run",
-    "JUnit.CardControllerTest.executor": "Run",
-    "JUnit.CardControllerTest.fetchCardDetailsInvalidMobileNumberTest.executor": "Run",
-    "JUnit.CardControllerTest.fetchCardDetailsSuccessTest.executor": "Run",
-    "JUnit.CardControllerTest.fetchCardInvalidMobileNumberTest.executor": "Run",
-    "JUnit.CardControllerTest.testCreateCardInvalidMobileNumber.executor": "Run",
-    "JUnit.CardControllerTest.testCreateCardSuccess.executor": "Run",
-    "JUnit.CardControllerTest.updateCardInvalidMobileNumberTest.executor": "Run",
-    "JUnit.CardControllerTest.updateCardSuccessTest.executor": "Run",
-    "JUnit.CardControllerTest.сreateCardInvalidMobileNumberTest.executor": "Run",
-    "JUnit.CardServiceTest.deleteCardTest.executor": "Run",
-    "JUnit.CardServiceTest.executor": "Run",
-    "JUnit.CardServiceTest.testCreateCardMobileNumberIsNotValid.executor": "Run",
-    "JUnit.LoanApplicationTests.executor": "Run",
-    "JUnit.LoanControllerTest.executor": "Run",
-    "JUnit.LoanControllerTest.fetchLoanNotFoundTest.executor": "Run",
-    "JUnit.LoanControllerTest.fetchLoanTest.executor": "Run",
-    "JUnit.LoanControllerTest.updateLoanInvalidMobileNumberTest.executor": "Run",
-    "JUnit.LoanServiceTest.executor": "Run",
-    "JUnit.LoanServiceTest.updateLoanNotFoundTest.executor": "Run",
-    "JUnit.LoanServiceTest.updateLoanTest.executor": "Run",
-    "JUnit.LoanTestSuite.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "com.codeium.enabled": "true",
-    "git-widget-placeholder": "v2-config-cloud",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/ANDREW/Study/Pogramming/JAVA/Spring/Microservices/EazyBytes_Course/bank_app/configserver/src/main/resources/config",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "project.propCompiler"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.AccountsApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.CardsApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ConfigserverApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.LoansApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yml.accounts: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yml.cards: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yml.loans: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yml: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AccountControllerTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AccountControllerTest.fetchAccountDetailsTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AccountServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.All in accounts (1).executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.All in accounts.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.All in cards.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.All in loans (1).executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.All in loans.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardControllerTest.createCardPositiveRESTApiTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardControllerTest.createCardRESTApiTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardControllerTest.createCardRESTTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardControllerTest.createCardSuccessTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardControllerTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardControllerTest.fetchCardDetailsInvalidMobileNumberTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardControllerTest.fetchCardDetailsSuccessTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardControllerTest.fetchCardInvalidMobileNumberTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardControllerTest.testCreateCardInvalidMobileNumber.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardControllerTest.testCreateCardSuccess.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardControllerTest.updateCardInvalidMobileNumberTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardControllerTest.updateCardSuccessTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardControllerTest.сreateCardInvalidMobileNumberTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardServiceTest.deleteCardTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardServiceTest.testCreateCardMobileNumberIsNotValid.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LoanApplicationTests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LoanControllerTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LoanControllerTest.fetchLoanNotFoundTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LoanControllerTest.fetchLoanTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LoanControllerTest.updateLoanInvalidMobileNumberTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LoanServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LoanServiceTest.updateLoanNotFoundTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LoanServiceTest.updateLoanTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LoanTestSuite.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;com.codeium.enabled&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;v2-config-cloud&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/ANDREW/Study/Pogramming/JAVA/Spring/Microservices/EazyBytes_Course/bank_app/configserver/src/main/resources/config&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propCompiler&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\ANDREW\Study\Pogramming\JAVA\Spring\Microservices\EazyBytes_Course\bank_app\configserver\src\main\resources\config" />
@@ -139,11 +127,10 @@
       <recent name="com.microservicesbank.accounts" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.LoanTestSuite">
+  <component name="RunManager" selected="Application.LoansApplication">
     <configuration name="AccountsApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.microservicesbank.accounts.AccountsApplication" />
       <module name="accounts" />
-      <option name="PROGRAM_PARAMETERS" value="--spring.profiles.active=prod" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.microservicesbank.accounts.*" />
@@ -209,16 +196,18 @@
       </method>
     </configuration>
     <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
-      <deployment type="docker-compose.yml" />
+      <deployment type="docker-compose.yml">
+        <settings />
+      </deployment>
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.LoanTestSuite" />
-        <item itemvalue="Application.CardsApplication" />
         <item itemvalue="Application.LoansApplication" />
         <item itemvalue="Application.AccountsApplication" />
+        <item itemvalue="Application.CardsApplication" />
         <item itemvalue="Application.ConfigserverApplication" />
+        <item itemvalue="JUnit.LoanTestSuite" />
       </list>
     </recent_temporary>
   </component>
@@ -255,7 +244,23 @@
       <option name="project" value="LOCAL" />
       <updated>1727619513591</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Update config server and microservices to support instant updates of config files connected through GitHub. Here are implemented 2 ways: &#10;1. Use actuator/refresh endpoint for each microservice&#10;2. Use actuator/busrefresh endpoint that uses RabbitMQ to update all the configurations at once.">
+      <option name="closed" value="true" />
+      <created>1728042361353</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1728042361353</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Update config server and microservices to support instant updates of config files connected through GitHub. Here are implemented 2 ways: &#10;1. Use actuator/refresh endpoint for each microservice&#10;2. Use actuator/busrefresh endpoint that uses RabbitMQ to update all the configurations at once.">
+      <option name="closed" value="true" />
+      <created>1728042399969</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1728042399969</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -276,6 +281,7 @@
     <MESSAGE value="Creating documentation for LoanController using OpenAPI and Swagger.&#10;&#10;Commit contains many changes in documentation-related code in Loans, Cards and Accounts microservice. There were updated ErrorResponseDTOs and slightly changed controllers' documentations." />
     <MESSAGE value="Create test suites for Accounts and Cards microservices.&#10;&#10;Add JUnit suite dependency to the pom.xml files. So that allowed us to implement TestSuites to run all needed tests in one click" />
     <MESSAGE value="Use different profiles for different environments with help of application.yml." />
-    <option name="LAST_COMMIT_MESSAGE" value="Use different profiles for different environments with help of application.yml." />
+    <MESSAGE value="Update config server and microservices to support instant updates of config files connected through GitHub. Here are implemented 2 ways: &#10;1. Use actuator/refresh endpoint for each microservice&#10;2. Use actuator/busrefresh endpoint that uses RabbitMQ to update all the configurations at once." />
+    <option name="LAST_COMMIT_MESSAGE" value="Update config server and microservices to support instant updates of config files connected through GitHub. Here are implemented 2 ways: &#10;1. Use actuator/refresh endpoint for each microservice&#10;2. Use actuator/busrefresh endpoint that uses RabbitMQ to update all the configurations at once." />
   </component>
 </project>
