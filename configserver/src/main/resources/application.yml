@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: config-server
+  profiles:
+    active: native
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: C:\ANDREW\Study\Pogramming\JAVA\Spring\Microservices\EazyBytes_Course\Documents\Microservices-bank-config #import config from local system
+#          search-locations: classpath:/config   #import config from project
+
+server:
+  port: 8071

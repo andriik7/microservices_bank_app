@@ -12,7 +12,7 @@
 	<artifactId>loans</artifactId>
 	<version>2</version>
 	<packaging>jar</packaging>
-	<name>loan</name>
+	<name>loans</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>
@@ -96,6 +96,16 @@
 							<artifactId>lombok</artifactId>
 						</exclude>
 					</excludes>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>com.google.cloud.tools</groupId>
+				<artifactId>jib-maven-plugin</artifactId>
+				<version>3.4.3</version>
+				<configuration>
+					<to>
+						<image>akuchera/${project.artifactId}:${project.version}</image>
+					</to>
 				</configuration>
 			</plugin>
 		</plugins>

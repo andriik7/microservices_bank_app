@@ -4,7 +4,44 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2f272a15-b657-4e69-b58b-9c5039112b57" name="Changes" comment="Use different profiles for different environments with help of application.yml." />
+    <list default="true" id="2f272a15-b657-4e69-b58b-9c5039112b57" name="Changes" comment="Use different profiles for different environments with help of application.yml.">
+      <change afterPath="$PROJECT_DIR$/configserver/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/configserver/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/configserver/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/configserver/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/configserver/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/configserver/src/main/java/com/microservicesbank/configserver/ConfigserverApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/configserver/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/configserver/src/main/resources/config/accounts.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/configserver/src/main/resources/config/cards-qa.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/configserver/src/main/resources/config/cards.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/configserver/src/main/resources/config/loans-qa.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/configserver/src/main/resources/config/loans.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/configserver/src/test/java/com/microservicesbank/configserver/ConfigserverApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/src/main/java/com/microservicesbank/accounts/controller/AccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/src/main/java/com/microservicesbank/accounts/controller/AccountController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/src/main/resources/application_prod.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configserver/src/main/resources/config/accounts-prod.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/src/main/resources/application_qa.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configserver/src/main/resources/config/accounts-qa.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/cards/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards/src/main/java/com/microsevicesbank/card/controller/CardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/java/com/microsevicesbank/card/controller/CardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards/src/main/resources/application_prod.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configserver/src/main/resources/config/cards-prod.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards/src/main/resources/application_qa.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/loans/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/src/main/java/com/microsevicesbank/loan/controller/LoanController.java" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/java/com/microsevicesbank/loan/controller/LoanController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/src/main/resources/application_prod.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configserver/src/main/resources/config/loans-prod.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/src/main/resources/application_qa.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/loans/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/classes/application_prod.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/classes/application_qa.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/classes/com/microsevicesbank/loan/controller/LoanController.class" beforeDir="false" afterPath="$PROJECT_DIR$/loans/target/classes/com/microsevicesbank/loan/controller/LoanController.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -57,9 +94,10 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
-    &quot;Application.AccountsApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Application.CardsApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Application.LoansApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.AccountsApplication.executor&quot;: &quot;Debug&quot;,
+    &quot;Application.CardsApplication.executor&quot;: &quot;Debug&quot;,
+    &quot;Application.ConfigserverApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.LoansApplication.executor&quot;: &quot;Debug&quot;,
     &quot;JUnit.AccountControllerTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.AccountControllerTest.fetchAccountDetailsTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.AccountServiceTest.executor&quot;: &quot;Run&quot;,
@@ -95,9 +133,9 @@
     &quot;JUnit.LoanTestSuite.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;com.codeium.enabled&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;v1__configurations&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;v2-config-cloud&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/ANDREW/Study/Pogramming/JAVA/Spring/Microservices/EazyBytes_Course/bank_app/loans/src/main/resources&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/ANDREW/Study/Pogramming/JAVA/Spring/Microservices/EazyBytes_Course/bank_app/configserver/src/main/resources/config&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
@@ -106,27 +144,66 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\ANDREW\Study\Pogramming\JAVA\Spring\Microservices\EazyBytes_Course\bank_app\configserver\src\main\resources\config" />
       <recent name="C:\ANDREW\Study\Pogramming\JAVA\Spring\Microservices\EazyBytes_Course\bank_app\loans\src\main\resources" />
       <recent name="C:\ANDREW\Study\Pogramming\JAVA\Spring\Microservices\EazyBytes_Course\bank_app\cards\src\main\resources" />
       <recent name="C:\ANDREW\Study\Pogramming\JAVA\Spring\Microservices\EazyBytes_Course\bank_app\accounts\src\main\resources" />
       <recent name="C:\ANDREW\Study\Pogramming\JAVA\Spring\Microservices\EazyBytes_Course\bank_app\loans\src\test\java\microsevicesbank\loan" />
-      <recent name="C:\ANDREW\Study\Pogramming\JAVA\Spring\Microservices\EazyBytes_Course\bank_app\cards\src\test\java\microsevicesbank\card" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="microsevicesbank.card" />
       <recent name="com.microservicesbank.accounts" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.AccountsApplication">
+  <component name="RunManager" selected="Application.CardsApplication">
     <configuration name="AccountsApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <envs>
-        <env name="SPRING_PROFILES_ACTIVE" value="prod" />
-      </envs>
       <option name="MAIN_CLASS_NAME" value="com.microservicesbank.accounts.AccountsApplication" />
       <module name="accounts" />
+      <option name="PROGRAM_PARAMETERS" value="--spring.profiles.active=qa" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.microservicesbank.accounts.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CardsApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.microsevicesbank.card.CardsApplication" />
+      <module name="cards" />
+      <option name="PROGRAM_PARAMETERS" value="--spring.profiles.active=prod" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.microsevicesbank.card.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ConfigserverApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.microservicesbank.configserver.ConfigserverApplication" />
+      <module name="configserver" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.microservicesbank.configserver.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LoansApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.microsevicesbank.loan.LoansApplication" />
+      <module name="loans" />
+      <option name="PROGRAM_PARAMETERS" value="--spring.profiles.active=qa" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.microsevicesbank.loan.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -142,45 +219,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="All in cards" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="cards" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="All in loans" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="loans" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LoanControllerTest.fetchLoanTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="loans" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="microsevicesbank.loan.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="microsevicesbank.loan" />
-      <option name="MAIN_CLASS_NAME" value="microsevicesbank.loan.LoanControllerTest" />
-      <option name="METHOD_NAME" value="fetchLoanTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.CardsApplication" />
+        <item itemvalue="Application.LoansApplication" />
         <item itemvalue="Application.AccountsApplication" />
+        <item itemvalue="Application.ConfigserverApplication" />
         <item itemvalue="JUnit.All in accounts" />
-        <item itemvalue="JUnit.LoanControllerTest.fetchLoanTest" />
-        <item itemvalue="JUnit.All in loans" />
-        <item itemvalue="JUnit.All in cards" />
       </list>
     </recent_temporary>
   </component>

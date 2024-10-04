@@ -3,10 +3,12 @@ logging:
     console: "${LOGGER_PATTERN:%green(%d{HH:mm:ss.SSS}) %blue(%-5level) %red([%thread]) %yellow(%logger{15}) - %msg%n}}"
 
 server:
-    port: 8090
+  port: 8090
 spring:
   application:
     name: cards
+#  profiles:
+#    active: prod
   datasource:
     url: jdbc:h2:mem:cardsdb
     driverClassName: org.h2.Driver
@@ -19,12 +21,5 @@ spring:
     database-platform: org.hibernate.dialect.H2Dialect
     hibernate.ddl-auto: update
   show-sql: true
-
-cards:
-  message: Welcome to Microservices Bank Cards
-  contactDetails:
-    name: John Doe Developer
-    email: john@example.com
-  onCallSupport:
-    - (555) 123-4567
-    - (555) 555-5555
+  config:
+    import: optional:configserver:http://localhost:8071/
