@@ -10,25 +10,17 @@ spring:
 #  profiles:
 #    active: prod
   datasource:
-    url: jdbc:h2:mem:loansdb
-    driverClassName: org.h2.Driver
-    username: sa
-    password: ''
-  h2:
-    console:
-      enabled: true
+    url: jdbc:mysql://localhost:3308/loansdb
+    username: root
+    password: root
+    sql:
+      init:
+        model: always
   jpa:
-    database-platform: org.hibernate.dialect.H2Dialect
-    hibernate.ddl-auto: update
-  show-sql: true
+    show-sql: true
   config:
     import: optional:configserver:http://localhost:8071/
   #these are default values, so it's not necessary to specify them
-  rabbitmq:
-    host: localhost
-    port: 5672
-    username: guest
-    password: guest
 
 management:
   endpoints:

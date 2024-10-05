@@ -1,19 +1,4 @@
 services:
-  rabbit:
-    image: rabbitmq:4.0-management
-    hostname: rabbitmq
-    ports:
-      - "5672:5672"
-      - "15672:15672"
-    healthcheck:
-      test: rabbitmq-diagnostics check_port_connectivity
-      interval: 10s
-      timeout: 5s
-      retries: 10
-      start_period: 10s
-    extends:
-      file: common-config.yml
-      service: network-deploy-service
   accounts:
     image: akuchera/accounts:3
     container_name: accounts-ms
@@ -52,9 +37,6 @@ services:
     container_name: configserver-ms
     ports:
       - "8071:8071"
-    depends_on:
-      rabbit:
-        condition: service_healthy
     healthcheck:
       test: "curl --fail http://configserver:8071/actuator/health/readiness | grep UP || exit 1"
       interval: 10s
