@@ -4,23 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2f272a15-b657-4e69-b58b-9c5039112b57" name="Changes" comment="Add dependency to the config server to support /monitor endpoint that will be invoked after every push to the repo  of configurations. So after each push configurations on config server will be refreshed.">
-      <change afterPath="$PROJECT_DIR$/docker-compose/default/common-config.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-compose/prod/common-config.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-compose/prod/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-compose/qa/common-config.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-compose/qa/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cards/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/cards/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configserver/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/configserver/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose/default/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/loans/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/jib-classpath-file" beforeDir="false" afterPath="$PROJECT_DIR$/loans/target/jib-cache/jib-classpath-file" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-image.digest" beforeDir="false" afterPath="$PROJECT_DIR$/loans/target/jib-image.digest" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-image.id" beforeDir="false" afterPath="$PROJECT_DIR$/loans/target/jib-image.id" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-image.json" beforeDir="false" afterPath="$PROJECT_DIR$/loans/target/jib-image.json" afterDir="false" />
-    </list>
+    <list default="true" id="2f272a15-b657-4e69-b58b-9c5039112b57" name="Changes" comment="Edit Docker Compose files to use different profiles. Also, make sure microservices don't start while other required services are down or unhealthy." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -124,7 +108,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "project.propCompiler"
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -210,9 +194,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.LoanTestSuite" />
         <item itemvalue="Docker.prod: Compose Deployment" />
         <item itemvalue="Docker.default: Compose Deployment" />
-        <item itemvalue="JUnit.LoanTestSuite" />
         <item itemvalue="Application.LoansApplication" />
         <item itemvalue="Application.ConfigserverApplication" />
       </list>
@@ -275,7 +259,15 @@
       <option name="project" value="LOCAL" />
       <updated>1728055882934</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Edit Docker Compose files to use different profiles. Also, make sure microservices don't start while other required services are down or unhealthy.">
+      <option name="closed" value="true" />
+      <created>1728131449779</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1728131449779</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -298,6 +290,7 @@
     <MESSAGE value="Use different profiles for different environments with help of application.yml." />
     <MESSAGE value="Update config server and microservices to support instant updates of config files connected through GitHub. Here are implemented 2 ways: &#10;1. Use actuator/refresh endpoint for each microservice&#10;2. Use actuator/busrefresh endpoint that uses RabbitMQ to update all the configurations at once." />
     <MESSAGE value="Add dependency to the config server to support /monitor endpoint that will be invoked after every push to the repo  of configurations. So after each push configurations on config server will be refreshed." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add dependency to the config server to support /monitor endpoint that will be invoked after every push to the repo  of configurations. So after each push configurations on config server will be refreshed." />
+    <MESSAGE value="Edit Docker Compose files to use different profiles. Also, make sure microservices don't start while other required services are down or unhealthy." />
+    <option name="LAST_COMMIT_MESSAGE" value="Edit Docker Compose files to use different profiles. Also, make sure microservices don't start while other required services are down or unhealthy." />
   </component>
 </project>
