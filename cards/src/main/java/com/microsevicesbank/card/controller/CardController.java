@@ -2,6 +2,7 @@ package com.microsevicesbank.card.controller;
 
 import com.microsevicesbank.card.constants.CardConstants;
 import com.microsevicesbank.card.dto.CardDTO;
+import com.microsevicesbank.card.dto.CardsContactInfoDTO;
 import com.microsevicesbank.card.dto.ErrorResponseDTO;
 import com.microsevicesbank.card.dto.ResponseDTO;
 import com.microsevicesbank.card.service.ICardService;
@@ -30,6 +31,8 @@ import org.springframework.web.bind.annotation.*;
 public class CardController {
 
     private ICardService cardService;
+
+    private CardsContactInfoDTO cardsContactInfoDTO;
 
     @Operation(
             summary = "Create new card REST API",
@@ -185,5 +188,13 @@ public class CardController {
         }
         return ResponseEntity.status(HttpStatus.EXPECTATION_FAILED)
                              .body(new ResponseDTO(CardConstants.STATUS_417, CardConstants.MESSAGE_417_DELETE));
+    }
+
+    @GetMapping("/contactDetails")
+    public ResponseEntity<CardsContactInfoDTO> getContactInfo() {
+
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(cardsContactInfoDTO);
     }
 }

@@ -1,0 +1,8 @@
+loans:
+  message: Welcome to Microservices Bank Loans for QA
+  contactDetails:
+    name: Jane Doe - QA Lead
+    email: jane@example.com
+  onCallSupport:
+    - (555) 432-5232
+    - (555) 666-6666

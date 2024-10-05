@@ -1,0 +1,8 @@
+cards:
+  message: Welcome to Microservices Bank Cards for production
+  contactDetails:
+    name: Andrii Kuchera - Product Owner
+    email: andrii@example.com
+  onCallSupport:
+    - (555) 367-2357
+    - (555) 777-7777

@@ -1,0 +1,8 @@
+accounts:
+  message: Welcome to Microservices Bank Accounts
+  contactDetails:
+    name: John Doe Developer
+    email: john@example.com
+  onCallSupport:
+    - (555) 123-4567
+    - (555) 555-5555

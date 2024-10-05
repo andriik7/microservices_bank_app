@@ -7,6 +7,8 @@ server:
 spring:
   application:
     name: loans
+#  profiles:
+#    active: prod
   datasource:
     url: jdbc:h2:mem:loansdb
     driverClassName: org.h2.Driver
@@ -19,12 +21,17 @@ spring:
     database-platform: org.hibernate.dialect.H2Dialect
     hibernate.ddl-auto: update
   show-sql: true
+  config:
+    import: optional:configserver:http://localhost:8071/
+  #these are default values, so it's not necessary to specify them
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
 
-Loans:
-  message: Welcome to Microservices Bank Loans
-  contactDetails:
-    name: John Doe Developer
-    email: john@example.com
-  onCallSupport:
-    - (555) 123-4567
-    - (555) 555-5555
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

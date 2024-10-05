@@ -3,6 +3,7 @@ package com.microsevicesbank.loan.controller;
 import com.microsevicesbank.loan.constants.LoanConstants;
 import com.microsevicesbank.loan.dto.ErrorResponseDTO;
 import com.microsevicesbank.loan.dto.LoanDTO;
+import com.microsevicesbank.loan.dto.LoansContactInfoDTO;
 import com.microsevicesbank.loan.dto.ResponseDTO;
 import com.microsevicesbank.loan.service.ILoanService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -31,6 +32,8 @@ import org.springframework.web.bind.annotation.*;
 public class LoanController {
 
     private ILoanService loanService;
+
+    private LoansContactInfoDTO loansContactInfoDTO;
 
     @Operation(
             summary = "Create new loan REST API",
@@ -193,4 +196,11 @@ public class LoanController {
                 .body(new ResponseDTO(LoanConstants.STATUS_417, LoanConstants.MESSAGE_417_DELETE));
     }
 
+    @GetMapping("/contactDetails")
+    public ResponseEntity<LoansContactInfoDTO> getContactInfo() {
+
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(loansContactInfoDTO);
+    }
 }
