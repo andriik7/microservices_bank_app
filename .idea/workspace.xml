@@ -5,55 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2f272a15-b657-4e69-b58b-9c5039112b57" name="Changes" comment="Edit Docker Compose files to use different profiles. Also, make sure microservices don't start while other required services are down or unhealthy.">
-      <change afterPath="$PROJECT_DIR$/accounts/src/main/java/com/microservicesbank/accounts/controller/CustomerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/accounts/src/main/java/com/microservicesbank/accounts/dto/CardDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/accounts/src/main/java/com/microservicesbank/accounts/dto/CustomerDetailsDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/accounts/src/main/java/com/microservicesbank/accounts/dto/LoanDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/accounts/src/main/java/com/microservicesbank/accounts/service/ICustomerService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/accounts/src/main/java/com/microservicesbank/accounts/service/client/CardsFeignClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/accounts/src/main/java/com/microservicesbank/accounts/service/client/LoansFeignClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/accounts/src/main/java/com/microservicesbank/accounts/service/impl/CustomerServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eurekaserver/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eurekaserver/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eurekaserver/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eurekaserver/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eurekaserver/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eurekaserver/src/main/java/com/microservicesbank/eurekaserver/EurekaserverApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eurekaserver/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eurekaserver/src/test/java/com/microservicesbank/eurekaserver/EurekaserverApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_27_09_2024_13_32__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_27_09_2024_13_32__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_28_09_2024_16_50_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_28_09_2024_16_50__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_29_09_2024_17_23_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_29_09_2024_17_23__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_28_09_2024_16_54_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_28_09_2024_16_54_[Changes]1/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_28_09_2024_16_54__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_28_09_2024_16_54__Changes_1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/src/main/java/com/microservicesbank/accounts/AccountsApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/src/main/java/com/microservicesbank/accounts/AccountsApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/src/main/java/com/microservicesbank/accounts/mapper/CustomerMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/src/main/java/com/microservicesbank/accounts/mapper/CustomerMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cards/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/cards/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cards/src/main/resources/application-test.yml" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/resources/application-test.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cards/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cards/src/main/resources/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/resources/schema.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cards/src/test/java/microsevicesbank/card/CardControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/test/java/microsevicesbank/card/CardControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configserver/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/configserver/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configserver/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configserver/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose/default/common-config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose/default/common-config.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose/default/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose/default/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose/prod/common-config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose/prod/common-config.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose/prod/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose/prod/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose/qa/common-config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose/qa/common-config.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose/qa/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose/qa/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/loans/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/loans/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eurekaserver/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/eurekaserver/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/jib-classpath-file" beforeDir="false" afterPath="$PROJECT_DIR$/loans/target/jib-cache/jib-classpath-file" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/loans/target/jib-image.digest" beforeDir="false" afterPath="$PROJECT_DIR$/loans/target/jib-image.digest" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/loans/target/jib-image.id" beforeDir="false" afterPath="$PROJECT_DIR$/loans/target/jib-image.id" afterDir="false" />
@@ -110,63 +69,65 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.AccountsApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Application.CardsApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ConfigserverApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Application.EurekaserverApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Application.LoansApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.default: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.docker-compose.yml.accounts: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.docker-compose.yml.cards: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.docker-compose.yml.loans: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.docker-compose.yml: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.prod: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.AccountControllerTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.AccountControllerTest.fetchAccountDetailsTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.AccountServiceTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.All in accounts (1).executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.All in accounts.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.All in cards.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.All in loans (1).executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.All in loans.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CardControllerTest.createCardPositiveRESTApiTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CardControllerTest.createCardRESTApiTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CardControllerTest.createCardRESTTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CardControllerTest.createCardSuccessTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CardControllerTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CardControllerTest.fetchCardDetailsInvalidMobileNumberTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CardControllerTest.fetchCardDetailsSuccessTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CardControllerTest.fetchCardInvalidMobileNumberTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CardControllerTest.testCreateCardInvalidMobileNumber.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CardControllerTest.testCreateCardSuccess.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CardControllerTest.updateCardInvalidMobileNumberTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CardControllerTest.updateCardSuccessTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CardControllerTest.сreateCardInvalidMobileNumberTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CardServiceTest.deleteCardTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CardServiceTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CardServiceTest.testCreateCardMobileNumberIsNotValid.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.LoanApplicationTests.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.LoanControllerTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.LoanControllerTest.fetchLoanNotFoundTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.LoanControllerTest.fetchLoanTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.LoanControllerTest.updateLoanInvalidMobileNumberTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.LoanServiceTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.LoanServiceTest.updateLoanNotFoundTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.LoanServiceTest.updateLoanTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.LoanTestSuite.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;com.codeium.enabled&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;service__registry__feature&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/ANDREW/Study/Pogramming/JAVA/Spring/Microservices/EazyBytes_Course/bank_app/eurekaserver&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.AccountsApplication.executor": "Run",
+    "Application.CardsApplication.executor": "Run",
+    "Application.ConfigserverApplication.executor": "Run",
+    "Application.EurekaserverApplication.executor": "Run",
+    "Application.LoansApplication.executor": "Run",
+    "Docker.default: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yml.accounts: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yml.cards: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yml.loans: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yml: Compose Deployment.executor": "Run",
+    "Docker.prod.configserver: Compose Deployment.executor": "Run",
+    "Docker.prod.eurekaserver: Compose Deployment.executor": "Run",
+    "Docker.prod: Compose Deployment.executor": "Run",
+    "JUnit.AccountControllerTest.executor": "Run",
+    "JUnit.AccountControllerTest.fetchAccountDetailsTest.executor": "Run",
+    "JUnit.AccountServiceTest.executor": "Run",
+    "JUnit.All in accounts (1).executor": "Run",
+    "JUnit.All in accounts.executor": "Run",
+    "JUnit.All in cards.executor": "Run",
+    "JUnit.All in loans (1).executor": "Run",
+    "JUnit.All in loans.executor": "Run",
+    "JUnit.CardControllerTest.createCardPositiveRESTApiTest.executor": "Run",
+    "JUnit.CardControllerTest.createCardRESTApiTest.executor": "Run",
+    "JUnit.CardControllerTest.createCardRESTTest.executor": "Run",
+    "JUnit.CardControllerTest.createCardSuccessTest.executor": "Run",
+    "JUnit.CardControllerTest.executor": "Run",
+    "JUnit.CardControllerTest.fetchCardDetailsInvalidMobileNumberTest.executor": "Run",
+    "JUnit.CardControllerTest.fetchCardDetailsSuccessTest.executor": "Run",
+    "JUnit.CardControllerTest.fetchCardInvalidMobileNumberTest.executor": "Run",
+    "JUnit.CardControllerTest.testCreateCardInvalidMobileNumber.executor": "Run",
+    "JUnit.CardControllerTest.testCreateCardSuccess.executor": "Run",
+    "JUnit.CardControllerTest.updateCardInvalidMobileNumberTest.executor": "Run",
+    "JUnit.CardControllerTest.updateCardSuccessTest.executor": "Run",
+    "JUnit.CardControllerTest.сreateCardInvalidMobileNumberTest.executor": "Run",
+    "JUnit.CardServiceTest.deleteCardTest.executor": "Run",
+    "JUnit.CardServiceTest.executor": "Run",
+    "JUnit.CardServiceTest.testCreateCardMobileNumberIsNotValid.executor": "Run",
+    "JUnit.LoanApplicationTests.executor": "Run",
+    "JUnit.LoanControllerTest.executor": "Run",
+    "JUnit.LoanControllerTest.fetchLoanNotFoundTest.executor": "Run",
+    "JUnit.LoanControllerTest.fetchLoanTest.executor": "Run",
+    "JUnit.LoanControllerTest.updateLoanInvalidMobileNumberTest.executor": "Run",
+    "JUnit.LoanServiceTest.executor": "Run",
+    "JUnit.LoanServiceTest.updateLoanNotFoundTest.executor": "Run",
+    "JUnit.LoanServiceTest.updateLoanTest.executor": "Run",
+    "JUnit.LoanTestSuite.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "com.codeium.enabled": "true",
+    "git-widget-placeholder": "service__registry__feature",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/ANDREW/Study/Pogramming/JAVA/Spring/Microservices/EazyBytes_Course/bank_app/docker-compose/qa",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\ANDREW\Study\Pogramming\JAVA\Spring\Microservices\EazyBytes_Course\bank_app\docker-compose\qa" />
@@ -185,33 +146,7 @@
       <recent name="com.microservicesbank.accounts" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.AccountsApplication">
-    <configuration name="AccountsApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.microservicesbank.accounts.AccountsApplication" />
-      <module name="accounts" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.microservicesbank.accounts.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CardsApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.microsevicesbank.card.CardsApplication" />
-      <module name="cards" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.microsevicesbank.card.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Docker.prod: Compose Deployment">
     <configuration name="ConfigserverApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.microservicesbank.configserver.ConfigserverApplication" />
       <module name="configserver" />
@@ -238,37 +173,58 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LoansApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.microsevicesbank.loan.LoansApplication" />
-      <module name="loans" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.microsevicesbank.loan.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
       <deployment type="docker-compose.yml">
         <settings />
       </deployment>
       <method v="2" />
     </configuration>
+    <configuration name="prod: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="docker-compose/prod/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="prod.configserver: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="configserver" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose/prod/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="prod.eurekaserver: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="eurekaserver" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose/prod/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Application.ConfigserverApplication" />
-      <item itemvalue="Application.AccountsApplication" />
-      <item itemvalue="Application.CardsApplication" />
       <item itemvalue="Application.EurekaserverApplication" />
-      <item itemvalue="Application.LoansApplication" />
+      <item itemvalue="Docker.prod.configserver: Compose Deployment" />
+      <item itemvalue="Docker.prod.eurekaserver: Compose Deployment" />
+      <item itemvalue="Docker.prod: Compose Deployment" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.AccountsApplication" />
-        <item itemvalue="Application.CardsApplication" />
-        <item itemvalue="Application.LoansApplication" />
+        <item itemvalue="Docker.prod: Compose Deployment" />
+        <item itemvalue="Docker.prod.eurekaserver: Compose Deployment" />
+        <item itemvalue="Docker.prod.configserver: Compose Deployment" />
         <item itemvalue="Application.EurekaserverApplication" />
         <item itemvalue="Application.ConfigserverApplication" />
       </list>
