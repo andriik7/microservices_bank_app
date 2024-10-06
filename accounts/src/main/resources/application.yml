@@ -7,8 +7,6 @@ server:
 spring:
   application:
     name: accounts
-#  profiles:
-#    active: def
   datasource:
     url: jdbc:h2:mem:accountsdb
     driverClassName: org.h2.Driver
@@ -23,14 +21,34 @@ spring:
   show-sql: true
   config:
     import: optional:configserver:http://localhost:8071/
-  rabbitmq:
-    host: localhost
-    port: 5672
-    username: guest
-    password: guest
 
 management:
   endpoints:
     web:
       exposure:
         include: '*'
+  endpoint:
+    shutdown:
+      enabled: true
+  info:
+    env:
+      enabled: true #to enable info details for an actuator
+
+endpoints:
+  shutdown:
+    enabled: true
+
+eureka:
+  instance:
+    preferIpAddress: true #register with ip address but not with hostname because there is not any DNS mappings provided
+  client:
+    fetchRegistry: true #fetch registered services
+    registerWithEureka: true
+    serviceUrl:
+      defaultZone: http://localhost:8070/eureka/
+
+info:
+  app:
+    name: accounts
+    description: Microservicesbank Accounts microservice
+    version: 4

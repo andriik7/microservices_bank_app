@@ -2,6 +2,7 @@ package com.microservicesbank.accounts.mapper;
 
 
 import com.microservicesbank.accounts.dto.CustomerDTO;
+import com.microservicesbank.accounts.dto.CustomerDetailsDTO;
 import com.microservicesbank.accounts.model.Customer;
 
 public class CustomerMapper {
@@ -22,5 +23,14 @@ public class CustomerMapper {
         customer.setMobileNumber(customerDTO.getMobileNumber());
 
         return customer;
+    }
+
+    public static CustomerDetailsDTO mapToCustomerDetailsDTO(Customer customer, CustomerDetailsDTO customerDetailsDTO) {
+
+        customerDetailsDTO.setName(customer.getName());
+        customerDetailsDTO.setEmail(customer.getEmail());
+        customerDetailsDTO.setMobileNumber(customer.getMobileNumber());
+
+        return customerDetailsDTO;
     }
 }
