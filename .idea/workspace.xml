@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="2f272a15-b657-4e69-b58b-9c5039112b57" name="Changes" comment="Edit Docker Compose files to use different profiles. Also, make sure microservices don't start while other required services are down or unhealthy.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose/default/common-config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose/default/common-config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose/default/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose/default/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose/prod/common-config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose/prod/common-config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose/prod/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose/prod/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose/qa/common-config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose/qa/common-config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose/qa/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose/qa/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eurekaserver/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/eurekaserver/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/jib-classpath-file" beforeDir="false" afterPath="$PROJECT_DIR$/loans/target/jib-cache/jib-classpath-file" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/jib-image.digest" beforeDir="false" afterPath="$PROJECT_DIR$/loans/target/jib-image.digest" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/jib-image.id" beforeDir="false" afterPath="$PROJECT_DIR$/loans/target/jib-image.id" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/jib-image.json" beforeDir="false" afterPath="$PROJECT_DIR$/loans/target/jib-image.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;andriik7&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/andriik7/microservices_bank_app.git&quot;,
+    &quot;accountId&quot;: &quot;ed6a863c-8c50-4243-bbd4-9c708e760707&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;ff3c3cff&quot;,
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2mhUu0utENj63tCZSF0BXf9SEGj" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.AccountsApplication.executor": "Run",
+    "Application.CardsApplication.executor": "Run",
+    "Application.ConfigserverApplication.executor": "Run",
+    "Application.EurekaserverApplication.executor": "Run",
+    "Application.LoansApplication.executor": "Run",
+    "Docker.default: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yml.accounts: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yml.cards: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yml.loans: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yml: Compose Deployment.executor": "Run",
+    "Docker.prod.configserver: Compose Deployment.executor": "Run",
+    "Docker.prod.eurekaserver: Compose Deployment.executor": "Run",
+    "Docker.prod: Compose Deployment.executor": "Run",
+    "JUnit.AccountControllerTest.executor": "Run",
+    "JUnit.AccountControllerTest.fetchAccountDetailsTest.executor": "Run",
+    "JUnit.AccountServiceTest.executor": "Run",
+    "JUnit.All in accounts (1).executor": "Run",
+    "JUnit.All in accounts.executor": "Run",
+    "JUnit.All in cards.executor": "Run",
+    "JUnit.All in loans (1).executor": "Run",
+    "JUnit.All in loans.executor": "Run",
+    "JUnit.CardControllerTest.createCardPositiveRESTApiTest.executor": "Run",
+    "JUnit.CardControllerTest.createCardRESTApiTest.executor": "Run",
+    "JUnit.CardControllerTest.createCardRESTTest.executor": "Run",
+    "JUnit.CardControllerTest.createCardSuccessTest.executor": "Run",
+    "JUnit.CardControllerTest.executor": "Run",
+    "JUnit.CardControllerTest.fetchCardDetailsInvalidMobileNumberTest.executor": "Run",
+    "JUnit.CardControllerTest.fetchCardDetailsSuccessTest.executor": "Run",
+    "JUnit.CardControllerTest.fetchCardInvalidMobileNumberTest.executor": "Run",
+    "JUnit.CardControllerTest.testCreateCardInvalidMobileNumber.executor": "Run",
+    "JUnit.CardControllerTest.testCreateCardSuccess.executor": "Run",
+    "JUnit.CardControllerTest.updateCardInvalidMobileNumberTest.executor": "Run",
+    "JUnit.CardControllerTest.updateCardSuccessTest.executor": "Run",
+    "JUnit.CardControllerTest.сreateCardInvalidMobileNumberTest.executor": "Run",
+    "JUnit.CardServiceTest.deleteCardTest.executor": "Run",
+    "JUnit.CardServiceTest.executor": "Run",
+    "JUnit.CardServiceTest.testCreateCardMobileNumberIsNotValid.executor": "Run",
+    "JUnit.LoanApplicationTests.executor": "Run",
+    "JUnit.LoanControllerTest.executor": "Run",
+    "JUnit.LoanControllerTest.fetchLoanNotFoundTest.executor": "Run",
+    "JUnit.LoanControllerTest.fetchLoanTest.executor": "Run",
+    "JUnit.LoanControllerTest.updateLoanInvalidMobileNumberTest.executor": "Run",
+    "JUnit.LoanServiceTest.executor": "Run",
+    "JUnit.LoanServiceTest.updateLoanNotFoundTest.executor": "Run",
+    "JUnit.LoanServiceTest.updateLoanTest.executor": "Run",
+    "JUnit.LoanTestSuite.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "com.codeium.enabled": "true",
+    "git-widget-placeholder": "service__registry__feature",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/ANDREW/Study/Pogramming/JAVA/Spring/Microservices/EazyBytes_Course/bank_app/docker-compose/qa",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\ANDREW\Study\Pogramming\JAVA\Spring\Microservices\EazyBytes_Course\bank_app\docker-compose\qa" />
+      <recent name="C:\ANDREW\Study\Pogramming\JAVA\Spring\Microservices\EazyBytes_Course\bank_app\docker-compose\prod" />
+      <recent name="C:\ANDREW\Study\Pogramming\JAVA\Spring\Microservices\EazyBytes_Course\bank_app\configserver\src\main\resources\config" />
+      <recent name="C:\ANDREW\Study\Pogramming\JAVA\Spring\Microservices\EazyBytes_Course\bank_app\loans\src\main\resources" />
+      <recent name="C:\ANDREW\Study\Pogramming\JAVA\Spring\Microservices\EazyBytes_Course\bank_app\cards\src\main\resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\ANDREW\Study\Pogramming\JAVA\Spring\Microservices\EazyBytes_Course\bank_app\docker-compose\default" />
+      <recent name="C:\ANDREW\Study\Pogramming\JAVA\Spring\Microservices\EazyBytes_Course\bank_app\docker-compose" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.microservicesbank.accounts.dto" />
+      <recent name="microsevicesbank.card" />
+      <recent name="com.microservicesbank.accounts" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Docker.prod: Compose Deployment">
+    <configuration name="ConfigserverApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.microservicesbank.configserver.ConfigserverApplication" />
+      <module name="configserver" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.microservicesbank.configserver.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EurekaserverApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.microservicesbank.eurekaserver.EurekaserverApplication" />
+      <module name="eurekaserver" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.microservicesbank.eurekaserver.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="prod: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="docker-compose/prod/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="prod.configserver: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="configserver" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose/prod/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="prod.eurekaserver: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="eurekaserver" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose/prod/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Application.ConfigserverApplication" />
+      <item itemvalue="Application.EurekaserverApplication" />
+      <item itemvalue="Docker.prod.configserver: Compose Deployment" />
+      <item itemvalue="Docker.prod.eurekaserver: Compose Deployment" />
+      <item itemvalue="Docker.prod: Compose Deployment" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Docker.prod: Compose Deployment" />
+        <item itemvalue="Docker.prod.eurekaserver: Compose Deployment" />
+        <item itemvalue="Docker.prod.configserver: Compose Deployment" />
+        <item itemvalue="Application.EurekaserverApplication" />
+        <item itemvalue="Application.ConfigserverApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2f272a15-b657-4e69-b58b-9c5039112b57" name="Changes" comment="" />
+      <created>1727528523720</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1727528523720</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Merge branch 'refs/heads/card_branch'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <option name="closed" value="true" />
+      <created>1727531302999</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1727531302999</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Create LoanController and LoanControllerTest using TDD to resolve all possible issues from the start. Add some correction to the LoanDTO and using new dependency I provide @Suite to run all my tests at the same moment right before every commit.">
+      <option name="closed" value="true" />
+      <created>1727542763704</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1727542763704</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Create test suites for Accounts and Cards microservices.&#10;&#10;Add JUnit suite dependency to the pom.xml files. So that allowed us to implement TestSuites to run all needed tests in one click">
+      <option name="closed" value="true" />
+      <created>1727619513591</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1727619513591</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Update config server and microservices to support instant updates of config files connected through GitHub. Here are implemented 2 ways: &#10;1. Use actuator/refresh endpoint for each microservice&#10;2. Use actuator/busrefresh endpoint that uses RabbitMQ to update all the configurations at once.">
+      <option name="closed" value="true" />
+      <created>1728042361353</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1728042361353</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Update config server and microservices to support instant updates of config files connected through GitHub. Here are implemented 2 ways: &#10;1. Use actuator/refresh endpoint for each microservice&#10;2. Use actuator/busrefresh endpoint that uses RabbitMQ to update all the configurations at once.">
+      <option name="closed" value="true" />
+      <created>1728042399969</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1728042399969</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Add dependency to the config server to support /monitor endpoint that will be invoked after every push to the repo  of configurations. So after each push configurations on config server will be refreshed.">
+      <option name="closed" value="true" />
+      <created>1728055882934</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1728055882934</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Edit Docker Compose files to use different profiles. Also, make sure microservices don't start while other required services are down or unhealthy.">
+      <option name="closed" value="true" />
+      <created>1728131449779</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1728131449779</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="TDD with CardController and refactoring&#10;&#10;Creating CardController and CardControllerTest to get all these endpoints working properly. Also here I am updating and fixing some exception handling, services and service tests for Cards microservice." />
+    <MESSAGE value="Merge branch 'refs/heads/card_branch'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
+    <MESSAGE value="Create LoanController and LoanControllerTest using TDD to resolve all possible issues from the start. Add some correction to the LoanDTO and using new dependency I provide @Suite to run all my tests at the same moment right before every commit." />
+    <MESSAGE value="Creating documentation for LoanController using OpenAPI and Swagger.&#10;&#10;Commit contains many changes in documentation-related code in Loans, Cards and Accounts microservice. There were updated ErrorResponseDTOs and slightly changed controllers' documentations." />
+    <MESSAGE value="Create test suites for Accounts and Cards microservices.&#10;&#10;Add JUnit suite dependency to the pom.xml files. So that allowed us to implement TestSuites to run all needed tests in one click" />
+    <MESSAGE value="Use different profiles for different environments with help of application.yml." />
+    <MESSAGE value="Update config server and microservices to support instant updates of config files connected through GitHub. Here are implemented 2 ways: &#10;1. Use actuator/refresh endpoint for each microservice&#10;2. Use actuator/busrefresh endpoint that uses RabbitMQ to update all the configurations at once." />
+    <MESSAGE value="Add dependency to the config server to support /monitor endpoint that will be invoked after every push to the repo  of configurations. So after each push configurations on config server will be refreshed." />
+    <MESSAGE value="Edit Docker Compose files to use different profiles. Also, make sure microservices don't start while other required services are down or unhealthy." />
+    <option name="LAST_COMMIT_MESSAGE" value="Edit Docker Compose files to use different profiles. Also, make sure microservices don't start while other required services are down or unhealthy." />
+  </component>
+</project>

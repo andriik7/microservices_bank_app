@@ -1,0 +1,7 @@
+package com.microservicesbank.accounts.service;
+
+public interface ICustomerService {
+
+
+
+}

@@ -1,0 +1,574 @@
+Index: docker-compose/qa/common-config.yml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>services:\r\n  network-deploy-service:\r\n    networks:\r\n      - \"microservice-bank\"\r\n  microservice-base-config:\r\n    extends:\r\n      service: network-deploy-service\r\n    deploy:\r\n      resources:\r\n        limits:\r\n          memory: 700m\r\n    environment:\r\n      SPRING_PROFILES_ACTIVE: qa\r\n  microservice-configserver-config:\r\n    extends:\r\n      service: microservice-base-config\r\n    environment:\r\n      SPRING_PROFILES_ACTIVE: default\r\n      SPRING_CONFIG_IMPORT: configserver:http://configserver:8071/
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/docker-compose/qa/common-config.yml b/docker-compose/qa/common-config.yml
+--- a/docker-compose/qa/common-config.yml	
++++ b/docker-compose/qa/common-config.yml	
+@@ -2,6 +2,19 @@
+   network-deploy-service:
+     networks:
+       - "microservice-bank"
++  microservice-db-config:
++    extends:
++      service: network-deploy-service
++    image: mysql
++    healthcheck:
++      test: [ "CMD", "mysqladmin" ,"ping", "-h", "localhost" ]
++      timeout: 10s
++      retries: 10
++      interval: 10s
++      start_period: 10s
++    environment:
++      MYSQL_ROOT_PASSWORD: root
++
+   microservice-base-config:
+     extends:
+       service: network-deploy-service
+@@ -10,10 +23,12 @@
+         limits:
+           memory: 700m
+     environment:
+-      SPRING_PROFILES_ACTIVE: qa
++      SPRING_PROFILES_ACTIVE: default
+   microservice-configserver-config:
+     extends:
+       service: microservice-base-config
+     environment:
+-      SPRING_PROFILES_ACTIVE: default
+-      SPRING_CONFIG_IMPORT: configserver:http://configserver:8071/
+\ No newline at end of file
++      SPRING_PROFILES_ACTIVE: qa
++      SPRING_CONFIG_IMPORT: configserver:http://configserver:8071/
++      SPRING_DATASOURCE_USERNAME: root
++      SPRING_DATASOURCE_PASSWORD: root
+Index: loans/target/classes/application.yml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>logging:\r\n  pattern:\r\n    console: \"${LOGGER_PATTERN:%green(%d{HH:mm:ss.SSS}) %blue(%-5level) %red([%thread]) %yellow(%logger{15}) - %msg%n}}\"\r\n\r\nserver:\r\n    port: 9000\r\nspring:\r\n  application:\r\n    name: loans\r\n#  profiles:\r\n#    active: prod\r\n  datasource:\r\n    url: jdbc:mysql://localhost:3308/loansdb\r\n    username: root\r\n    password: root\r\n    sql:\r\n      init:\r\n        model: always\r\n  jpa:\r\n    show-sql: true\r\n  config:\r\n    import: optional:configserver:http://localhost:8071/\r\n  #these are default values, so it's not necessary to specify them\r\n\r\nmanagement:\r\n  endpoints:\r\n    web:\r\n      exposure:\r\n        include: '*'
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/loans/target/classes/application.yml b/loans/target/classes/application.yml
+--- a/loans/target/classes/application.yml	
++++ b/loans/target/classes/application.yml	
+@@ -3,7 +3,7 @@
+     console: "${LOGGER_PATTERN:%green(%d{HH:mm:ss.SSS}) %blue(%-5level) %red([%thread]) %yellow(%logger{15}) - %msg%n}}"
+ 
+ server:
+-    port: 9000
++  port: 9000
+ spring:
+   application:
+     name: loans
+@@ -13,11 +13,11 @@
+     url: jdbc:mysql://localhost:3308/loansdb
+     username: root
+     password: root
+-    sql:
+-      init:
+-        model: always
+   jpa:
+     show-sql: true
++  sql:
++    init:
++      mode: always
+   config:
+     import: optional:configserver:http://localhost:8071/
+   #these are default values, so it's not necessary to specify them
+Index: docker-compose/default/docker-compose.yml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>services:\r\n  accounts:\r\n    image: akuchera/accounts:3\r\n    container_name: accounts-ms\r\n    ports:\r\n      - \"8080:8080\"\r\n    depends_on:\r\n      configserver:\r\n        condition: service_healthy #service_completed_successfully only applyable if there is a test for configserver health. Other way if no test provided is service_healthy\r\n    extends:\r\n      file: common-config.yml\r\n      service: microservice-configserver-config\r\n  cards:\r\n    image: akuchera/cards:3\r\n    container_name: cards-ms\r\n    ports:\r\n      - \"8090:8090\"\r\n    depends_on:\r\n      configserver:\r\n        condition: service_healthy #service_completed_successfully only applyable if there is a test for configserver health. Other way if no test provided is service_healthy\r\n    extends:\r\n      file: common-config.yml\r\n      service: microservice-configserver-config\r\n  loans:\r\n    image: akuchera/loans:3\r\n    container_name: loans-ms\r\n    ports:\r\n      - \"9000:9000\"\r\n    depends_on:\r\n      configserver:\r\n        condition: service_healthy #service_completed_successfully only applyable if there is a test for configserver health. Other way if no test provided is service_healthy\r\n    extends:\r\n      file: common-config.yml\r\n      service: microservice-configserver-config\r\n  configserver:\r\n    image: akuchera/configserver:3\r\n    container_name: configserver-ms\r\n    ports:\r\n      - \"8071:8071\"\r\n    healthcheck:\r\n      test: \"curl --fail http://configserver:8071/actuator/health/readiness | grep UP || exit 1\"\r\n      interval: 10s\r\n      timeout: 5s\r\n      retries: 10\r\n      start_period: 10s\r\n    deploy:\r\n      resources:\r\n        limits:\r\n          memory: 700m\r\n    extends:\r\n      file: common-config.yml\r\n      service: microservice-base-config\r\nnetworks:\r\n  microservice-bank:\r\n    driver: bridge\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/docker-compose/default/docker-compose.yml b/docker-compose/default/docker-compose.yml
+--- a/docker-compose/default/docker-compose.yml	
++++ b/docker-compose/default/docker-compose.yml	
+@@ -1,39 +1,85 @@
+ services:
++
++  accountsdb:
++    container_name: accountsdb
++    ports:
++      - "3306:3306"
++    environment:
++      MYSQL_DATABASE: accountsdb
++    extends:
++      file: common-config.yml
++      service: microservice-db-config
++
++  cardsdb:
++    container_name: cardsdb
++    ports:
++      - "3307:3306"
++    environment:
++      MYSQL_DATABASE: cardsdb
++    extends:
++      file: common-config.yml
++      service: microservice-db-config
++
++  loansdb:
++    container_name: loansdb
++    ports:
++      - "3308:3306"
++    environment:
++      MYSQL_DATABASE: loansdb
++    extends:
++      file: common-config.yml
++      service: microservice-db-config
++
+   accounts:
+-    image: akuchera/accounts:3
++    image: akuchera/accounts:4
+     container_name: accounts-ms
+     ports:
+       - "8080:8080"
++    environment:
++      SPRING_DATASOURCE_URL: jdbc:mysql://accountsdb:3306/accountsdb
+     depends_on:
++      accountsdb:
++        condition: service_healthy #service_completed_successfully only applyable if there is a test for configserver health. Other way if no test provided is service_healthy
+       configserver:
+         condition: service_healthy #service_completed_successfully only applyable if there is a test for configserver health. Other way if no test provided is service_healthy
+     extends:
+       file: common-config.yml
+       service: microservice-configserver-config
++
+   cards:
+-    image: akuchera/cards:3
++    image: akuchera/cards:4
+     container_name: cards-ms
+     ports:
+       - "8090:8090"
++    environment:
++      SPRING_DATASOURCE_URL: jdbc:mysql://cardsdb:3306/cardsdb
+     depends_on:
++      cardsdb:
++        condition: service_healthy #service_completed_successfully only applyable if there is a test for configserver health. Other way if no test provided is service_healthy
+       configserver:
+         condition: service_healthy #service_completed_successfully only applyable if there is a test for configserver health. Other way if no test provided is service_healthy
+     extends:
+       file: common-config.yml
+       service: microservice-configserver-config
++
+   loans:
+-    image: akuchera/loans:3
++    image: akuchera/loans:4
+     container_name: loans-ms
+     ports:
+       - "9000:9000"
++    environment:
++      SPRING_DATASOURCE_URL: jdbc:mysql://loansdb:3306/loansdb
+     depends_on:
++      loansdb:
++        condition: service_healthy #service_completed_successfully only applyable if there is a test for configserver health. Other way if no test provided is service_healthy
+       configserver:
+         condition: service_healthy #service_completed_successfully only applyable if there is a test for configserver health. Other way if no test provided is service_healthy
+     extends:
+       file: common-config.yml
+       service: microservice-configserver-config
++
+   configserver:
+-    image: akuchera/configserver:3
++    image: akuchera/configserver:4
+     container_name: configserver-ms
+     ports:
+       - "8071:8071"
+Index: docker-compose/prod/common-config.yml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>services:\r\n  network-deploy-service:\r\n    networks:\r\n      - \"microservice-bank\"\r\n  microservice-base-config:\r\n    extends:\r\n      service: network-deploy-service\r\n    deploy:\r\n      resources:\r\n        limits:\r\n          memory: 700m\r\n    environment:\r\n      SPRING_PROFILES_ACTIVE: prod\r\n  microservice-configserver-config:\r\n    extends:\r\n      service: microservice-base-config\r\n    environment:\r\n      SPRING_PROFILES_ACTIVE: default\r\n      SPRING_CONFIG_IMPORT: configserver:http://configserver:8071/
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/docker-compose/prod/common-config.yml b/docker-compose/prod/common-config.yml
+--- a/docker-compose/prod/common-config.yml	
++++ b/docker-compose/prod/common-config.yml	
+@@ -2,6 +2,19 @@
+   network-deploy-service:
+     networks:
+       - "microservice-bank"
++  microservice-db-config:
++    extends:
++      service: network-deploy-service
++    image: mysql
++    healthcheck:
++      test: [ "CMD", "mysqladmin" ,"ping", "-h", "localhost" ]
++      timeout: 10s
++      retries: 10
++      interval: 10s
++      start_period: 10s
++    environment:
++      MYSQL_ROOT_PASSWORD: root
++
+   microservice-base-config:
+     extends:
+       service: network-deploy-service
+@@ -10,10 +23,12 @@
+         limits:
+           memory: 700m
+     environment:
+-      SPRING_PROFILES_ACTIVE: prod
++      SPRING_PROFILES_ACTIVE: default
+   microservice-configserver-config:
+     extends:
+       service: microservice-base-config
+     environment:
+-      SPRING_PROFILES_ACTIVE: default
+-      SPRING_CONFIG_IMPORT: configserver:http://configserver:8071/
+\ No newline at end of file
++      SPRING_PROFILES_ACTIVE: prod
++      SPRING_CONFIG_IMPORT: configserver:http://configserver:8071/
++      SPRING_DATASOURCE_USERNAME: root
++      SPRING_DATASOURCE_PASSWORD: root
+Index: docker-compose/prod/docker-compose.yml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>services:\r\n  accounts:\r\n    image: akuchera/accounts:3\r\n    container_name: accounts-ms\r\n    ports:\r\n      - \"8080:8080\"\r\n    depends_on:\r\n      configserver:\r\n        condition: service_healthy #service_completed_successfully only applyable if there is a test for configserver health. Other way if no test provided is service_healthy\r\n    extends:\r\n      file: common-config.yml\r\n      service: microservice-configserver-config\r\n  cards:\r\n    image: akuchera/cards:3\r\n    container_name: cards-ms\r\n    ports:\r\n      - \"8090:8090\"\r\n    depends_on:\r\n      configserver:\r\n        condition: service_healthy #service_completed_successfully only applyable if there is a test for configserver health. Other way if no test provided is service_healthy\r\n    extends:\r\n      file: common-config.yml\r\n      service: microservice-configserver-config\r\n  loans:\r\n    image: akuchera/loans:3\r\n    container_name: loans-ms\r\n    ports:\r\n      - \"9000:9000\"\r\n    depends_on:\r\n      configserver:\r\n        condition: service_healthy #service_completed_successfully only applyable if there is a test for configserver health. Other way if no test provided is service_healthy\r\n    extends:\r\n      file: common-config.yml\r\n      service: microservice-configserver-config\r\n  configserver:\r\n    image: akuchera/configserver:3\r\n    container_name: configserver-ms\r\n    ports:\r\n      - \"8071:8071\"\r\n    healthcheck:\r\n      test: \"curl --fail http://configserver:8071/actuator/health/readiness | grep UP || exit 1\"\r\n      interval: 10s\r\n      timeout: 5s\r\n      retries: 10\r\n      start_period: 10s\r\n    deploy:\r\n      resources:\r\n        limits:\r\n          memory: 700m\r\n    extends:\r\n      file: common-config.yml\r\n      service: microservice-base-config\r\nnetworks:\r\n  microservice-bank:\r\n    driver: bridge
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/docker-compose/prod/docker-compose.yml b/docker-compose/prod/docker-compose.yml
+--- a/docker-compose/prod/docker-compose.yml	
++++ b/docker-compose/prod/docker-compose.yml	
+@@ -1,39 +1,85 @@
+ services:
++
++  accountsdb:
++    container_name: accountsdb
++    ports:
++      - "3306:3306"
++    environment:
++      MYSQL_DATABASE: accountsdb
++    extends:
++      file: common-config.yml
++      service: microservice-db-config
++
++  cardsdb:
++    container_name: cardsdb
++    ports:
++      - "3307:3306"
++    environment:
++      MYSQL_DATABASE: cardsdb
++    extends:
++      file: common-config.yml
++      service: microservice-db-config
++
++  loansdb:
++    container_name: loansdb
++    ports:
++      - "3308:3306"
++    environment:
++      MYSQL_DATABASE: loansdb
++    extends:
++      file: common-config.yml
++      service: microservice-db-config
++
+   accounts:
+-    image: akuchera/accounts:3
++    image: akuchera/accounts:4
+     container_name: accounts-ms
+     ports:
+       - "8080:8080"
++    environment:
++      SPRING_DATASOURCE_URL: jdbc:mysql://accountsdb:3306/accountsdb
+     depends_on:
++      accountsdb:
++        condition: service_healthy #service_completed_successfully only applyable if there is a test for configserver health. Other way if no test provided is service_healthy
+       configserver:
+         condition: service_healthy #service_completed_successfully only applyable if there is a test for configserver health. Other way if no test provided is service_healthy
+     extends:
+       file: common-config.yml
+       service: microservice-configserver-config
++
+   cards:
+-    image: akuchera/cards:3
++    image: akuchera/cards:4
+     container_name: cards-ms
+     ports:
+       - "8090:8090"
++    environment:
++      SPRING_DATASOURCE_URL: jdbc:mysql://cardsdb:3306/cardsdb
+     depends_on:
++      cardsdb:
++        condition: service_healthy #service_completed_successfully only applyable if there is a test for configserver health. Other way if no test provided is service_healthy
+       configserver:
+         condition: service_healthy #service_completed_successfully only applyable if there is a test for configserver health. Other way if no test provided is service_healthy
+     extends:
+       file: common-config.yml
+       service: microservice-configserver-config
++
+   loans:
+-    image: akuchera/loans:3
++    image: akuchera/loans:4
+     container_name: loans-ms
+     ports:
+       - "9000:9000"
++    environment:
++      SPRING_DATASOURCE_URL: jdbc:mysql://loansdb:3306/loansdb
+     depends_on:
++      loansdb:
++        condition: service_healthy #service_completed_successfully only applyable if there is a test for configserver health. Other way if no test provided is service_healthy
+       configserver:
+         condition: service_healthy #service_completed_successfully only applyable if there is a test for configserver health. Other way if no test provided is service_healthy
+     extends:
+       file: common-config.yml
+       service: microservice-configserver-config
++
+   configserver:
+-    image: akuchera/configserver:3
++    image: akuchera/configserver:4
+     container_name: configserver-ms
+     ports:
+       - "8071:8071"
+@@ -52,4 +98,4 @@
+       service: microservice-base-config
+ networks:
+   microservice-bank:
+-    driver: bridge
+\ No newline at end of file
++    driver: bridge
+Index: loans/src/main/resources/schema.sql
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>CREATE TABLE IF NOT EXISTS `loans` (\r\n  `loan_id` int NOT NULL AUTO_INCREMENT,\r\n  `mobile_number` varchar(15) NOT NULL,\r\n  `loan_number` varchar(100) NOT NULL,\r\n  `loan_type` varchar(100) NOT NULL,\r\n  `total_loan` int NOT NULL,\r\n  `amount_paid` int NOT NULL,\r\n  `outstanding_amount` int NOT NULL,\r\n  `created_at` date NOT NULL,\r\n  `created_by` varchar(20) NOT NULL,\r\n  `updated_at` date DEFAULT NULL,\r\n  `updated_by` varchar(20) DEFAULT NULL,\r\n  PRIMARY KEY (`loan_id`)\r\n);
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/loans/src/main/resources/schema.sql b/loans/src/main/resources/schema.sql
+--- a/loans/src/main/resources/schema.sql	
++++ b/loans/src/main/resources/schema.sql	
+@@ -1,4 +1,4 @@
+-CREATE TABLE IF NOT EXISTS `loans` (
++CREATE TABLE IF NOT EXISTS `loan` (
+   `loan_id` int NOT NULL AUTO_INCREMENT,
+   `mobile_number` varchar(15) NOT NULL,
+   `loan_number` varchar(100) NOT NULL,
+Index: configserver/pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project xmlns=\"http://maven.apache.org/POM/4.0.0\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\r\n\txsi:schemaLocation=\"http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd\">\r\n\t<modelVersion>4.0.0</modelVersion>\r\n\t<parent>\r\n\t\t<groupId>org.springframework.boot</groupId>\r\n\t\t<artifactId>spring-boot-starter-parent</artifactId>\r\n\t\t<version>3.3.4</version>\r\n\t\t<relativePath/> <!-- lookup parent from repository -->\r\n\t</parent>\r\n\t<groupId>com.microservicesbank</groupId>\r\n\t<artifactId>configserver</artifactId>\r\n\t<version>3</version>\r\n\t<packaging>jar</packaging>\r\n\t<name>configserver</name>\r\n\t<description>Config server for microservices bank</description>\r\n\t<url/>\r\n\t<licenses>\r\n\t\t<license/>\r\n\t</licenses>\r\n\t<developers>\r\n\t\t<developer/>\r\n\t</developers>\r\n\t<scm>\r\n\t\t<connection/>\r\n\t\t<developerConnection/>\r\n\t\t<tag/>\r\n\t\t<url/>\r\n\t</scm>\r\n\t<properties>\r\n\t\t<java.version>21</java.version>\r\n\t\t<spring-cloud.version>2023.0.3</spring-cloud.version>\r\n\t</properties>\r\n\t<dependencies>\r\n\t\t<dependency>\r\n\t\t\t<groupId>org.springframework.boot</groupId>\r\n\t\t\t<artifactId>spring-boot-starter-actuator</artifactId>\r\n\t\t</dependency>\r\n\t\t<dependency>\r\n\t\t\t<groupId>org.springframework.cloud</groupId>\r\n\t\t\t<artifactId>spring-cloud-config-server</artifactId>\r\n\t\t</dependency>\r\n\r\n\t\t<dependency>\r\n\t\t\t<groupId>org.springframework.boot</groupId>\r\n\t\t\t<artifactId>spring-boot-devtools</artifactId>\r\n\t\t\t<scope>runtime</scope>\r\n\t\t\t<optional>true</optional>\r\n\t\t</dependency>\r\n\t\t<dependency>\r\n\t\t\t<groupId>org.springframework.boot</groupId>\r\n\t\t\t<artifactId>spring-boot-starter-test</artifactId>\r\n\t\t\t<scope>test</scope>\r\n\t\t</dependency>\r\n\t</dependencies>\r\n\t<dependencyManagement>\r\n\t\t<dependencies>\r\n\t\t\t<dependency>\r\n\t\t\t\t<groupId>org.springframework.cloud</groupId>\r\n\t\t\t\t<artifactId>spring-cloud-dependencies</artifactId>\r\n\t\t\t\t<version>${spring-cloud.version}</version>\r\n\t\t\t\t<type>pom</type>\r\n\t\t\t\t<scope>import</scope>\r\n\t\t\t</dependency>\r\n\t\t</dependencies>\r\n\t</dependencyManagement>\r\n\r\n\t<build>\r\n\t\t<plugins>\r\n\t\t\t<plugin>\r\n\t\t\t\t<groupId>org.springframework.boot</groupId>\r\n\t\t\t\t<artifactId>spring-boot-maven-plugin</artifactId>\r\n\t\t\t</plugin>\r\n\t\t\t<plugin>\r\n\t\t\t\t<groupId>com.google.cloud.tools</groupId>\r\n\t\t\t\t<artifactId>jib-maven-plugin</artifactId>\r\n\t\t\t\t<version>3.4.3</version>\r\n\t\t\t\t<configuration>\r\n\t\t\t\t\t<to>\r\n\t\t\t\t\t\t<image>akuchera/${project.artifactId}:${project.version}</image>\r\n\t\t\t\t\t</to>\r\n\t\t\t\t</configuration>\r\n\t\t\t</plugin>\r\n\t\t</plugins>\r\n\t</build>\r\n\r\n</project>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/configserver/pom.xml b/configserver/pom.xml
+--- a/configserver/pom.xml	
++++ b/configserver/pom.xml	
+@@ -10,7 +10,7 @@
+ 	</parent>
+ 	<groupId>com.microservicesbank</groupId>
+ 	<artifactId>configserver</artifactId>
+-	<version>3</version>
++	<version>4</version>
+ 	<packaging>jar</packaging>
+ 	<name>configserver</name>
+ 	<description>Config server for microservices bank</description>
+Index: cards/pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project xmlns=\"http://maven.apache.org/POM/4.0.0\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\r\n\txsi:schemaLocation=\"http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd\">\r\n\t<modelVersion>4.0.0</modelVersion>\r\n\t<parent>\r\n\t\t<groupId>org.springframework.boot</groupId>\r\n\t\t<artifactId>spring-boot-starter-parent</artifactId>\r\n\t\t<version>3.3.4</version>\r\n\t\t<relativePath/> <!-- lookup parent from repository -->\r\n\t</parent>\r\n\t<groupId>microsevicesbank</groupId>\r\n\t<artifactId>cards</artifactId>\r\n\t<version>3</version>\r\n\t<packaging>jar</packaging>\r\n\t<name>cards</name>\r\n\t<description>Demo project for Spring Boot</description>\r\n\t<url/>\r\n\t<licenses>\r\n\t\t<license/>\r\n\t</licenses>\r\n\t<developers>\r\n\t\t<developer/>\r\n\t</developers>\r\n\t<scm>\r\n\t\t<connection/>\r\n\t\t<developerConnection/>\r\n\t\t<tag/>\r\n\t\t<url/>\r\n\t</scm>\r\n\t<properties>\r\n\t\t<java.version>21</java.version>\r\n\t\t<spring-cloud.version>2023.0.3</spring-cloud.version>\r\n\t</properties>\r\n\t<dependencies>\r\n\t\t<dependency>\r\n\t\t\t<groupId>org.springframework.boot</groupId>\r\n\t\t\t<artifactId>spring-boot-starter-data-jpa</artifactId>\r\n\t\t</dependency>\r\n\t\t<dependency>\r\n\t\t\t<groupId>org.springframework.boot</groupId>\r\n\t\t\t<artifactId>spring-boot-starter-validation</artifactId>\r\n\t\t</dependency>\r\n\t\t<dependency>\r\n\t\t\t<groupId>org.springframework.boot</groupId>\r\n\t\t\t<artifactId>spring-boot-starter-web</artifactId>\r\n\t\t</dependency>\r\n\t\t<dependency>\r\n\t\t\t<groupId>org.springdoc</groupId>\r\n\t\t\t<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>\r\n\t\t\t<version>2.6.0</version>\r\n\t\t</dependency>\r\n\t\t<dependency>\r\n\t\t\t<groupId>org.junit.platform</groupId>\r\n\t\t\t<artifactId>junit-platform-suite</artifactId>\r\n\t\t\t<scope>test</scope>\r\n\t\t</dependency>\r\n\t\t<dependency>\r\n\t\t\t<groupId>org.springframework.boot</groupId>\r\n\t\t\t<artifactId>spring-boot-devtools</artifactId>\r\n\t\t\t<scope>runtime</scope>\r\n\t\t\t<optional>true</optional>\r\n\t\t</dependency>\r\n\t\t<dependency>\r\n\t\t\t<groupId>com.h2database</groupId>\r\n\t\t\t<artifactId>h2</artifactId>\r\n\t\t\t<scope>runtime</scope>\r\n\t\t</dependency>\r\n\t\t<dependency>\r\n\t\t\t<groupId>com.mysql</groupId>\r\n\t\t\t<artifactId>mysql-connector-j</artifactId>\r\n\t\t</dependency>\r\n\t\t<dependency>\r\n\t\t\t<groupId>org.projectlombok</groupId>\r\n\t\t\t<artifactId>lombok</artifactId>\r\n\t\t\t<optional>true</optional>\r\n\t\t</dependency>\r\n\t\t<dependency>\r\n\t\t\t<groupId>org.springframework.cloud</groupId>\r\n\t\t\t<artifactId>spring-cloud-starter-config</artifactId>\r\n\t\t</dependency>\r\n\t\t<dependency>\r\n\t\t\t<groupId>org.springframework.boot</groupId>\r\n\t\t\t<artifactId>spring-boot-starter-test</artifactId>\r\n\t\t\t<scope>test</scope>\r\n\t\t</dependency>\r\n\t</dependencies>\r\n\t<dependencyManagement>\r\n\t\t<dependencies>\r\n\t\t\t<dependency>\r\n\t\t\t\t<groupId>org.springframework.cloud</groupId>\r\n\t\t\t\t<artifactId>spring-cloud-dependencies</artifactId>\r\n\t\t\t\t<version>${spring-cloud.version}</version>\r\n\t\t\t\t<type>pom</type>\r\n\t\t\t\t<scope>import</scope>\r\n\t\t\t</dependency>\r\n\t\t</dependencies>\r\n\t</dependencyManagement>\r\n\r\n\t<build>\r\n\t\t<plugins>\r\n\t\t\t<plugin>\r\n\t\t\t\t<groupId>org.springframework.boot</groupId>\r\n\t\t\t\t<artifactId>spring-boot-maven-plugin</artifactId>\r\n\t\t\t\t<configuration>\r\n\t\t\t\t\t<excludes>\r\n\t\t\t\t\t\t<exclude>\r\n\t\t\t\t\t\t\t<groupId>org.projectlombok</groupId>\r\n\t\t\t\t\t\t\t<artifactId>lombok</artifactId>\r\n\t\t\t\t\t\t</exclude>\r\n\t\t\t\t\t</excludes>\r\n\t\t\t\t</configuration>\r\n\t\t\t</plugin>\r\n\t\t\t<plugin>\r\n\t\t\t\t<groupId>com.google.cloud.tools</groupId>\r\n\t\t\t\t<artifactId>jib-maven-plugin</artifactId>\r\n\t\t\t\t<version>3.4.3</version>\r\n\t\t\t\t<configuration>\r\n\t\t\t\t\t<to>\r\n\t\t\t\t\t\t<image>akuchera/${project.artifactId}:${project.version}</image>\r\n\t\t\t\t\t</to>\r\n\t\t\t\t</configuration>\r\n\t\t\t</plugin>\r\n\t\t</plugins>\r\n\t</build>\r\n\r\n</project>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/cards/pom.xml b/cards/pom.xml
+--- a/cards/pom.xml	
++++ b/cards/pom.xml	
+@@ -10,7 +10,7 @@
+ 	</parent>
+ 	<groupId>microsevicesbank</groupId>
+ 	<artifactId>cards</artifactId>
+-	<version>3</version>
++	<version>4</version>
+ 	<packaging>jar</packaging>
+ 	<name>cards</name>
+ 	<description>Demo project for Spring Boot</description>
+Index: docker-compose/qa/docker-compose.yml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>services:\r\n  accounts:\r\n    image: akuchera/accounts:3\r\n    container_name: accounts-ms\r\n    ports:\r\n      - \"8080:8080\"\r\n    depends_on:\r\n      configserver:\r\n        condition: service_healthy #service_completed_successfully only applyable if there is a test for configserver health. Other way if no test provided is service_healthy\r\n    extends:\r\n      file: common-config.yml\r\n      service: microservice-configserver-config\r\n  cards:\r\n    image: akuchera/cards:3\r\n    container_name: cards-ms\r\n    ports:\r\n      - \"8090:8090\"\r\n    depends_on:\r\n      configserver:\r\n        condition: service_healthy #service_completed_successfully only applyable if there is a test for configserver health. Other way if no test provided is service_healthy\r\n    extends:\r\n      file: common-config.yml\r\n      service: microservice-configserver-config\r\n  loans:\r\n    image: akuchera/loans:3\r\n    container_name: loans-ms\r\n    ports:\r\n      - \"9000:9000\"\r\n    depends_on:\r\n      configserver:\r\n        condition: service_healthy #service_completed_successfully only applyable if there is a test for configserver health. Other way if no test provided is service_healthy\r\n    extends:\r\n      file: common-config.yml\r\n      service: microservice-configserver-config\r\n  configserver:\r\n    image: akuchera/configserver:3\r\n    container_name: configserver-ms\r\n    ports:\r\n      - \"8071:8071\"\r\n    healthcheck:\r\n      test: \"curl --fail http://configserver:8071/actuator/health/readiness | grep UP || exit 1\"\r\n      interval: 10s\r\n      timeout: 5s\r\n      retries: 10\r\n      start_period: 10s\r\n    deploy:\r\n      resources:\r\n        limits:\r\n          memory: 700m\r\n    extends:\r\n      file: common-config.yml\r\n      service: microservice-base-config\r\nnetworks:\r\n  microservice-bank:\r\n    driver: bridge
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/docker-compose/qa/docker-compose.yml b/docker-compose/qa/docker-compose.yml
+--- a/docker-compose/qa/docker-compose.yml	
++++ b/docker-compose/qa/docker-compose.yml	
+@@ -1,39 +1,85 @@
+ services:
++
++  accountsdb:
++    container_name: accountsdb
++    ports:
++      - "3306:3306"
++    environment:
++      MYSQL_DATABASE: accountsdb
++    extends:
++      file: common-config.yml
++      service: microservice-db-config
++
++  cardsdb:
++    container_name: cardsdb
++    ports:
++      - "3307:3306"
++    environment:
++      MYSQL_DATABASE: cardsdb
++    extends:
++      file: common-config.yml
++      service: microservice-db-config
++
++  loansdb:
++    container_name: loansdb
++    ports:
++      - "3308:3306"
++    environment:
++      MYSQL_DATABASE: loansdb
++    extends:
++      file: common-config.yml
++      service: microservice-db-config
++
+   accounts:
+-    image: akuchera/accounts:3
++    image: akuchera/accounts:4
+     container_name: accounts-ms
+     ports:
+       - "8080:8080"
++    environment:
++      SPRING_DATASOURCE_URL: jdbc:mysql://accountsdb:3306/accountsdb
+     depends_on:
++      accountsdb:
++        condition: service_healthy #service_completed_successfully only applyable if there is a test for configserver health. Other way if no test provided is service_healthy
+       configserver:
+         condition: service_healthy #service_completed_successfully only applyable if there is a test for configserver health. Other way if no test provided is service_healthy
+     extends:
+       file: common-config.yml
+       service: microservice-configserver-config
++
+   cards:
+-    image: akuchera/cards:3
++    image: akuchera/cards:4
+     container_name: cards-ms
+     ports:
+       - "8090:8090"
++    environment:
++      SPRING_DATASOURCE_URL: jdbc:mysql://cardsdb:3306/cardsdb
+     depends_on:
++      cardsdb:
++        condition: service_healthy #service_completed_successfully only applyable if there is a test for configserver health. Other way if no test provided is service_healthy
+       configserver:
+         condition: service_healthy #service_completed_successfully only applyable if there is a test for configserver health. Other way if no test provided is service_healthy
+     extends:
+       file: common-config.yml
+       service: microservice-configserver-config
++
+   loans:
+-    image: akuchera/loans:3
++    image: akuchera/loans:4
+     container_name: loans-ms
+     ports:
+       - "9000:9000"
++    environment:
++      SPRING_DATASOURCE_URL: jdbc:mysql://loansdb:3306/loansdb
+     depends_on:
++      loansdb:
++        condition: service_healthy #service_completed_successfully only applyable if there is a test for configserver health. Other way if no test provided is service_healthy
+       configserver:
+         condition: service_healthy #service_completed_successfully only applyable if there is a test for configserver health. Other way if no test provided is service_healthy
+     extends:
+       file: common-config.yml
+       service: microservice-configserver-config
++
+   configserver:
+-    image: akuchera/configserver:3
++    image: akuchera/configserver:4
+     container_name: configserver-ms
+     ports:
+       - "8071:8071"
+@@ -52,4 +98,4 @@
+       service: microservice-base-config
+ networks:
+   microservice-bank:
+-    driver: bridge
+\ No newline at end of file
++    driver: bridge
+Index: loans/pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project xmlns=\"http://maven.apache.org/POM/4.0.0\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\r\n\txsi:schemaLocation=\"http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd\">\r\n\t<modelVersion>4.0.0</modelVersion>\r\n\t<parent>\r\n\t\t<groupId>org.springframework.boot</groupId>\r\n\t\t<artifactId>spring-boot-starter-parent</artifactId>\r\n\t\t<version>3.3.4</version>\r\n\t\t<relativePath/> <!-- lookup parent from repository -->\r\n\t</parent>\r\n\t<groupId>microsevicesbank</groupId>\r\n\t<artifactId>loans</artifactId>\r\n\t<version>3</version>\r\n\t<packaging>jar</packaging>\r\n\t<name>loans</name>\r\n\t<description>Demo project for Spring Boot</description>\r\n\t<url/>\r\n\t<licenses>\r\n\t\t<license/>\r\n\t</licenses>\r\n\t<developers>\r\n\t\t<developer/>\r\n\t</developers>\r\n\t<scm>\r\n\t\t<connection/>\r\n\t\t<developerConnection/>\r\n\t\t<tag/>\r\n\t\t<url/>\r\n\t</scm>\r\n\t<properties>\r\n\t\t<java.version>21</java.version>\r\n\t\t<spring-cloud.version>2023.0.3</spring-cloud.version>\r\n\t</properties>\r\n\t<dependencies>\r\n\t\t<dependency>\r\n\t\t\t<groupId>org.springframework.boot</groupId>\r\n\t\t\t<artifactId>spring-boot-starter-data-jpa</artifactId>\r\n\t\t</dependency>\r\n\t\t<dependency>\r\n\t\t\t<groupId>org.springframework.boot</groupId>\r\n\t\t\t<artifactId>spring-boot-starter-validation</artifactId>\r\n\t\t</dependency>\r\n\t\t<dependency>\r\n\t\t\t<groupId>org.springframework.boot</groupId>\r\n\t\t\t<artifactId>spring-boot-starter-web</artifactId>\r\n\t\t</dependency>\r\n\t\t<dependency>\r\n\t\t\t<groupId>org.springdoc</groupId>\r\n\t\t\t<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>\r\n\t\t\t<version>2.6.0</version>\r\n\t\t</dependency>\r\n\t\t<dependency>\r\n\t\t\t<groupId>org.junit.platform</groupId>\r\n\t\t\t<artifactId>junit-platform-suite</artifactId>\r\n\t\t\t<scope>test</scope>\r\n\t\t</dependency>\r\n\t\t<dependency>\r\n\t\t\t<groupId>org.springframework.boot</groupId>\r\n\t\t\t<artifactId>spring-boot-devtools</artifactId>\r\n\t\t\t<scope>runtime</scope>\r\n\t\t\t<optional>true</optional>\r\n\t\t</dependency>\r\n\t\t<dependency>\r\n\t\t\t<groupId>com.h2database</groupId>\r\n\t\t\t<artifactId>h2</artifactId>\r\n\t\t\t<scope>runtime</scope>\r\n\t\t</dependency>\r\n\t\t<dependency>\r\n\t\t\t<groupId>com.mysql</groupId>\r\n\t\t\t<artifactId>mysql-connector-j</artifactId>\r\n\t\t</dependency>\r\n\t\t<dependency>\r\n\t\t\t<groupId>org.projectlombok</groupId>\r\n\t\t\t<artifactId>lombok</artifactId>\r\n\t\t\t<optional>true</optional>\r\n\t\t</dependency>\r\n\t\t<dependency>\r\n\t\t\t<groupId>org.springframework.cloud</groupId>\r\n\t\t\t<artifactId>spring-cloud-starter-config</artifactId>\r\n\t\t</dependency>\r\n\t\t<dependency>\r\n\t\t\t<groupId>org.springdoc</groupId>\r\n\t\t\t<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>\r\n\t\t\t<version>2.6.0</version>\r\n\t\t</dependency>\r\n\t\t<dependency>\r\n\t\t\t<groupId>org.springframework.boot</groupId>\r\n\t\t\t<artifactId>spring-boot-starter-test</artifactId>\r\n\t\t\t<scope>test</scope>\r\n\t\t</dependency>\r\n\t</dependencies>\r\n\t<dependencyManagement>\r\n\t\t<dependencies>\r\n\t\t\t<dependency>\r\n\t\t\t\t<groupId>org.springframework.cloud</groupId>\r\n\t\t\t\t<artifactId>spring-cloud-dependencies</artifactId>\r\n\t\t\t\t<version>${spring-cloud.version}</version>\r\n\t\t\t\t<type>pom</type>\r\n\t\t\t\t<scope>import</scope>\r\n\t\t\t</dependency>\r\n\t\t</dependencies>\r\n\t</dependencyManagement>\r\n\r\n\t<build>\r\n\t\t<plugins>\r\n\t\t\t<plugin>\r\n\t\t\t\t<groupId>org.springframework.boot</groupId>\r\n\t\t\t\t<artifactId>spring-boot-maven-plugin</artifactId>\r\n\t\t\t\t<configuration>\r\n\t\t\t\t\t<image>\r\n\t\t\t\t\t\t<name>akuchera/${project.artifactId}:${project.version}</name>\r\n\t\t\t\t\t</image>\r\n\t\t\t\t\t<excludes>\r\n\t\t\t\t\t\t<exclude>\r\n\t\t\t\t\t\t\t<groupId>org.projectlombok</groupId>\r\n\t\t\t\t\t\t\t<artifactId>lombok</artifactId>\r\n\t\t\t\t\t\t</exclude>\r\n\t\t\t\t\t</excludes>\r\n\t\t\t\t</configuration>\r\n\t\t\t</plugin>\r\n\t\t\t<plugin>\r\n\t\t\t\t<groupId>com.google.cloud.tools</groupId>\r\n\t\t\t\t<artifactId>jib-maven-plugin</artifactId>\r\n\t\t\t\t<version>3.4.3</version>\r\n\t\t\t\t<configuration>\r\n\t\t\t\t\t<to>\r\n\t\t\t\t\t\t<image>akuchera/${project.artifactId}:${project.version}</image>\r\n\t\t\t\t\t</to>\r\n\t\t\t\t</configuration>\r\n\t\t\t</plugin>\r\n\t\t</plugins>\r\n\t</build>\r\n\r\n</project>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/loans/pom.xml b/loans/pom.xml
+--- a/loans/pom.xml	
++++ b/loans/pom.xml	
+@@ -10,7 +10,7 @@
+ 	</parent>
+ 	<groupId>microsevicesbank</groupId>
+ 	<artifactId>loans</artifactId>
+-	<version>3</version>
++	<version>4</version>
+ 	<packaging>jar</packaging>
+ 	<name>loans</name>
+ 	<description>Demo project for Spring Boot</description>
+Index: cards/src/main/java/com/microsevicesbank/card/model/Card.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.microsevicesbank.card.model;\r\n\r\nimport jakarta.persistence.Entity;\r\nimport jakarta.persistence.GeneratedValue;\r\nimport jakarta.persistence.GenerationType;\r\nimport jakarta.persistence.Id;\r\nimport lombok.*;\r\n\r\n@Entity\r\n@Getter @Setter @ToString\r\n@AllArgsConstructor @NoArgsConstructor\r\npublic class Card extends SuperEntity {\r\n\r\n    @Id\r\n    @GeneratedValue(strategy = GenerationType.IDENTITY)\r\n    private Long cardId;\r\n\r\n    private String mobileNumber;\r\n\r\n    private String cardNumber;\r\n\r\n    private String cardType;\r\n\r\n    private int totalLimit;\r\n\r\n    private int amountUsed;\r\n\r\n    private int availableAmount;\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/cards/src/main/java/com/microsevicesbank/card/model/Card.java b/cards/src/main/java/com/microsevicesbank/card/model/Card.java
+--- a/cards/src/main/java/com/microsevicesbank/card/model/Card.java	
++++ b/cards/src/main/java/com/microsevicesbank/card/model/Card.java	
+@@ -1,9 +1,6 @@
+ package com.microsevicesbank.card.model;
+ 
+-import jakarta.persistence.Entity;
+-import jakarta.persistence.GeneratedValue;
+-import jakarta.persistence.GenerationType;
+-import jakarta.persistence.Id;
++import jakarta.persistence.*;
+ import lombok.*;
+ 
+ @Entity
+Index: accounts/pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project xmlns=\"http://maven.apache.org/POM/4.0.0\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\r\n\txsi:schemaLocation=\"http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd\">\r\n\t<modelVersion>4.0.0</modelVersion>\r\n\t<parent>\r\n\t\t<groupId>org.springframework.boot</groupId>\r\n\t\t<artifactId>spring-boot-starter-parent</artifactId>\r\n\t\t<version>3.3.4</version>\r\n\t\t<relativePath/> <!-- lookup parent from repository -->\r\n\t</parent>\r\n\t<groupId>com.microservicesbank</groupId>\r\n\t<artifactId>accounts</artifactId>\r\n\t<version>3</version>\r\n\t<packaging>jar</packaging>\r\n\t<name>accounts</name>\r\n\t<description>Demo project for Spring Boot</description>\r\n\t<url/>\r\n\t<licenses>\r\n\t\t<license/>\r\n\t</licenses>\r\n\t<developers>\r\n\t\t<developer/>\r\n\t</developers>\r\n\t<scm>\r\n\t\t<connection/>\r\n\t\t<developerConnection/>\r\n\t\t<tag/>\r\n\t\t<url/>\r\n\t</scm>\r\n\t<properties>\r\n\t\t<java.version>21</java.version>\r\n\t\t<spring-cloud.version>2023.0.3</spring-cloud.version>\r\n\t</properties>\r\n\t<dependencies>\r\n\t\t<dependency>\r\n\t\t\t<groupId>org.springframework.boot</groupId>\r\n\t\t\t<artifactId>spring-boot-starter-actuator</artifactId>\r\n\t\t</dependency>\r\n\t\t<dependency>\r\n\t\t\t<groupId>org.springframework.boot</groupId>\r\n\t\t\t<artifactId>spring-boot-starter-data-jpa</artifactId>\r\n\t\t</dependency>\r\n\t\t<dependency>\r\n\t\t\t<groupId>org.springframework.boot</groupId>\r\n\t\t\t<artifactId>spring-boot-starter-validation</artifactId>\r\n\t\t</dependency>\r\n\t\t<dependency>\r\n\t\t\t<groupId>org.springframework.boot</groupId>\r\n\t\t\t<artifactId>spring-boot-starter-web</artifactId>\r\n\t\t</dependency>\r\n\t\t<dependency>\r\n\t\t\t<groupId>org.junit.platform</groupId>\r\n\t\t\t<artifactId>junit-platform-suite</artifactId>\r\n\t\t\t<scope>test</scope>\r\n\t\t</dependency>\r\n\t\t<dependency>\r\n\t\t\t<groupId>org.springframework.boot</groupId>\r\n\t\t\t<artifactId>spring-boot-devtools</artifactId>\r\n\t\t\t<scope>runtime</scope>\r\n\t\t\t<optional>true</optional>\r\n\t\t</dependency>\r\n\t\t<dependency>\r\n\t\t\t<groupId>com.h2database</groupId>\r\n\t\t\t<artifactId>h2</artifactId>\r\n\t\t\t<scope>runtime</scope>\r\n\t\t</dependency>\r\n\t\t<dependency>\r\n\t\t\t<groupId>com.mysql</groupId>\r\n\t\t\t<artifactId>mysql-connector-j</artifactId>\r\n\t\t</dependency>\r\n\t\t<dependency>\r\n\t\t\t<groupId>org.springdoc</groupId>\r\n\t\t\t<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>\r\n\t\t\t<version>2.6.0</version>\r\n\t\t</dependency>\r\n\t\t<dependency>\r\n\t\t\t<groupId>org.projectlombok</groupId>\r\n\t\t\t<artifactId>lombok</artifactId>\r\n\t\t\t<scope>provided</scope>\r\n\t\t</dependency>\r\n\t\t<dependency>\r\n\t\t\t<groupId>org.springframework.cloud</groupId>\r\n\t\t\t<artifactId>spring-cloud-starter-config</artifactId>\r\n\t\t</dependency>\r\n\t\t<dependency>\r\n\t\t\t<groupId>org.springframework.boot</groupId>\r\n\t\t\t<artifactId>spring-boot-starter-test</artifactId>\r\n\t\t\t<scope>test</scope>\r\n\t\t</dependency>\r\n\t</dependencies>\r\n\t<dependencyManagement>\r\n\t\t<dependencies>\r\n\t\t\t<dependency>\r\n\t\t\t\t<groupId>org.springframework.cloud</groupId>\r\n\t\t\t\t<artifactId>spring-cloud-dependencies</artifactId>\r\n\t\t\t\t<version>${spring-cloud.version}</version>\r\n\t\t\t\t<type>pom</type>\r\n\t\t\t\t<scope>import</scope>\r\n\t\t\t</dependency>\r\n\t\t</dependencies>\r\n\t</dependencyManagement>\r\n\r\n\t<build>\r\n\t\t<plugins>\r\n\t\t\t<plugin>\r\n\t\t\t\t<groupId>org.springframework.boot</groupId>\r\n\t\t\t\t<artifactId>spring-boot-maven-plugin</artifactId>\r\n\t\t\t\t<configuration>\r\n\t\t\t\t\t<excludes>\r\n\t\t\t\t\t\t<exclude>\r\n\t\t\t\t\t\t\t<groupId>org.projectlombok</groupId>\r\n\t\t\t\t\t\t\t<artifactId>lombok</artifactId>\r\n\t\t\t\t\t\t</exclude>\r\n\t\t\t\t\t</excludes>\r\n\t\t\t\t</configuration>\r\n\t\t\t</plugin>\r\n\t\t\t<plugin>\r\n\t\t\t\t<groupId>com.google.cloud.tools</groupId>\r\n\t\t\t\t<artifactId>jib-maven-plugin</artifactId>\r\n\t\t\t\t<version>3.4.3</version>\r\n\t\t\t\t<configuration>\r\n\t\t\t\t\t<to>\r\n\t\t\t\t\t\t<image>akuchera/${project.artifactId}:${project.version}</image>\r\n\t\t\t\t\t</to>\r\n\t\t\t\t</configuration>\r\n\t\t\t</plugin>\r\n\t\t</plugins>\r\n\t</build>\r\n\r\n</project>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/accounts/pom.xml b/accounts/pom.xml
+--- a/accounts/pom.xml	
++++ b/accounts/pom.xml	
+@@ -10,7 +10,7 @@
+ 	</parent>
+ 	<groupId>com.microservicesbank</groupId>
+ 	<artifactId>accounts</artifactId>
+-	<version>3</version>
++	<version>4</version>
+ 	<packaging>jar</packaging>
+ 	<name>accounts</name>
+ 	<description>Demo project for Spring Boot</description>
+Index: accounts/src/main/resources/application-test.yml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>logging:\r\n  pattern:\r\n    console: \"${LOGGER_PATTERN:%green(%d{HH:mm:ss.SSS}) %blue(%-5level) %red([%thread]) %yellow(%logger{15}) - %msg%n}}\"\r\n\r\nspring:\r\n  datasource:\r\n    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE\r\n    driverClassName: org.h2.Driver\r\n    username: sa\r\n    password:\r\n    initialization-mode: always\r\n  h2:\r\n    console:\r\n      enabled: true\r\n  jpa:\r\n    hibernate:\r\n      ddl-auto: create-drop\r\n    show-sql: true\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/accounts/src/main/resources/application-test.yml b/accounts/src/main/resources/application-test.yml
+--- a/accounts/src/main/resources/application-test.yml	
++++ b/accounts/src/main/resources/application-test.yml	
+@@ -7,7 +7,7 @@
+     url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+     driverClassName: org.h2.Driver
+     username: sa
+-    password:
++    password: ''
+     initialization-mode: always
+   h2:
+     console:

@@ -18,15 +18,34 @@ spring:
       mode: always
   config:
     import: optional:configserver:http://localhost:8071/
-  #these are default values, so it's not necessary to specify them
-  rabbitmq:
-    host: localhost
-    port: 5672
-    username: guest
-    password: guest
 
 management:
   endpoints:
     web:
       exposure:
         include: '*'
+  endpoint:
+    shutdown:
+      enabled: true
+  info:
+    env:
+      enabled: true #to enable info details for an actuator
+
+endpoints:
+  shutdown:
+    enabled: true
+
+eureka:
+  instance:
+    preferIpAddress: true #register with ip address but not with hostname because there is not any DNS mappings provided
+  client:
+    fetchRegistry: true #fetch registered services
+    registerWithEureka: true
+    serviceUrl:
+      defaultZone: http://localhost:8070/eureka/
+
+info:
+  app:
+    name: loans
+    description: Microservicesbank Loans microservice
+    version: 4

@@ -64,6 +64,9 @@ public class CardControllerTest {
     @Test
     public void createCardSuccessTest() throws Exception {
 
+        if (cardService.fetchCard(publicCard.getMobileNumber()) != null)
+            cardService.deleteCard(publicCard.getMobileNumber());
+
         mockMvc.perform(post("/api/createCard")
                                 .param("mobileNumber", publicCard.getMobileNumber()))
                .andExpect(status().isCreated())
@@ -97,6 +100,9 @@ public class CardControllerTest {
     @Test
     public void fetchCardDetailsSuccessTest() throws Exception {
 
+        if (cardService.fetchCard(publicCard.getMobileNumber()) != null)
+            cardService.deleteCard(publicCard.getMobileNumber());
+
         cardService.createCard(publicCard.getMobileNumber());
         CardDTO fetchedCard = cardService.fetchCard(publicCard.getMobileNumber());
 
@@ -126,6 +132,9 @@ public class CardControllerTest {
 
     @Test
     public void updateCardSuccessTest() throws Exception {
+
+        if (cardService.fetchCard(publicCard.getMobileNumber()) != null)
+            cardService.deleteCard(publicCard.getMobileNumber());
 
         cardService.createCard(publicCard.getMobileNumber());
         publicCard = cardService.fetchCard(publicCard.getMobileNumber());
@@ -181,8 +190,8 @@ public class CardControllerTest {
 
     @Test
     public void deleteCardSuccessTest() throws Exception {
-
-        cardService.createCard(publicCard.getMobileNumber());
+        if (cardService.fetchCard(publicCard.getMobileNumber()) == null)
+            cardService.createCard(publicCard.getMobileNumber());
 
         assertDoesNotThrow(() -> cardService.fetchCard(publicCard.getMobileNumber()));
 

@@ -1,54 +1,62 @@
 services:
-  rabbit:
-    image: rabbitmq:4.0-management
-    hostname: rabbitmq
+  eurekaserver:
+    image: akuchera/eurekaserver:4
+    container_name: eurekaserver-ms
     ports:
-      - "5672:5672"
-      - "15672:15672"
+      - "8070:8070"
     healthcheck:
-      test: rabbitmq-diagnostics check_port_connectivity
+      test: "curl --fail http://eurekaserver:8070/actuator/health/readiness | grep UP || exit 1"
       interval: 10s
       timeout: 5s
       retries: 10
       start_period: 10s
+    depends_on:
+      configserver:
+        condition: service_healthy
     extends:
       file: common-config.yml
-      service: network-deploy-service
+      service: microservice-configserver-config
   accounts:
-    image: akuchera/accounts:3
+    image: akuchera/accounts:4
     container_name: accounts-ms
     ports:
       - "8080:8080"
     depends_on:
       configserver:
         condition: service_healthy #service_completed_successfully only applyable if there is a test for configserver health. Other way if no test provided is service_healthy
+      eurekaserver:
+        condition: service_healthy
     extends:
       file: common-config.yml
-      service: microservice-configserver-config
+      service: microservice-eurekaserver-config
   cards:
-    image: akuchera/cards:3
+    image: akuchera/cards:4
     container_name: cards-ms
     ports:
       - "8090:8090"
     depends_on:
       configserver:
         condition: service_healthy #service_completed_successfully only applyable if there is a test for configserver health. Other way if no test provided is service_healthy
+      eurekaserver:
+        condition: service_healthy
     extends:
       file: common-config.yml
-      service: microservice-configserver-config
+      service: microservice-eurekaserver-config
   loans:
-    image: akuchera/loans:3
+    image: akuchera/loans:4
     container_name: loans-ms
     ports:
       - "9000:9000"
     depends_on:
       configserver:
         condition: service_healthy #service_completed_successfully only applyable if there is a test for configserver health. Other way if no test provided is service_healthy
+      eurekaserver:
+        condition: service_healthy
     extends:
       file: common-config.yml
-      service: microservice-configserver-config
+      service: microservice-eurekaserver-config
   configserver:
-    image: akuchera/configserver:3
+    image: akuchera/configserver:4
     container_name: configserver-ms
     ports:
       - "8071:8071"
