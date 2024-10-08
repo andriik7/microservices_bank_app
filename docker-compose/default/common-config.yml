@@ -11,7 +11,6 @@ services:
           memory: 700m
     environment:
       SPRING_PROFILES_ACTIVE: default
-      SPRING_RABBITMQ_HOST: rabbit
   microservice-configserver-config:
     extends:
       service: microservice-base-config
