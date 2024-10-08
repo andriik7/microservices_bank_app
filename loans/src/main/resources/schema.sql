@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS `loans` (
+CREATE TABLE IF NOT EXISTS `loan` (
   `loan_id` int NOT NULL AUTO_INCREMENT,
   `mobile_number` varchar(15) NOT NULL,
   `loan_number` varchar(100) NOT NULL,

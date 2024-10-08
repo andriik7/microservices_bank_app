@@ -7,7 +7,8 @@ import jakarta.persistence.Id;
 import lombok.*;
 
 @Entity
-@Getter @Setter @ToString @AllArgsConstructor @NoArgsConstructor
+@Getter @Setter @ToString
+@AllArgsConstructor @NoArgsConstructor
 public class Loan extends SuperEntity {
 
     @Id

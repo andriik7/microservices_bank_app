@@ -7,8 +7,6 @@ server:
 spring:
   application:
     name: loans
-#  profiles:
-#    active: prod
   datasource:
     url: jdbc:mysql://localhost:3308/loansdb
     username: root
@@ -21,6 +19,11 @@ spring:
   config:
     import: optional:configserver:http://localhost:8071/
   #these are default values, so it's not necessary to specify them
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
 
 management:
   endpoints:
