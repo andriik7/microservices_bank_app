@@ -1,4 +1,6 @@
 services:
+<<<<<<< HEAD
+=======
   eurekaserver:
     image: akuchera/eurekaserver:4
     container_name: eurekaserver-ms
@@ -16,6 +18,7 @@ services:
     extends:
       file: common-config.yml
       service: microservice-configserver-config
+>>>>>>> refs/heads/service_registry_feature
   accounts:
     image: akuchera/accounts:4
     container_name: accounts-ms
@@ -28,7 +31,7 @@ services:
         condition: service_healthy
     extends:
       file: common-config.yml
-      service: microservice-eurekaserver-config
+      service: microservice-eureka-config
   cards:
     image: akuchera/cards:4
     container_name: cards-ms
@@ -41,7 +44,7 @@ services:
         condition: service_healthy
     extends:
       file: common-config.yml
-      service: microservice-eurekaserver-config
+      service: microservice-eureka-config
   loans:
     image: akuchera/loans:4
     container_name: loans-ms
@@ -54,7 +57,7 @@ services:
         condition: service_healthy
     extends:
       file: common-config.yml
-      service: microservice-eurekaserver-config
+      service: microservice-eureka-config
   configserver:
     image: akuchera/configserver:4
     container_name: configserver-ms

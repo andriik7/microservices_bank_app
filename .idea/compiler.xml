@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="eurekaserver" />
+        <module name="configserver (1)" />
         <module name="cards" />
         <module name="accounts" />
         <module name="configserver" />
@@ -20,6 +21,7 @@
       <module name="accounts" options="-parameters" />
       <module name="cards" options="-parameters" />
       <module name="configserver" options="-parameters" />
+      <module name="configserver (1)" options="-parameters" />
       <module name="eurekaserver" options="-parameters" />
       <module name="loans" options="-parameters" />
     </option>
