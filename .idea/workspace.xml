@@ -4,8 +4,82 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2f272a15-b657-4e69-b58b-9c5039112b57" name="Changes" comment="Edit Docker Compose files to use different profiles. Also, make sure microservices don't start while other required services are down or unhealthy.">
+    <list default="true" id="2f272a15-b657-4e69-b58b-9c5039112b57" name="Changes" comment="Create gateway server MVP&#10;&#10;Configure pom.xml files updating versions. Create gatewayserver module with appropriate dependencies and application.yml config. Also I am connecting gateway server to the config server and eureka server to implement service discovery.">
+      <change afterPath="$PROJECT_DIR$/gatewayserver/src/main/java/com/microservicesbank/gatewayserver/filter/FilterUtility.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gatewayserver/src/main/java/com/microservicesbank/gatewayserver/filter/RequestTraceFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gatewayserver/src/main/java/com/microservicesbank/gatewayserver/filter/ResponseTraceFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/src/main/java/com/microservicesbank/accounts/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/src/main/java/com/microservicesbank/accounts/controller/CustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/src/main/java/com/microservicesbank/accounts/service/ICustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/src/main/java/com/microservicesbank/accounts/service/ICustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/src/main/java/com/microservicesbank/accounts/service/client/CardsFeignClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/src/main/java/com/microservicesbank/accounts/service/client/CardsFeignClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/src/main/java/com/microservicesbank/accounts/service/client/LoansFeignClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/src/main/java/com/microservicesbank/accounts/service/client/LoansFeignClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/src/main/java/com/microservicesbank/accounts/service/impl/CustomerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/src/main/java/com/microservicesbank/accounts/service/impl/CustomerServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/cards/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards/src/main/java/com/microsevicesbank/card/CardsApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/java/com/microservicesbank/cards/CardsApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards/src/main/java/com/microsevicesbank/card/audit/AuditAwareImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/java/com/microservicesbank/loans/audit/AuditAwareImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards/src/main/java/com/microsevicesbank/card/constants/CardConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/java/com/microservicesbank/cards/constants/CardConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards/src/main/java/com/microsevicesbank/card/controller/CardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/java/com/microservicesbank/cards/controller/CardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards/src/main/java/com/microsevicesbank/card/dto/CardDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/java/com/microservicesbank/cards/dto/CardDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards/src/main/java/com/microsevicesbank/card/dto/CardsContactInfoDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/java/com/microservicesbank/cards/dto/CardsContactInfoDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards/src/main/java/com/microsevicesbank/card/dto/ErrorResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/java/com/microservicesbank/loans/dto/ErrorResponseDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards/src/main/java/com/microsevicesbank/card/dto/ResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/java/com/microservicesbank/cards/dto/ResponseDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards/src/main/java/com/microsevicesbank/card/exception/CardAlreadyExistsException.java" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/java/com/microservicesbank/cards/exception/CardAlreadyExistsException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards/src/main/java/com/microsevicesbank/card/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/java/com/microservicesbank/cards/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards/src/main/java/com/microsevicesbank/card/exception/ResourceNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/java/com/microservicesbank/loans/exception/ResourceNotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards/src/main/java/com/microsevicesbank/card/mapper/CardMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/java/com/microservicesbank/cards/mapper/CardMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards/src/main/java/com/microsevicesbank/card/model/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/java/com/microservicesbank/cards/model/Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards/src/main/java/com/microsevicesbank/card/model/SuperEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/java/com/microservicesbank/loans/model/SuperEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards/src/main/java/com/microsevicesbank/card/repository/CardRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/java/com/microservicesbank/cards/repository/CardRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards/src/main/java/com/microsevicesbank/card/service/ICardService.java" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/java/com/microservicesbank/cards/service/ICardService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards/src/main/java/com/microsevicesbank/card/service/impl/CardServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/java/com/microservicesbank/cards/service/impl/CardServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards/src/test/java/microsevicesbank/card/CardControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/test/java/microsevicesbank/card/CardControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards/src/test/java/microsevicesbank/card/CardServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/test/java/microsevicesbank/card/CardServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gatewayserver/src/main/java/com/microservicesbank/gatewayserver/GatewayserverApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/gatewayserver/src/main/java/com/microservicesbank/gatewayserver/GatewayserverApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gatewayserver/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gatewayserver/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/loans/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/src/main/java/com/microsevicesbank/loan/LoansApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/java/com/microservicesbank/loans/LoansApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/src/main/java/com/microsevicesbank/loan/audit/AuditAwareImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/java/com/microservicesbank/cards/audit/AuditAwareImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/src/main/java/com/microsevicesbank/loan/constants/LoanConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/java/com/microservicesbank/loans/constants/LoanConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/src/main/java/com/microsevicesbank/loan/controller/LoanController.java" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/java/com/microservicesbank/loans/controller/LoanController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/src/main/java/com/microsevicesbank/loan/dto/ErrorResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/java/com/microservicesbank/cards/dto/ErrorResponseDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/src/main/java/com/microsevicesbank/loan/dto/LoanDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/java/com/microservicesbank/loans/dto/LoanDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/src/main/java/com/microsevicesbank/loan/dto/LoansContactInfoDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/java/com/microservicesbank/loans/dto/LoansContactInfoDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/src/main/java/com/microsevicesbank/loan/dto/ResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/java/com/microservicesbank/loans/dto/ResponseDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/src/main/java/com/microsevicesbank/loan/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/java/com/microservicesbank/loans/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/src/main/java/com/microsevicesbank/loan/exception/LoanAlreadyExistsException.java" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/java/com/microservicesbank/loans/exception/LoanAlreadyExistsException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/src/main/java/com/microsevicesbank/loan/exception/ResourceNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/java/com/microservicesbank/cards/exception/ResourceNotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/src/main/java/com/microsevicesbank/loan/mapper/LoanMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/java/com/microservicesbank/loans/mapper/LoanMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/src/main/java/com/microsevicesbank/loan/model/Loan.java" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/java/com/microservicesbank/loans/model/Loan.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/src/main/java/com/microsevicesbank/loan/model/SuperEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/java/com/microservicesbank/cards/model/SuperEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/src/main/java/com/microsevicesbank/loan/repository/LoanRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/java/com/microservicesbank/loans/repository/LoanRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/src/main/java/com/microsevicesbank/loan/service/ILoanService.java" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/java/com/microservicesbank/loans/service/ILoanService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/src/main/java/com/microsevicesbank/loan/service/impl/LoanServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/java/com/microservicesbank/loans/service/impl/LoanServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/src/test/java/microsevicesbank/loan/LoanControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/test/java/microsevicesbank/loan/LoanControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/src/test/java/microsevicesbank/loan/LoanServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/test/java/microsevicesbank/loan/LoanServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/loans/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/classes/com/microsevicesbank/loan/LoansApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/classes/com/microsevicesbank/loan/audit/AuditAwareImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/classes/com/microsevicesbank/loan/constants/LoanConstants.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/classes/com/microsevicesbank/loan/controller/LoanController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/classes/com/microsevicesbank/loan/dto/ErrorResponseDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/classes/com/microsevicesbank/loan/dto/LoanDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/classes/com/microsevicesbank/loan/dto/LoansContactInfoDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/classes/com/microsevicesbank/loan/dto/ResponseDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/classes/com/microsevicesbank/loan/exception/GlobalExceptionHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/classes/com/microsevicesbank/loan/exception/LoanAlreadyExistsException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/classes/com/microsevicesbank/loan/exception/ResourceNotFoundException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/classes/com/microsevicesbank/loan/mapper/LoanMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/classes/com/microsevicesbank/loan/model/Loan.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/classes/com/microsevicesbank/loan/model/SuperEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/classes/com/microsevicesbank/loan/repository/LoanRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/classes/com/microsevicesbank/loan/service/ILoanService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/classes/com/microsevicesbank/loan/service/impl/LoanServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/test-classes/microsevicesbank/loan/LoanControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/loans/target/test-classes/microsevicesbank/loan/LoanControllerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/test-classes/microsevicesbank/loan/LoanServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/loans/target/test-classes/microsevicesbank/loan/LoanServiceTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +138,9 @@
     "Application.CardsApplication.executor": "Run",
     "Application.ConfigserverApplication.executor": "Run",
     "Application.EurekaserverApplication.executor": "Run",
+    "Application.GatewayserverApplication.executor": "Run",
     "Application.LoansApplication.executor": "Run",
+    "Application.com.microservicesbank.loans.LoansApplication.executor": "Run",
     "Docker.default: Compose Deployment.executor": "Run",
     "Docker.docker-compose.yml.accounts: Compose Deployment.executor": "Run",
     "Docker.docker-compose.yml.cards: Compose Deployment.executor": "Run",
@@ -130,12 +206,39 @@
       <recent name="C:\ANDREW\Study\Pogramming\JAVA\Spring\Microservices\EazyBytes_Course\bank_app\docker-compose" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.microservicesbank.gatewayserver.filter" />
       <recent name="com.microservicesbank.accounts.dto" />
       <recent name="microsevicesbank.card" />
       <recent name="com.microservicesbank.accounts" />
     </key>
   </component>
-  <component name="RunManager" selected="Docker.default: Compose Deployment">
+  <component name="RunManager" selected="Application.GatewayserverApplication">
+    <configuration name="AccountsApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.microservicesbank.accounts.AccountsApplication" />
+      <module name="accounts" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.microservicesbank.accounts.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CardsApplication" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="com.microservicesbank.cards.CardsApplication" />
+      <module name="cards" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.microsevicesbank.cards.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="EurekaserverApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.microservicesbank.eurekaserver.EurekaserverApplication" />
       <module name="eurekaserver" />
@@ -149,67 +252,51 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="GatewayserverApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.microservicesbank.gatewayserver.GatewayserverApplication" />
+      <module name="gatewayserver" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.microservicesbank.gatewayserver.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LoansApplication" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="com.microservicesbank.loans.LoansApplication" />
+      <module name="loans" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.microsevicesbank.loans.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
       <deployment type="docker-compose.yml">
         <settings />
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="default: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="sourceFilePath" value="docker-compose/default/docker-compose.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
-    <configuration name="prod: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="sourceFilePath" value="docker-compose/prod/docker-compose.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
-    <configuration name="prod.configserver: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="services">
-            <list>
-              <option value="configserver" />
-            </list>
-          </option>
-          <option name="sourceFilePath" value="docker-compose/prod/docker-compose.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
-    <configuration name="prod.eurekaserver: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="services">
-            <list>
-              <option value="eurekaserver" />
-            </list>
-          </option>
-          <option name="sourceFilePath" value="docker-compose/prod/docker-compose.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
     <list>
+      <item itemvalue="Application.AccountsApplication" />
+      <item itemvalue="Application.CardsApplication" />
+      <item itemvalue="Application.GatewayserverApplication" />
+      <item itemvalue="Application.LoansApplication" />
       <item itemvalue="Application.EurekaserverApplication" />
-      <item itemvalue="Docker.default: Compose Deployment" />
-      <item itemvalue="Docker.prod.configserver: Compose Deployment" />
-      <item itemvalue="Docker.prod.eurekaserver: Compose Deployment" />
-      <item itemvalue="Docker.prod: Compose Deployment" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Docker.prod.eurekaserver: Compose Deployment" />
-        <item itemvalue="Docker.prod.configserver: Compose Deployment" />
-        <item itemvalue="Docker.prod: Compose Deployment" />
-        <item itemvalue="Docker.default: Compose Deployment" />
+        <item itemvalue="Application.GatewayserverApplication" />
+        <item itemvalue="Application.CardsApplication" />
+        <item itemvalue="Application.LoansApplication" />
+        <item itemvalue="Application.AccountsApplication" />
         <item itemvalue="Application.EurekaserverApplication" />
       </list>
     </recent_temporary>
@@ -279,7 +366,23 @@
       <option name="project" value="LOCAL" />
       <updated>1728131449779</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Create gateway server MVP&#10;&#10;Configure pom.xml files updating versions. Create gatewayserver module with appropriate dependencies and application.yml config. Also I am connecting gateway server to the config server and eureka server to implement service discovery.">
+      <option name="closed" value="true" />
+      <created>1728492861055</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1728492861055</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Create gateway server MVP&#10;&#10;Configure pom.xml files updating versions. Create gatewayserver module with appropriate dependencies and application.yml config. Also I am connecting gateway server to the config server and eureka server to implement service discovery.">
+      <option name="closed" value="true" />
+      <created>1728493179031</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1728493179031</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -303,6 +406,7 @@
     <MESSAGE value="Update config server and microservices to support instant updates of config files connected through GitHub. Here are implemented 2 ways: &#10;1. Use actuator/refresh endpoint for each microservice&#10;2. Use actuator/busrefresh endpoint that uses RabbitMQ to update all the configurations at once." />
     <MESSAGE value="Add dependency to the config server to support /monitor endpoint that will be invoked after every push to the repo  of configurations. So after each push configurations on config server will be refreshed." />
     <MESSAGE value="Edit Docker Compose files to use different profiles. Also, make sure microservices don't start while other required services are down or unhealthy." />
-    <option name="LAST_COMMIT_MESSAGE" value="Edit Docker Compose files to use different profiles. Also, make sure microservices don't start while other required services are down or unhealthy." />
+    <MESSAGE value="Create gateway server MVP&#10;&#10;Configure pom.xml files updating versions. Create gatewayserver module with appropriate dependencies and application.yml config. Also I am connecting gateway server to the config server and eureka server to implement service discovery." />
+    <option name="LAST_COMMIT_MESSAGE" value="Create gateway server MVP&#10;&#10;Configure pom.xml files updating versions. Create gatewayserver module with appropriate dependencies and application.yml config. Also I am connecting gateway server to the config server and eureka server to implement service discovery." />
   </component>
 </project>

@@ -1,11 +1,11 @@
 package microsevicesbank.card;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.microsevicesbank.card.CardsApplication;
-import com.microsevicesbank.card.constants.CardConstants;
-import com.microsevicesbank.card.dto.CardDTO;
-import com.microsevicesbank.card.exception.ResourceNotFoundException;
-import com.microsevicesbank.card.service.ICardService;
+import com.microservicesbank.cards.CardsApplication;
+import com.microservicesbank.cards.constants.CardConstants;
+import com.microservicesbank.cards.dto.CardDTO;
+import com.microservicesbank.cards.exception.ResourceNotFoundException;
+import com.microservicesbank.cards.service.ICardService;
 import jakarta.transaction.Transactional;
 import microsevicesbank.card.display.CamelCaseDisplay;
 import org.junit.jupiter.api.BeforeEach;

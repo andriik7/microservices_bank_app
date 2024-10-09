@@ -1,4 +1,8 @@
 logging:
+  level:
+    com:
+      microservicesbank:
+        gatewayserver: DEBUG
   pattern:
     console: "${LOGGER_PATTERN:%red(%d{HH:mm:ss.SSS}) %blue(%-5level) %yellow([%thread]) %green(%logger{15}) - %msg%n}}"
 
