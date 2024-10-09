@@ -64,13 +64,8 @@
 			<optional>true</optional>
 		</dependency>
 		<dependency>
-<<<<<<< HEAD
 			<groupId>com.mysql</groupId>
 			<artifactId>mysql-connector-j</artifactId>
-=======
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-			<scope>runtime</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
@@ -79,7 +74,6 @@
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-openfeign</artifactId>
->>>>>>> refs/heads/service_registry_feature
 		</dependency>
 		<dependency>
 			<groupId>org.springdoc</groupId>
