@@ -63,8 +63,11 @@ public class CardController {
             )
     })
     @PostMapping("/createCard")
-    public ResponseEntity<ResponseDTO> createCard(@RequestParam @Pattern(regexp = "^\\d{10}$", message = "Mobile number must be 10 digits") String mobileNumber) {
+    public ResponseEntity<ResponseDTO> createCard(@RequestHeader("microbank-correlation-id") String correlationId,
+                                                  @RequestParam @Pattern(regexp = "^\\d{10}$",
+                                                          message = "Mobile number must be 10 digits") String mobileNumber) {
 
+        logger.debug("microbank-correlation-id found: {}", correlationId);
         cardService.createCard(mobileNumber);
 
         return ResponseEntity
@@ -141,8 +144,10 @@ public class CardController {
             )
     })
     @PutMapping("/updateCard")
-    public ResponseEntity<ResponseDTO> updateCardDetails(@Valid @RequestBody CardDTO cardDTO) {
+    public ResponseEntity<ResponseDTO> updateCardDetails(@RequestHeader("microbank-correlation-id") String correlationId,
+                                                         @Valid @RequestBody CardDTO cardDTO) {
 
+        logger.debug("microbank-correlation-id found: {}", correlationId);
         boolean isUpdated = cardService.updateCard(cardDTO);
         if (isUpdated) {
             return ResponseEntity.status(HttpStatus.OK)
@@ -184,9 +189,11 @@ public class CardController {
             )
     })
     @DeleteMapping("/deleteCard")
-    public ResponseEntity<ResponseDTO> deleteCardDetails(@RequestParam @Pattern(regexp = "^\\d{10}$",
-            message = "Mobile number must be 10 digits") String mobileNumber) {
+    public ResponseEntity<ResponseDTO> deleteCardDetails(@RequestHeader("microbank-correlation-id") String correlationId,
+                                                         @RequestParam @Pattern(regexp = "^\\d{10}$",
+                                                                 message = "Mobile number must be 10 digits") String mobileNumber) {
 
+        logger.debug("microbank-correlation-id found: {}", correlationId);
         boolean isDeleted = cardService.deleteCard(mobileNumber);
 
         if (isDeleted) {
@@ -198,8 +205,9 @@ public class CardController {
     }
 
     @GetMapping("/contactDetails")
-    public ResponseEntity<CardsContactInfoDTO> getContactInfo() {
+    public ResponseEntity<CardsContactInfoDTO> getContactInfo(@RequestHeader("microbank-correlation-id") String correlationId) {
 
+        logger.debug("microbank-correlation-id found: {}", correlationId);
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .body(cardsContactInfoDTO);

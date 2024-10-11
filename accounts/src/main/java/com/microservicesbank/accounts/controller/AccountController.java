@@ -15,6 +15,8 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Pattern;
 import lombok.AllArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -30,6 +32,8 @@ import org.springframework.web.bind.annotation.*;
 @AllArgsConstructor
 @Validated
 public class AccountController {
+
+    private static final Logger logger = LoggerFactory.getLogger(AccountController.class);
 
     private IAccountService accountService;
 
@@ -53,8 +57,10 @@ public class AccountController {
             )
     })
     @PostMapping("/createAccount")
-    public ResponseEntity<ResponseDTO> createAccount(@Valid @RequestBody CustomerDTO customerDTO) {
+    public ResponseEntity<ResponseDTO> createAccount(@RequestHeader("microbank-correlation-id") String correlationId,
+                                                     @Valid @RequestBody CustomerDTO customerDTO) {
 
+        logger.debug("microbank-correlation-id found: {}", correlationId);
         accountService.createAccount(customerDTO);
 
         return ResponseEntity.status(HttpStatus.CREATED)
@@ -86,8 +92,11 @@ public class AccountController {
             )
     })
     @GetMapping("/fetchAccount")
-    public ResponseEntity<CustomerDTO> fetchAccountDetails(@RequestParam @Pattern(regexp = "^\\d{10}$", message = "Mobile number must be 10 digits") String mobileNumber) {
+    public ResponseEntity<CustomerDTO> fetchAccountDetails(@RequestHeader("microbank-correlation-id") String correlationId,
+                                                           @RequestParam @Pattern(regexp = "^\\d{10}$",
+                                                                   message = "Mobile number must be 10 digits") String mobileNumber) {
 
+        logger.debug("microbank-correlation-id found: {}", correlationId);
         CustomerDTO customerDTO = accountService.fetchAccount(mobileNumber);
 
         return ResponseEntity.status(HttpStatus.OK).body(customerDTO);
@@ -125,8 +134,10 @@ public class AccountController {
             )
     })
     @PutMapping("/updateAccount")
-    public ResponseEntity<ResponseDTO> updateAccountDetails(@Valid @RequestBody CustomerDTO customerDTO) {
+    public ResponseEntity<ResponseDTO> updateAccountDetails(@RequestHeader("microbank-correlation-id") String correlationId,
+                                                            @Valid @RequestBody CustomerDTO customerDTO) {
 
+        logger.debug("microbank-correlation-id found: {}", correlationId);
         boolean isUpdated = accountService.updateAccount(customerDTO);
         if (isUpdated) {
             return ResponseEntity.status(HttpStatus.OK)
@@ -169,7 +180,11 @@ public class AccountController {
             )
     })
     @DeleteMapping("/deleteAccount")
-    public ResponseEntity<ResponseDTO> deleteAccount(@RequestParam @Pattern(regexp = "^\\d{10}$", message = "Mobile number must be 10 digits") String mobileNumber) {
+    public ResponseEntity<ResponseDTO> deleteAccount(@RequestHeader("microbank-correlation-id") String correlationId,
+                                                     @RequestParam @Pattern(regexp = "^\\d{10}$",
+                                                             message = "Mobile number must be 10 digits") String mobileNumber) {
+
+        logger.debug("microbank-correlation-id found: {}", correlationId);
         if (accountService.deleteAccount(mobileNumber)) {
             return ResponseEntity.status(HttpStatus.OK)
                                  .body(new ResponseDTO(AccountConstants.STATUS_200, AccountConstants.MESSAGE_200));
@@ -179,8 +194,9 @@ public class AccountController {
     }
 
     @GetMapping("/contactDetails")
-    public ResponseEntity<AccountsContactInfoDTO> getContactInfo() {
+    public ResponseEntity<AccountsContactInfoDTO> getContactInfo(@RequestHeader("microbank-correlation-id") String correlationId) {
 
+        logger.debug("microbank-correlation-id found: {}", correlationId);
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .body(accountsContactInfoDTO);

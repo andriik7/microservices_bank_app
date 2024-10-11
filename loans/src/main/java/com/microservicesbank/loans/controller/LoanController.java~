@@ -64,11 +64,9 @@ public class LoanController {
             )
     })
     @PostMapping("/createLoan")
-    public ResponseEntity<ResponseDTO> createLoan(@RequestHeader("microbank-correlation-id") String correlationId,
-                                                  @RequestParam @Pattern(regexp = "^\\d{10}$",
-                                                          message = "Mobile number must be 10 digits") String mobileNumber) {
+    public ResponseEntity<ResponseDTO> createLoan(@RequestParam @Pattern(regexp = "^\\d{10}$",
+            message = "Mobile number must be 10 digits") String mobileNumber) {
 
-        logger.debug("microbank-correlation-id found: {}", correlationId);
         loanService.createLoan(mobileNumber);
 
         return ResponseEntity
@@ -143,10 +141,8 @@ public class LoanController {
             )
     })
     @PutMapping("/updateLoan")
-    public ResponseEntity<ResponseDTO> updateLoanDetails(@RequestHeader("microbank-correlation-id") String correlationId,
-                                                         @Valid @RequestBody LoanDTO loanDTO) {
+    public ResponseEntity<ResponseDTO> updateLoanDetails(@Valid @RequestBody LoanDTO loanDTO) {
 
-        logger.debug("microbank-correlation-id found: {}", correlationId);
         boolean isUpdated = loanService.updateLoan(loanDTO);
 
         if (isUpdated) {
@@ -191,11 +187,9 @@ public class LoanController {
             )
     })
     @DeleteMapping("/deleteLoan")
-    public ResponseEntity<ResponseDTO> deleteLoanDetails(@RequestHeader("microbank-correlation-id") String correlationId,
-                                                         @RequestParam @Pattern(regexp = "^\\d{10}$",
-                                                                 message = "Mobile number must be 10 digits") String mobileNumber) {
+    public ResponseEntity<ResponseDTO> deleteLoanDetails(@RequestParam @Pattern(regexp = "^\\d{10}$",
+            message = "Mobile number must be 10 digits") String mobileNumber) {
 
-        logger.debug("microbank-correlation-id found: {}", correlationId);
         boolean isDeleted = loanService.deleteLoan(mobileNumber);
 
         if (isDeleted) {
@@ -209,9 +203,8 @@ public class LoanController {
     }
 
     @GetMapping("/contactDetails")
-    public ResponseEntity<LoansContactInfoDTO> getContactInfo(@RequestHeader("microbank-correlation-id") String correlationId) {
+    public ResponseEntity<LoansContactInfoDTO> getContactInfo() {
 
-        logger.debug("microbank-correlation-id found: {}", correlationId);
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .body(loansContactInfoDTO);

@@ -5,81 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2f272a15-b657-4e69-b58b-9c5039112b57" name="Changes" comment="Create gateway server MVP&#10;&#10;Configure pom.xml files updating versions. Create gatewayserver module with appropriate dependencies and application.yml config. Also I am connecting gateway server to the config server and eureka server to implement service discovery.">
-      <change afterPath="$PROJECT_DIR$/gatewayserver/src/main/java/com/microservicesbank/gatewayserver/filter/FilterUtility.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gatewayserver/src/main/java/com/microservicesbank/gatewayserver/filter/RequestTraceFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gatewayserver/src/main/java/com/microservicesbank/gatewayserver/filter/ResponseTraceFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/src/main/java/com/microservicesbank/accounts/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/src/main/java/com/microservicesbank/accounts/controller/CustomerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/src/main/java/com/microservicesbank/accounts/service/ICustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/src/main/java/com/microservicesbank/accounts/service/ICustomerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/src/main/java/com/microservicesbank/accounts/service/client/CardsFeignClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/src/main/java/com/microservicesbank/accounts/service/client/CardsFeignClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/src/main/java/com/microservicesbank/accounts/service/client/LoansFeignClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/src/main/java/com/microservicesbank/accounts/service/client/LoansFeignClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/src/main/java/com/microservicesbank/accounts/service/impl/CustomerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/src/main/java/com/microservicesbank/accounts/service/impl/CustomerServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cards/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/cards/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cards/src/main/java/com/microsevicesbank/card/CardsApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/java/com/microservicesbank/cards/CardsApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cards/src/main/java/com/microsevicesbank/card/audit/AuditAwareImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/java/com/microservicesbank/loans/audit/AuditAwareImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cards/src/main/java/com/microsevicesbank/card/constants/CardConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/java/com/microservicesbank/cards/constants/CardConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cards/src/main/java/com/microsevicesbank/card/controller/CardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/java/com/microservicesbank/cards/controller/CardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cards/src/main/java/com/microsevicesbank/card/dto/CardDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/java/com/microservicesbank/cards/dto/CardDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cards/src/main/java/com/microsevicesbank/card/dto/CardsContactInfoDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/java/com/microservicesbank/cards/dto/CardsContactInfoDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cards/src/main/java/com/microsevicesbank/card/dto/ErrorResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/java/com/microservicesbank/loans/dto/ErrorResponseDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cards/src/main/java/com/microsevicesbank/card/dto/ResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/java/com/microservicesbank/cards/dto/ResponseDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cards/src/main/java/com/microsevicesbank/card/exception/CardAlreadyExistsException.java" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/java/com/microservicesbank/cards/exception/CardAlreadyExistsException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cards/src/main/java/com/microsevicesbank/card/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/java/com/microservicesbank/cards/exception/GlobalExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cards/src/main/java/com/microsevicesbank/card/exception/ResourceNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/java/com/microservicesbank/loans/exception/ResourceNotFoundException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cards/src/main/java/com/microsevicesbank/card/mapper/CardMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/java/com/microservicesbank/cards/mapper/CardMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cards/src/main/java/com/microsevicesbank/card/model/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/java/com/microservicesbank/cards/model/Card.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cards/src/main/java/com/microsevicesbank/card/model/SuperEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/java/com/microservicesbank/loans/model/SuperEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cards/src/main/java/com/microsevicesbank/card/repository/CardRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/java/com/microservicesbank/cards/repository/CardRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cards/src/main/java/com/microsevicesbank/card/service/ICardService.java" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/java/com/microservicesbank/cards/service/ICardService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cards/src/main/java/com/microsevicesbank/card/service/impl/CardServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/java/com/microservicesbank/cards/service/impl/CardServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cards/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cards/src/test/java/microsevicesbank/card/CardControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/test/java/microsevicesbank/card/CardControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cards/src/test/java/microsevicesbank/card/CardServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/test/java/microsevicesbank/card/CardServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gatewayserver/src/main/java/com/microservicesbank/gatewayserver/GatewayserverApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/gatewayserver/src/main/java/com/microservicesbank/gatewayserver/GatewayserverApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gatewayserver/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gatewayserver/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/loans/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/src/main/java/com/microsevicesbank/loan/LoansApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/java/com/microservicesbank/loans/LoansApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/src/main/java/com/microsevicesbank/loan/audit/AuditAwareImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/java/com/microservicesbank/cards/audit/AuditAwareImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/src/main/java/com/microsevicesbank/loan/constants/LoanConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/java/com/microservicesbank/loans/constants/LoanConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/src/main/java/com/microsevicesbank/loan/controller/LoanController.java" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/java/com/microservicesbank/loans/controller/LoanController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/src/main/java/com/microsevicesbank/loan/dto/ErrorResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/java/com/microservicesbank/cards/dto/ErrorResponseDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/src/main/java/com/microsevicesbank/loan/dto/LoanDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/java/com/microservicesbank/loans/dto/LoanDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/src/main/java/com/microsevicesbank/loan/dto/LoansContactInfoDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/java/com/microservicesbank/loans/dto/LoansContactInfoDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/src/main/java/com/microsevicesbank/loan/dto/ResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/java/com/microservicesbank/loans/dto/ResponseDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/src/main/java/com/microsevicesbank/loan/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/java/com/microservicesbank/loans/exception/GlobalExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/src/main/java/com/microsevicesbank/loan/exception/LoanAlreadyExistsException.java" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/java/com/microservicesbank/loans/exception/LoanAlreadyExistsException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/src/main/java/com/microsevicesbank/loan/exception/ResourceNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/java/com/microservicesbank/cards/exception/ResourceNotFoundException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/src/main/java/com/microsevicesbank/loan/mapper/LoanMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/java/com/microservicesbank/loans/mapper/LoanMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/src/main/java/com/microsevicesbank/loan/model/Loan.java" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/java/com/microservicesbank/loans/model/Loan.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/src/main/java/com/microsevicesbank/loan/model/SuperEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/java/com/microservicesbank/cards/model/SuperEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/src/main/java/com/microsevicesbank/loan/repository/LoanRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/java/com/microservicesbank/loans/repository/LoanRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/src/main/java/com/microsevicesbank/loan/service/ILoanService.java" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/java/com/microservicesbank/loans/service/ILoanService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/src/main/java/com/microsevicesbank/loan/service/impl/LoanServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/java/com/microservicesbank/loans/service/impl/LoanServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/src/test/java/microsevicesbank/loan/LoanControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/test/java/microsevicesbank/loan/LoanControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/src/test/java/microsevicesbank/loan/LoanServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/test/java/microsevicesbank/loan/LoanServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/loans/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/classes/com/microsevicesbank/loan/LoansApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/classes/com/microsevicesbank/loan/audit/AuditAwareImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/classes/com/microsevicesbank/loan/constants/LoanConstants.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/classes/com/microsevicesbank/loan/controller/LoanController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/classes/com/microsevicesbank/loan/dto/ErrorResponseDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/classes/com/microsevicesbank/loan/dto/LoanDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/classes/com/microsevicesbank/loan/dto/LoansContactInfoDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/classes/com/microsevicesbank/loan/dto/ResponseDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/classes/com/microsevicesbank/loan/exception/GlobalExceptionHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/classes/com/microsevicesbank/loan/exception/LoanAlreadyExistsException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/classes/com/microsevicesbank/loan/exception/ResourceNotFoundException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/classes/com/microsevicesbank/loan/mapper/LoanMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/classes/com/microsevicesbank/loan/model/Loan.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/classes/com/microsevicesbank/loan/model/SuperEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/classes/com/microsevicesbank/loan/repository/LoanRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/classes/com/microsevicesbank/loan/service/ILoanService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/classes/com/microsevicesbank/loan/service/impl/LoanServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/test-classes/microsevicesbank/loan/LoanControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/loans/target/test-classes/microsevicesbank/loan/LoanControllerTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/test-classes/microsevicesbank/loan/LoanServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/loans/target/test-classes/microsevicesbank/loan/LoanServiceTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/src/main/java/com/microservicesbank/accounts/controller/AccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/src/main/java/com/microservicesbank/accounts/controller/AccountController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards/src/main/java/com/microservicesbank/cards/controller/CardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/java/com/microservicesbank/cards/controller/CardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/src/main/java/com/microservicesbank/loans/controller/LoanController.java" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/java/com/microservicesbank/loans/controller/LoanController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,67 +61,67 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.AccountsApplication.executor": "Run",
-    "Application.CardsApplication.executor": "Run",
-    "Application.ConfigserverApplication.executor": "Run",
-    "Application.EurekaserverApplication.executor": "Run",
-    "Application.GatewayserverApplication.executor": "Run",
-    "Application.LoansApplication.executor": "Run",
-    "Application.com.microservicesbank.loans.LoansApplication.executor": "Run",
-    "Docker.default: Compose Deployment.executor": "Run",
-    "Docker.docker-compose.yml.accounts: Compose Deployment.executor": "Run",
-    "Docker.docker-compose.yml.cards: Compose Deployment.executor": "Run",
-    "Docker.docker-compose.yml.loans: Compose Deployment.executor": "Run",
-    "Docker.docker-compose.yml: Compose Deployment.executor": "Run",
-    "Docker.prod.configserver: Compose Deployment.executor": "Run",
-    "Docker.prod.eurekaserver: Compose Deployment.executor": "Run",
-    "Docker.prod: Compose Deployment.executor": "Run",
-    "JUnit.AccountControllerTest.executor": "Run",
-    "JUnit.AccountControllerTest.fetchAccountDetailsTest.executor": "Run",
-    "JUnit.AccountServiceTest.executor": "Run",
-    "JUnit.All in accounts (1).executor": "Run",
-    "JUnit.All in accounts.executor": "Run",
-    "JUnit.All in cards.executor": "Run",
-    "JUnit.All in loans (1).executor": "Run",
-    "JUnit.All in loans.executor": "Run",
-    "JUnit.CardControllerTest.createCardPositiveRESTApiTest.executor": "Run",
-    "JUnit.CardControllerTest.createCardRESTApiTest.executor": "Run",
-    "JUnit.CardControllerTest.createCardRESTTest.executor": "Run",
-    "JUnit.CardControllerTest.createCardSuccessTest.executor": "Run",
-    "JUnit.CardControllerTest.executor": "Run",
-    "JUnit.CardControllerTest.fetchCardDetailsInvalidMobileNumberTest.executor": "Run",
-    "JUnit.CardControllerTest.fetchCardDetailsSuccessTest.executor": "Run",
-    "JUnit.CardControllerTest.fetchCardInvalidMobileNumberTest.executor": "Run",
-    "JUnit.CardControllerTest.testCreateCardInvalidMobileNumber.executor": "Run",
-    "JUnit.CardControllerTest.testCreateCardSuccess.executor": "Run",
-    "JUnit.CardControllerTest.updateCardInvalidMobileNumberTest.executor": "Run",
-    "JUnit.CardControllerTest.updateCardSuccessTest.executor": "Run",
-    "JUnit.CardControllerTest.сreateCardInvalidMobileNumberTest.executor": "Run",
-    "JUnit.CardServiceTest.deleteCardTest.executor": "Run",
-    "JUnit.CardServiceTest.executor": "Run",
-    "JUnit.CardServiceTest.testCreateCardMobileNumberIsNotValid.executor": "Run",
-    "JUnit.LoanApplicationTests.executor": "Run",
-    "JUnit.LoanControllerTest.executor": "Run",
-    "JUnit.LoanControllerTest.fetchLoanNotFoundTest.executor": "Run",
-    "JUnit.LoanControllerTest.fetchLoanTest.executor": "Run",
-    "JUnit.LoanControllerTest.updateLoanInvalidMobileNumberTest.executor": "Run",
-    "JUnit.LoanServiceTest.executor": "Run",
-    "JUnit.LoanServiceTest.updateLoanNotFoundTest.executor": "Run",
-    "JUnit.LoanServiceTest.updateLoanTest.executor": "Run",
-    "JUnit.LoanTestSuite.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "com.codeium.enabled": "true",
-    "git-widget-placeholder": "gatewayserver-branch",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/ANDREW/Study/Pogramming/JAVA/Spring/Microservices/EazyBytes_Course/bank_app/gatewayserver",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "project.propCompiler"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.AccountsApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.CardsApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ConfigserverApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.EurekaserverApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.GatewayserverApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.LoansApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.com.microservicesbank.loans.LoansApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.default: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yml.accounts: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yml.cards: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yml.loans: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yml: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.prod.configserver: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.prod.eurekaserver: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.prod: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AccountControllerTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AccountControllerTest.fetchAccountDetailsTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AccountServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.All in accounts (1).executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.All in accounts.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.All in cards.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.All in loans (1).executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.All in loans.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardControllerTest.createCardPositiveRESTApiTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardControllerTest.createCardRESTApiTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardControllerTest.createCardRESTTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardControllerTest.createCardSuccessTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardControllerTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardControllerTest.fetchCardDetailsInvalidMobileNumberTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardControllerTest.fetchCardDetailsSuccessTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardControllerTest.fetchCardInvalidMobileNumberTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardControllerTest.testCreateCardInvalidMobileNumber.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardControllerTest.testCreateCardSuccess.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardControllerTest.updateCardInvalidMobileNumberTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardControllerTest.updateCardSuccessTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardControllerTest.сreateCardInvalidMobileNumberTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardServiceTest.deleteCardTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardServiceTest.testCreateCardMobileNumberIsNotValid.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LoanApplicationTests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LoanControllerTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LoanControllerTest.fetchLoanNotFoundTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LoanControllerTest.fetchLoanTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LoanControllerTest.updateLoanInvalidMobileNumberTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LoanServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LoanServiceTest.updateLoanNotFoundTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LoanServiceTest.updateLoanTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LoanTestSuite.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;com.codeium.enabled&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;gatewayserver-branch&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/ANDREW/Study/Pogramming/JAVA/Spring/Microservices/EazyBytes_Course/bank_app/gatewayserver&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\ANDREW\Study\Pogramming\JAVA\Spring\Microservices\EazyBytes_Course\bank_app\docker-compose\qa" />
@@ -287,17 +216,17 @@
     <list>
       <item itemvalue="Application.AccountsApplication" />
       <item itemvalue="Application.CardsApplication" />
+      <item itemvalue="Application.EurekaserverApplication" />
       <item itemvalue="Application.GatewayserverApplication" />
       <item itemvalue="Application.LoansApplication" />
-      <item itemvalue="Application.EurekaserverApplication" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.GatewayserverApplication" />
-        <item itemvalue="Application.CardsApplication" />
         <item itemvalue="Application.LoansApplication" />
-        <item itemvalue="Application.AccountsApplication" />
+        <item itemvalue="Application.GatewayserverApplication" />
         <item itemvalue="Application.EurekaserverApplication" />
+        <item itemvalue="Application.CardsApplication" />
+        <item itemvalue="Application.AccountsApplication" />
       </list>
     </recent_temporary>
   </component>
