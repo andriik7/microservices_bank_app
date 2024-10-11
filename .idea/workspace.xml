@@ -6,9 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="2f272a15-b657-4e69-b58b-9c5039112b57" name="Changes" comment="Create gateway server MVP&#10;&#10;Configure pom.xml files updating versions. Create gatewayserver module with appropriate dependencies and application.yml config. Also I am connecting gateway server to the config server and eureka server to implement service discovery.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/src/main/java/com/microservicesbank/accounts/controller/AccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/src/main/java/com/microservicesbank/accounts/controller/AccountController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cards/src/main/java/com/microservicesbank/cards/controller/CardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/java/com/microservicesbank/cards/controller/CardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/src/main/java/com/microservicesbank/loans/controller/LoanController.java" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/java/com/microservicesbank/loans/controller/LoanController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose/default/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose/default/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/jib-classpath-file" beforeDir="false" afterPath="$PROJECT_DIR$/loans/target/jib-cache/jib-classpath-file" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/jib-image.digest" beforeDir="false" afterPath="$PROJECT_DIR$/loans/target/jib-image.digest" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/jib-image.id" beforeDir="false" afterPath="$PROJECT_DIR$/loans/target/jib-image.id" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/jib-image.json" beforeDir="false" afterPath="$PROJECT_DIR$/loans/target/jib-image.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,20 +146,7 @@
       <recent name="com.microservicesbank.accounts" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.GatewayserverApplication">
-    <configuration name="AccountsApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.microservicesbank.accounts.AccountsApplication" />
-      <module name="accounts" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.microservicesbank.accounts.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Docker.default: Compose Deployment">
     <configuration name="CardsApplication" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="com.microservicesbank.cards.CardsApplication" />
       <module name="cards" />
@@ -213,20 +205,28 @@
       </deployment>
       <method v="2" />
     </configuration>
+    <configuration name="default: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="docker-compose/default/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
     <list>
-      <item itemvalue="Application.AccountsApplication" />
       <item itemvalue="Application.CardsApplication" />
       <item itemvalue="Application.EurekaserverApplication" />
       <item itemvalue="Application.GatewayserverApplication" />
       <item itemvalue="Application.LoansApplication" />
+      <item itemvalue="Docker.default: Compose Deployment" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Docker.default: Compose Deployment" />
         <item itemvalue="Application.LoansApplication" />
         <item itemvalue="Application.GatewayserverApplication" />
         <item itemvalue="Application.EurekaserverApplication" />
         <item itemvalue="Application.CardsApplication" />
-        <item itemvalue="Application.AccountsApplication" />
       </list>
     </recent_temporary>
   </component>
