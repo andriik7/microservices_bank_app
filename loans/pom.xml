@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>microsevicesbank</groupId>
 	<artifactId>loans</artifactId>
-	<version>4</version>
+	<version>5</version>
 	<packaging>jar</packaging>
 	<name>loans</name>
 	<description>Demo project for Spring Boot</description>
@@ -53,7 +53,12 @@
             <artifactId>junit-platform-suite</artifactId>
             <scope>test</scope>
         </dependency>
-        <dependency>
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-bus-amqp</artifactId>
         </dependency>

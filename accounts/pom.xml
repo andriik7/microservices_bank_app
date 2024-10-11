@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.microservicesbank</groupId>
 	<artifactId>accounts</artifactId>
-	<version>4</version>
+	<version>5</version>
 	<packaging>jar</packaging>
 	<name>accounts</name>
 	<description>Demo project for Spring Boot</description>
@@ -47,6 +47,11 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<scope>runtime</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.junit.platform</groupId>

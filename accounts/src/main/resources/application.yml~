@@ -1,4 +1,8 @@
 logging:
+  level:
+    com:
+      microservicesbank:
+        accounts: DEBUG
   pattern:
     console: "${LOGGER_PATTERN:%green(%d{HH:mm:ss.SSS}) %blue(%-5level) %red([%thread]) %yellow(%logger{15}) - %msg%n}}"
 
@@ -8,7 +12,7 @@ spring:
   application:
     name: accounts
   datasource:
-    url: jdbc:h2:mem:accountsdb
+    url: jdbc:h2:mem:testdb
     driverClassName: org.h2.Driver
     username: sa
     password: ''
@@ -17,8 +21,18 @@ spring:
       enabled: true
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
-    hibernate.ddl-auto: update
-  show-sql: true
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+#  datasource:
+#    url: jdbc:mysql://localhost:3306/accountsdb
+#    username: root
+#    password: root
+#  jpa:
+#    show-sql: true
+#  sql:
+#    init:
+#      mode: always
   config:
     import: optional:configserver:http://localhost:8071/
 
@@ -30,9 +44,21 @@ management:
   endpoint:
     shutdown:
       enabled: true
+    health:
+      probes:
+        enabled: true
+  health:
+    readiness-state:
+      enabled: true
+    liveness-state:
+      enabled: true
   info:
     env:
       enabled: true #to enable info details for an actuator
+
+endpoints:
+  shutdown:
+    enabled: true
 
 eureka:
   instance:
@@ -47,4 +73,4 @@ info:
   app:
     name: accounts
     description: Microservicesbank Accounts microservice
-    version: 4
+    version: 5

@@ -4,22 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2f272a15-b657-4e69-b58b-9c5039112b57" name="Changes" comment="Edit Docker Compose files to use different profiles. Also, make sure microservices don't start while other required services are down or unhealthy.">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_05_10_2024_20_52__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_05_10_2024_20_52__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_05_10_2024_20_52__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_05_10_2024_20_52__Changes_1.xml" afterDir="false" />
+    <list default="true" id="2f272a15-b657-4e69-b58b-9c5039112b57" name="Changes" comment="Create gateway server MVP&#10;&#10;Configure pom.xml files updating versions. Create gatewayserver module with appropriate dependencies and application.yml config. Also I am connecting gateway server to the config server and eureka server to implement service discovery.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configserver/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/configserver/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose/prod/common-config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose/prod/common-config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose/prod/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose/prod/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose/qa/common-config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose/qa/common-config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose/qa/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose/qa/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eurekaserver/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/eurekaserver/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose/default/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose/default/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/jib-classpath-file" beforeDir="false" afterPath="$PROJECT_DIR$/loans/target/jib-cache/jib-classpath-file" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/loans/target/jib-image.digest" beforeDir="false" afterPath="$PROJECT_DIR$/loans/target/jib-image.digest" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/loans/target/jib-image.id" beforeDir="false" afterPath="$PROJECT_DIR$/loans/target/jib-image.id" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/loans/target/jib-image.json" beforeDir="false" afterPath="$PROJECT_DIR$/loans/target/jib-image.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/test-classes/microsevicesbank/loan/display/CamelCaseDisplay.class" beforeDir="false" afterPath="$PROJECT_DIR$/loans/target/test-classes/microsevicesbank/loan/display/CamelCaseDisplay.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +37,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="develop" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -72,65 +66,67 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.AccountsApplication.executor": "Run",
-    "Application.CardsApplication.executor": "Run",
-    "Application.ConfigserverApplication.executor": "Run",
-    "Application.EurekaserverApplication.executor": "Run",
-    "Application.LoansApplication.executor": "Run",
-    "Docker.default: Compose Deployment.executor": "Run",
-    "Docker.docker-compose.yml.accounts: Compose Deployment.executor": "Run",
-    "Docker.docker-compose.yml.cards: Compose Deployment.executor": "Run",
-    "Docker.docker-compose.yml.loans: Compose Deployment.executor": "Run",
-    "Docker.docker-compose.yml: Compose Deployment.executor": "Run",
-    "Docker.prod.configserver: Compose Deployment.executor": "Run",
-    "Docker.prod.eurekaserver: Compose Deployment.executor": "Run",
-    "Docker.prod: Compose Deployment.executor": "Run",
-    "JUnit.AccountControllerTest.executor": "Run",
-    "JUnit.AccountControllerTest.fetchAccountDetailsTest.executor": "Run",
-    "JUnit.AccountServiceTest.executor": "Run",
-    "JUnit.All in accounts (1).executor": "Run",
-    "JUnit.All in accounts.executor": "Run",
-    "JUnit.All in cards.executor": "Run",
-    "JUnit.All in loans (1).executor": "Run",
-    "JUnit.All in loans.executor": "Run",
-    "JUnit.CardControllerTest.createCardPositiveRESTApiTest.executor": "Run",
-    "JUnit.CardControllerTest.createCardRESTApiTest.executor": "Run",
-    "JUnit.CardControllerTest.createCardRESTTest.executor": "Run",
-    "JUnit.CardControllerTest.createCardSuccessTest.executor": "Run",
-    "JUnit.CardControllerTest.executor": "Run",
-    "JUnit.CardControllerTest.fetchCardDetailsInvalidMobileNumberTest.executor": "Run",
-    "JUnit.CardControllerTest.fetchCardDetailsSuccessTest.executor": "Run",
-    "JUnit.CardControllerTest.fetchCardInvalidMobileNumberTest.executor": "Run",
-    "JUnit.CardControllerTest.testCreateCardInvalidMobileNumber.executor": "Run",
-    "JUnit.CardControllerTest.testCreateCardSuccess.executor": "Run",
-    "JUnit.CardControllerTest.updateCardInvalidMobileNumberTest.executor": "Run",
-    "JUnit.CardControllerTest.updateCardSuccessTest.executor": "Run",
-    "JUnit.CardControllerTest.сreateCardInvalidMobileNumberTest.executor": "Run",
-    "JUnit.CardServiceTest.deleteCardTest.executor": "Run",
-    "JUnit.CardServiceTest.executor": "Run",
-    "JUnit.CardServiceTest.testCreateCardMobileNumberIsNotValid.executor": "Run",
-    "JUnit.LoanApplicationTests.executor": "Run",
-    "JUnit.LoanControllerTest.executor": "Run",
-    "JUnit.LoanControllerTest.fetchLoanNotFoundTest.executor": "Run",
-    "JUnit.LoanControllerTest.fetchLoanTest.executor": "Run",
-    "JUnit.LoanControllerTest.updateLoanInvalidMobileNumberTest.executor": "Run",
-    "JUnit.LoanServiceTest.executor": "Run",
-    "JUnit.LoanServiceTest.updateLoanNotFoundTest.executor": "Run",
-    "JUnit.LoanServiceTest.updateLoanTest.executor": "Run",
-    "JUnit.LoanTestSuite.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "com.codeium.enabled": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/ANDREW/Study/Pogramming/JAVA/Spring/Microservices/EazyBytes_Course/bank_app/docker-compose/qa",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.AccountsApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.CardsApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ConfigserverApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.EurekaserverApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.GatewayserverApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.LoansApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.com.microservicesbank.loans.LoansApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.default: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yml.accounts: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yml.cards: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yml.loans: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yml: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.prod.configserver: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.prod.eurekaserver: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.prod: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AccountControllerTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AccountControllerTest.fetchAccountDetailsTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AccountServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.All in accounts (1).executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.All in accounts.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.All in cards.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.All in loans (1).executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.All in loans.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardControllerTest.createCardPositiveRESTApiTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardControllerTest.createCardRESTApiTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardControllerTest.createCardRESTTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardControllerTest.createCardSuccessTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardControllerTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardControllerTest.fetchCardDetailsInvalidMobileNumberTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardControllerTest.fetchCardDetailsSuccessTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardControllerTest.fetchCardInvalidMobileNumberTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardControllerTest.testCreateCardInvalidMobileNumber.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardControllerTest.testCreateCardSuccess.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardControllerTest.updateCardInvalidMobileNumberTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardControllerTest.updateCardSuccessTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardControllerTest.сreateCardInvalidMobileNumberTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardServiceTest.deleteCardTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardServiceTest.testCreateCardMobileNumberIsNotValid.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LoanApplicationTests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LoanControllerTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LoanControllerTest.fetchLoanNotFoundTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LoanControllerTest.fetchLoanTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LoanControllerTest.updateLoanInvalidMobileNumberTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LoanServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LoanServiceTest.updateLoanNotFoundTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LoanServiceTest.updateLoanTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LoanTestSuite.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;com.codeium.enabled&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;gatewayserver-branch&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/ANDREW/Study/Pogramming/JAVA/Spring/Microservices/EazyBytes_Course/bank_app/gatewayserver&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\ANDREW\Study\Pogramming\JAVA\Spring\Microservices\EazyBytes_Course\bank_app\docker-compose\qa" />
@@ -144,18 +140,58 @@
       <recent name="C:\ANDREW\Study\Pogramming\JAVA\Spring\Microservices\EazyBytes_Course\bank_app\docker-compose" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.microservicesbank.gatewayserver.filter" />
       <recent name="com.microservicesbank.accounts.dto" />
       <recent name="microsevicesbank.card" />
       <recent name="com.microservicesbank.accounts" />
     </key>
   </component>
   <component name="RunManager" selected="Docker.default: Compose Deployment">
+    <configuration name="CardsApplication" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="com.microservicesbank.cards.CardsApplication" />
+      <module name="cards" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.microsevicesbank.cards.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="EurekaserverApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.microservicesbank.eurekaserver.EurekaserverApplication" />
       <module name="eurekaserver" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.microservicesbank.eurekaserver.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GatewayserverApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.microservicesbank.gatewayserver.GatewayserverApplication" />
+      <module name="gatewayserver" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.microservicesbank.gatewayserver.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LoansApplication" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="com.microservicesbank.loans.LoansApplication" />
+      <module name="loans" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.microsevicesbank.loans.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -177,54 +213,20 @@
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="prod: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="sourceFilePath" value="docker-compose/prod/docker-compose.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
-    <configuration name="prod.configserver: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="services">
-            <list>
-              <option value="configserver" />
-            </list>
-          </option>
-          <option name="sourceFilePath" value="docker-compose/prod/docker-compose.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
-    <configuration name="prod.eurekaserver: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="services">
-            <list>
-              <option value="eurekaserver" />
-            </list>
-          </option>
-          <option name="sourceFilePath" value="docker-compose/prod/docker-compose.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
     <list>
+      <item itemvalue="Application.CardsApplication" />
       <item itemvalue="Application.EurekaserverApplication" />
+      <item itemvalue="Application.GatewayserverApplication" />
+      <item itemvalue="Application.LoansApplication" />
       <item itemvalue="Docker.default: Compose Deployment" />
-      <item itemvalue="Docker.prod.configserver: Compose Deployment" />
-      <item itemvalue="Docker.prod.eurekaserver: Compose Deployment" />
-      <item itemvalue="Docker.prod: Compose Deployment" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Docker.default: Compose Deployment" />
-        <item itemvalue="Docker.prod: Compose Deployment" />
-        <item itemvalue="Docker.prod.eurekaserver: Compose Deployment" />
-        <item itemvalue="Docker.prod.configserver: Compose Deployment" />
+        <item itemvalue="Application.LoansApplication" />
+        <item itemvalue="Application.GatewayserverApplication" />
         <item itemvalue="Application.EurekaserverApplication" />
+        <item itemvalue="Application.CardsApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -293,7 +295,23 @@
       <option name="project" value="LOCAL" />
       <updated>1728131449779</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Create gateway server MVP&#10;&#10;Configure pom.xml files updating versions. Create gatewayserver module with appropriate dependencies and application.yml config. Also I am connecting gateway server to the config server and eureka server to implement service discovery.">
+      <option name="closed" value="true" />
+      <created>1728492861055</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1728492861055</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Create gateway server MVP&#10;&#10;Configure pom.xml files updating versions. Create gatewayserver module with appropriate dependencies and application.yml config. Also I am connecting gateway server to the config server and eureka server to implement service discovery.">
+      <option name="closed" value="true" />
+      <created>1728493179031</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1728493179031</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -317,6 +335,7 @@
     <MESSAGE value="Update config server and microservices to support instant updates of config files connected through GitHub. Here are implemented 2 ways: &#10;1. Use actuator/refresh endpoint for each microservice&#10;2. Use actuator/busrefresh endpoint that uses RabbitMQ to update all the configurations at once." />
     <MESSAGE value="Add dependency to the config server to support /monitor endpoint that will be invoked after every push to the repo  of configurations. So after each push configurations on config server will be refreshed." />
     <MESSAGE value="Edit Docker Compose files to use different profiles. Also, make sure microservices don't start while other required services are down or unhealthy." />
-    <option name="LAST_COMMIT_MESSAGE" value="Edit Docker Compose files to use different profiles. Also, make sure microservices don't start while other required services are down or unhealthy." />
+    <MESSAGE value="Create gateway server MVP&#10;&#10;Configure pom.xml files updating versions. Create gatewayserver module with appropriate dependencies and application.yml config. Also I am connecting gateway server to the config server and eureka server to implement service discovery." />
+    <option name="LAST_COMMIT_MESSAGE" value="Create gateway server MVP&#10;&#10;Configure pom.xml files updating versions. Create gatewayserver module with appropriate dependencies and application.yml config. Also I am connecting gateway server to the config server and eureka server to implement service discovery." />
   </component>
 </project>

@@ -1,11 +1,11 @@
 package microsevicesbank.loan;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.microsevicesbank.loan.LoansApplication;
-import com.microsevicesbank.loan.constants.LoanConstants;
-import com.microsevicesbank.loan.dto.LoanDTO;
-import com.microsevicesbank.loan.exception.ResourceNotFoundException;
-import com.microsevicesbank.loan.service.ILoanService;
+import com.microservicesbank.loans.LoansApplication;
+import com.microservicesbank.loans.constants.LoanConstants;
+import com.microservicesbank.loans.dto.LoanDTO;
+import com.microservicesbank.loans.exception.ResourceNotFoundException;
+import com.microservicesbank.loans.service.ILoanService;
 import jakarta.transaction.Transactional;
 import microsevicesbank.loan.display.CamelCaseDisplay;
 import org.junit.jupiter.api.DisplayNameGeneration;

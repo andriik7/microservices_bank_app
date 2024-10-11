@@ -1,13 +1,13 @@
 package microsevicesbank.card;
 
-import com.microsevicesbank.card.CardsApplication;
-import com.microsevicesbank.card.dto.CardDTO;
-import com.microsevicesbank.card.exception.CardAlreadyExistsException;
-import com.microsevicesbank.card.exception.ResourceNotFoundException;
-import com.microsevicesbank.card.mapper.CardMapper;
-import com.microsevicesbank.card.model.Card;
-import com.microsevicesbank.card.repository.CardRepository;
-import com.microsevicesbank.card.service.impl.CardServiceImpl;
+import com.microservicesbank.cards.CardsApplication;
+import com.microservicesbank.cards.dto.CardDTO;
+import com.microservicesbank.cards.exception.CardAlreadyExistsException;
+import com.microservicesbank.cards.exception.ResourceNotFoundException;
+import com.microservicesbank.cards.mapper.CardMapper;
+import com.microservicesbank.cards.model.Card;
+import com.microservicesbank.cards.repository.CardRepository;
+import com.microservicesbank.cards.service.impl.CardServiceImpl;
 import jakarta.transaction.Transactional;
 import microsevicesbank.card.display.CamelCaseDisplay;
 import org.junit.jupiter.api.DisplayNameGeneration;

@@ -1,12 +1,12 @@
 package microsevicesbank.loan;
 
-import com.microsevicesbank.loan.LoansApplication;
-import com.microsevicesbank.loan.dto.LoanDTO;
-import com.microsevicesbank.loan.exception.LoanAlreadyExistsException;
-import com.microsevicesbank.loan.exception.ResourceNotFoundException;
-import com.microsevicesbank.loan.model.Loan;
-import com.microsevicesbank.loan.repository.LoanRepository;
-import com.microsevicesbank.loan.service.impl.LoanServiceImpl;
+import com.microservicesbank.loans.LoansApplication;
+import com.microservicesbank.loans.dto.LoanDTO;
+import com.microservicesbank.loans.exception.LoanAlreadyExistsException;
+import com.microservicesbank.loans.exception.ResourceNotFoundException;
+import com.microservicesbank.loans.model.Loan;
+import com.microservicesbank.loans.repository.LoanRepository;
+import com.microservicesbank.loans.service.impl.LoanServiceImpl;
 import jakarta.transaction.Transactional;
 import microsevicesbank.loan.display.CamelCaseDisplay;
 import org.junit.jupiter.api.DisplayNameGeneration;
