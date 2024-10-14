@@ -30,6 +30,14 @@ management:
     env:
       enabled: true #to enable info details for an actuator
 
+resilience4j.circuitbreaker:
+  configs:
+    default:
+      slidingWindowSize: 10 #how many requests should be monitored to change state from closed to open
+      permittedNumberOfCallsInHalfOpenState: 2 #number of calls allowed in half open state
+      failureRateThreshold: 50 #percentage of failures to check out from closed state to the open one
+      waitDurationInOpenState: 10000 #how long should we wait in open state before changing to half open (10000 = 10 seconds)
+
 info:
   app:
     name: gatewayserver

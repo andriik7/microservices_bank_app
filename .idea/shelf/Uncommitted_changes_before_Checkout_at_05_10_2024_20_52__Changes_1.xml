@@ -1,9 +1,0 @@
-<changelist name="Uncommitted_changes_before_Checkout_at_05_10_2024_20_52_[Changes]1" date="1728150772600" recycled="true" deleted="true">
-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_05_10_2024_20_52_[Changes]1/shelved.patch" />
-  <option name="DESCRIPTION" value="Uncommitted changes before Checkout at 05.10.2024 20:52 [Changes]" />
-  <binary>
-    <option name="BEFORE_PATH" value="loans/target/test-classes/microsevicesbank/loan/display/CamelCaseDisplay.class" />
-    <option name="AFTER_PATH" value="loans/target/test-classes/microsevicesbank/loan/display/CamelCaseDisplay.class" />
-    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_05_10_2024_20_52_[Changes]1/CamelCaseDisplay.class" />
-  </binary>
-</changelist>
