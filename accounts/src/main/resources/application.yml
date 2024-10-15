@@ -85,6 +85,19 @@ resilience4j.circuitbreaker:
       failureRateThreshold: 50 #percentage of failures to check out from closed state to the open one
       waitDurationInOpenState: 10000 #how long should we wait in open state before changing to half open (10000 = 10 seconds)
 
+resilience4j.retry:
+  configs:
+    default:
+      maxAttempts: 3
+      waitDuration: 500 #longer that default circuit breaker wait duration so won't work without Customizer<ReactiveResilience4JCircuitBreakerFactory> in Gateway server
+      enableExponentialBackoff: true
+      exponentialBackoffMultiplier: 2
+      ignoreExceptions:
+        - java.lang.NullPointerException #ignore retries for null pointer exception, just return fallback instantly
+      retryExceptions: #when retryExceptions is mentioned - all other exceptions will be ignored so there is no need to mention ignoreExceptions in that case
+        - java.util.concurrent.TimeoutException #retry for timeout exception
+    #getContactDetails:  to add individual retry config for certain method
+
 info:
   app:
     name: accounts

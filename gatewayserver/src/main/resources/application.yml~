@@ -17,9 +17,6 @@ spring:
         locator:
           enabled: true #to enable service discovery
           lowerCaseServiceId: true #to enable service discovery in lower case
-      httpclient:
-        connect-timeout: 1000
-        response-timeout: 3s
 
 management:
   endpoints:

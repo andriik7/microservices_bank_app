@@ -3,6 +3,7 @@ package com.microservicesbank.accounts.controller;
 import com.microservicesbank.accounts.dto.CustomerDetailsDTO;
 import com.microservicesbank.accounts.dto.ErrorResponseDTO;
 import com.microservicesbank.accounts.service.ICustomerService;
+import io.github.resilience4j.retry.annotation.Retry;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -52,6 +53,7 @@ public class CustomerController {
                             schema = @Schema(implementation = ErrorResponseDTO.class))
             )
     })
+    @Retry(name = "fetchCustomerDetails", fallbackMethod = "fetchCustomerDetailsFallback")
     @GetMapping("/fetchCustomerDetails")
     public ResponseEntity<CustomerDetailsDTO> fetchCustomerDetails(@RequestHeader("microbank-correlation-id") String correlationId,
                                                                    @RequestParam @Pattern(regexp = "^\\d{10}$",
@@ -63,6 +65,14 @@ public class CustomerController {
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .body(customerDetailsDTO);
+    }
+
+    public ResponseEntity<CustomerDetailsDTO> fetchCustomerDetailsFallback(Throwable throwable) {
+
+        logger.debug("fetchCustomerDetailsFallback() method invoked");
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(new CustomerDetailsDTO());
     }
 
 }
