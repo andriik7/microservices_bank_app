@@ -12,6 +12,7 @@ import com.microservicesbank.accounts.service.ICustomerService;
 import com.microservicesbank.accounts.service.client.CardsFeignClient;
 import com.microservicesbank.accounts.service.client.LoansFeignClient;
 import lombok.AllArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -31,19 +32,22 @@ public class CustomerServiceImpl implements ICustomerService {
 
         Customer customer = customerRepository.findByMobileNumber(mobileNumber)
                                               .orElseThrow(() -> new ResourceNotFoundException("Customer", "mobileNumber", mobileNumber));
+        CustomerDetailsDTO customerDetailsDTO = CustomerMapper.mapToCustomerDetailsDTO(customer, new CustomerDetailsDTO());
 
         Account account = accountRepository.findByCustomerId(customer.getId())
                                            .orElseThrow(() -> new ResourceNotFoundException("Account", "customerId", customer.getId().toString()));
         AccountDTO accountDTO = AccountMapper.mapToAccountDTO(account, new AccountDTO());
-
-        CardDTO cardDTO = cardsFeignClient.fetchCardDetails(correlationId, mobileNumber).getBody();
-
-        LoanDTO loanDTO = loansFeignClient.fetchLoanDetails(correlationId, mobileNumber).getBody();
-
-        CustomerDetailsDTO customerDetailsDTO = CustomerMapper.mapToCustomerDetailsDTO(customer, new CustomerDetailsDTO());
         customerDetailsDTO.setAccountDto(accountDTO);
-        customerDetailsDTO.setCardDto(cardDTO);
-        customerDetailsDTO.setLoanDto(loanDTO);
+
+        ResponseEntity<CardDTO> cardResponse = cardsFeignClient.fetchCardDetails(correlationId, mobileNumber);
+        if (cardResponse != null) {
+            customerDetailsDTO.setCardDto(cardResponse.getBody());
+        }
+
+        ResponseEntity<LoanDTO> loanResponse = loansFeignClient.fetchLoanDetails(correlationId, mobileNumber);
+        if (loanResponse != null) {
+            customerDetailsDTO.setLoanDto(loanResponse.getBody());
+        }
 
         return customerDetailsDTO;
     }
