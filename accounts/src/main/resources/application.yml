@@ -11,7 +11,6 @@ server:
 spring:
   application:
     name: accounts
-
   cloud:
     openfeign:
       circuitbreaker:
@@ -41,6 +40,9 @@ spring:
   sql:
     init:
       mode: always
+#
+#
+#
   config:
     import: optional:configserver:http://localhost:8071/
 
@@ -110,4 +112,4 @@ info:
   app:
     name: accounts
     description: Microservicesbank Accounts microservice
-    version: 5
+    version: 6
