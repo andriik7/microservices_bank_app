@@ -1,10 +1,24 @@
 services:
+  redis:
+    image: redis
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD-SHELL", "redis-cli ping | grep PONG"]
+      timeout: 10s
+      retries: 10
+    extends:
+      file: common-config.yml
+      service: network-deploy-service
+
   gatewayserver:
-    image: akuchera/gatewayserver:5
+    image: akuchera/gatewayserver:6
     container_name: gatewayserver-ms
     ports:
       - "8072:8072"
     depends_on:
+      redis:
+        condition: service_healthy
       accounts:
         condition: service_healthy
       cards:
@@ -14,9 +28,14 @@ services:
     extends:
       file: common-config.yml
       service: microservice-eureka-config
+    environment:
+      SPRING_DATA_REDIS_CONNECT-TIMEOUT: 2s
+      SPRING_DATA_REDIS_HOST: redis
+      SPRING_DATA_REDIS_PORT: 6379
+      SPRING_DATA_REDIS_TIMEOUT: 1s
 
   eurekaserver:
-    image: akuchera/eurekaserver:5
+    image: akuchera/eurekaserver:6
     container_name: eurekaserver-ms
     ports:
       - "8070:8070"
@@ -79,7 +98,7 @@ services:
       service: microservice-db-config
 
   accounts:
-    image: akuchera/accounts:5
+    image: akuchera/accounts:6
     container_name: accounts-ms
     ports:
       - "8080:8080"
@@ -102,7 +121,7 @@ services:
       file: common-config.yml
       service: microservice-eureka-config
   cards:
-    image: akuchera/cards:5
+    image: akuchera/cards:6
     container_name: cards-ms
     ports:
       - "8090:8090"
@@ -125,7 +144,7 @@ services:
       file: common-config.yml
       service: microservice-eureka-config
   loans:
-    image: akuchera/loans:5
+    image: akuchera/loans:6
     container_name: loans-ms
     ports:
       - "9000:9000"
@@ -148,7 +167,7 @@ services:
       file: common-config.yml
       service: microservice-eureka-config
   configserver:
-    image: akuchera/configserver:5
+    image: akuchera/configserver:6
     container_name: configserver-ms
     ports:
       - "8071:8071"

@@ -2,15 +2,16 @@ logging:
   level:
     com:
       microservicesbank:
-        accounts: DEBUG
+        loans: DEBUG
   pattern:
     console: "${LOGGER_PATTERN:%green(%d{HH:mm:ss.SSS}) %blue(%-5level) %red([%thread]) %yellow(%logger{15}) - %msg%n}}"
 
 server:
-  port: 8080
+  port: 9000
 spring:
   application:
-    name: accounts
+    name: loans
+# LOCAL DEPLOY
   datasource:
     url: jdbc:h2:mem:testdb
     driverClassName: org.h2.Driver
@@ -24,8 +25,10 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+
+# PRODUCTION(DOCKER) DEPLOY
 #  datasource:
-#    url: jdbc:mysql://localhost:3306/accountsdb
+#    url: jdbc:mysql://localhost:3308/loansdb
 #    username: root
 #    password: root
 #  jpa:
@@ -33,6 +36,9 @@ spring:
 #  sql:
 #    init:
 #      mode: always
+#
+#
+#
   config:
     import: optional:configserver:http://localhost:8071/
 
@@ -71,6 +77,6 @@ eureka:
 
 info:
   app:
-    name: accounts
-    description: Microservicesbank Accounts microservice
-    version: 5
+    name: loans
+    description: Microservicesbank Loans microservice
+    version: 6

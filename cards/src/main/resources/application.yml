@@ -36,6 +36,9 @@ spring:
   sql:
     init:
       mode: always
+#
+#
+#
   config:
     import: optional:configserver:http://localhost:8071/
 
@@ -76,4 +79,4 @@ info:
   app:
     name: cards
     description: Microservicesbank Cards microservice
-    version: 5
+    version: 6

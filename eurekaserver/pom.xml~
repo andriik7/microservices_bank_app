@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.microservicesbank</groupId>
-	<artifactId>gatewayserver</artifactId>
+	<artifactId>eurekaserver</artifactId>
 	<version>5</version>
-	<name>gatewayserver</name>
-	<description>Edge Server for microservices bank</description>
+	<name>eurekaserver</name>
+	<description>Service Discovery agent for microservicesbank microservices</description>
 	<url/>
 	<licenses>
 		<license/>
@@ -41,18 +41,11 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-gateway-mvc</artifactId>
+			<artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-devtools</artifactId>
-			<scope>runtime</scope>
-			<optional>true</optional>
+			<artifactId>spring-cloud-starter-bus-amqp</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

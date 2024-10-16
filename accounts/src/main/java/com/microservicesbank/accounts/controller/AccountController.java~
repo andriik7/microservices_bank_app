@@ -201,12 +201,12 @@ public class AccountController {
     public ResponseEntity<AccountsContactInfoDTO> getContactInfo(@RequestHeader("microbank-correlation-id") String correlationId) throws TimeoutException {
 
 //        throw new NullPointerException(); //to check the fallback method(while ignoreExceptions and retryExceptions are not mentioned)
-//        logger.debug("getContactDetails() method invoked"); //to test if request is really retried
-//        throw new TimeoutException(); //to check the fallback method(while retryExceptions with appropriate exception is mentioned)
-        logger.debug("microbank-correlation-id found: {}", correlationId);
-        return ResponseEntity
-                .status(HttpStatus.OK)
-                .body(accountsContactInfoDTO);
+        logger.debug("getContactDetails() method invoked"); //to test if request is really retried
+        throw new TimeoutException(); //to check the fallback method(while retryExceptions with appropriate exception is mentioned)
+//        logger.debug("microbank-correlation-id found: {}", correlationId);
+//        return ResponseEntity
+//                .status(HttpStatus.OK)
+//                .body(accountsContactInfoDTO);
     }
 
     public ResponseEntity<String> getContactDetailsFallback(Throwable throwable) {
