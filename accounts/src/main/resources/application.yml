@@ -92,11 +92,19 @@ resilience4j.retry:
       waitDuration: 500 #longer that default circuit breaker wait duration so won't work without Customizer<ReactiveResilience4JCircuitBreakerFactory> in Gateway server
       enableExponentialBackoff: true
       exponentialBackoffMultiplier: 2
-      ignoreExceptions:
-        - java.lang.NullPointerException #ignore retries for null pointer exception, just return fallback instantly
-      retryExceptions: #when retryExceptions is mentioned - all other exceptions will be ignored so there is no need to mention ignoreExceptions in that case
-        - java.util.concurrent.TimeoutException #retry for timeout exception
+#      ignoreExceptions:
+#        - java.lang.NullPointerException #ignore retries for null pointer exception, just return fallback instantly
+#      retryExceptions: #when retryExceptions is mentioned - all other exceptions will be ignored so there is no need to mention ignoreExceptions in that case
+#        - java.util.concurrent.TimeoutException #retry for timeout exception
     #getContactDetails:  to add individual retry config for certain method
+
+resilience4j.ratelimiter:
+  configs:
+    default:
+      timeoutDuration: 1000 #time to wait for a token before giving up
+      limitRefreshPeriod: 5000 #period to refresh tokens
+      limitForPeriod: 1 #how many tokens should be available in a period
+#so there is 1 token available in 5 seconds and then it will be refreshed
 
 info:
   app:

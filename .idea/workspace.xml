@@ -6,10 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="2f272a15-b657-4e69-b58b-9c5039112b57" name="Changes" comment="Create gateway server MVP&#10;&#10;Configure pom.xml files updating versions. Create gatewayserver module with appropriate dependencies and application.yml config. Also I am connecting gateway server to the config server and eureka server to implement service discovery.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/src/main/java/com/microservicesbank/accounts/controller/AccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/src/main/java/com/microservicesbank/accounts/controller/AccountController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/accounts/src/main/java/com/microservicesbank/accounts/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/src/main/java/com/microservicesbank/accounts/controller/CustomerController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/accounts/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cards/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gatewayserver/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gatewayserver/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gatewayserver/src/main/java/com/microservicesbank/gatewayserver/GatewayserverApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/gatewayserver/src/main/java/com/microservicesbank/gatewayserver/GatewayserverApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gatewayserver/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gatewayserver/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/loans/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/resources/application.yml" afterDir="false" />
@@ -68,12 +68,12 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.AccountsApplication.executor": "Debug",
+    "Application.AccountsApplication.executor": "Run",
     "Application.CardsApplication.executor": "Debug",
     "Application.ConfigserverApplication.executor": "Run",
     "Application.EurekaserverApplication.executor": "Run",
     "Application.GatewayserverApplication.executor": "Run",
-    "Application.LoansApplication.executor": "Debug",
+    "Application.LoansApplication.executor": "Run",
     "Docker.default: Compose Deployment.executor": "Run",
     "Docker.docker-compose.yml.accounts: Compose Deployment.executor": "Run",
     "Docker.docker-compose.yml.cards: Compose Deployment.executor": "Run",
@@ -145,7 +145,7 @@
       <recent name="com.microservicesbank.accounts" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.AccountsApplication">
+  <component name="RunManager" selected="Application.GatewayserverApplication">
     <configuration name="AccountsApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.microservicesbank.accounts.AccountsApplication" />
       <module name="accounts" />
@@ -234,8 +234,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.AccountsApplication" />
         <item itemvalue="Application.GatewayserverApplication" />
+        <item itemvalue="Application.AccountsApplication" />
         <item itemvalue="Application.LoansApplication" />
         <item itemvalue="Application.CardsApplication" />
         <item itemvalue="Application.EurekaserverApplication" />
