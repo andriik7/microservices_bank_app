@@ -79,4 +79,4 @@ info:
   app:
     name: loans
     description: Microservicesbank Loans microservice
-    version: 6
+    version: 7

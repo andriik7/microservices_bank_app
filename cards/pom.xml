@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>microsevicesbank</groupId>
 	<artifactId>cards</artifactId>
-	<version>6</version>
+	<version>7</version>
 	<packaging>jar</packaging>
 	<name>cards</name>
 	<description>Demo project for Spring Boot</description>

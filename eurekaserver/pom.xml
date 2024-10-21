@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.microservicesbank</groupId>
 	<artifactId>eurekaserver</artifactId>
-	<version>6</version>
+	<version>7</version>
 	<name>eurekaserver</name>
 	<description>Service Discovery agent for microservicesbank microservices</description>
 	<url/>
