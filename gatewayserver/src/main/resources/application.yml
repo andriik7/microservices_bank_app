@@ -37,6 +37,9 @@ management:
   info:
     env:
       enabled: true #to enable info details for an actuator
+  metrics:
+    tags:
+      application: ${spring.application.name}
 
 resilience4j.circuitbreaker:
   configs:

@@ -5,22 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2f272a15-b657-4e69-b58b-9c5039112b57" name="Changes" comment="Create gateway server MVP&#10;&#10;Configure pom.xml files updating versions. Create gatewayserver module with appropriate dependencies and application.yml config. Also I am connecting gateway server to the config server and eureka server to implement service discovery.">
-      <change afterPath="$PROJECT_DIR$/docker-compose/observability/alloy/alloy-local-config.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-compose/observability/loki/loki-config.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose/default/.data/minio/.minio.sys/buckets/.heal/mrf/list.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose/default/.data/minio/.minio.sys/tmp/fd7a9079-9c5b-451f-ae77-c82fea08ca4d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose/observability/grafana/datasource.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose/observability/prometheus/prometheus.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/accounts/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/accounts/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cards/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/cards/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cards/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/configserver/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/configserver/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configserver/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configserver/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose/default/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose/default/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose/prod/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose/prod/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose/qa/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose/qa/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/eurekaserver/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/eurekaserver/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eurekaserver/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/eurekaserver/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gatewayserver/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gatewayserver/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gatewayserver/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gatewayserver/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/loans/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/loans/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/loans/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/loans/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/loans/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/jib-classpath-file" beforeDir="false" afterPath="$PROJECT_DIR$/loans/target/jib-cache/jib-classpath-file" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/loans/target/jib-image.digest" beforeDir="false" afterPath="$PROJECT_DIR$/loans/target/jib-image.digest" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/loans/target/jib-image.id" beforeDir="false" afterPath="$PROJECT_DIR$/loans/target/jib-image.id" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/loans/target/jib-image.json" beforeDir="false" afterPath="$PROJECT_DIR$/loans/target/jib-image.json" afterDir="false" />
@@ -78,6 +84,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "Application.AccountsApplication.executor": "Debug",
     "Application.CardsApplication.executor": "Debug",
     "Application.ConfigserverApplication.executor": "Run",
@@ -233,18 +240,18 @@
     <list>
       <item itemvalue="Application.ConfigserverApplication" />
       <item itemvalue="Application.AccountsApplication" />
+      <item itemvalue="Application.EurekaserverApplication" />
       <item itemvalue="Application.GatewayserverApplication" />
       <item itemvalue="Application.LoansApplication" />
-      <item itemvalue="Application.EurekaserverApplication" />
       <item itemvalue="Docker.default: Compose Deployment" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Docker.default: Compose Deployment" />
-        <item itemvalue="Application.GatewayserverApplication" />
-        <item itemvalue="Application.AccountsApplication" />
-        <item itemvalue="Application.EurekaserverApplication" />
         <item itemvalue="Application.LoansApplication" />
+        <item itemvalue="Application.GatewayserverApplication" />
+        <item itemvalue="Application.EurekaserverApplication" />
+        <item itemvalue="Application.AccountsApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -328,6 +335,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="TDD with CardController and refactoring&#10;&#10;Creating CardController and CardControllerTest to get all these endpoints working properly. Also here I am updating and fixing some exception handling, services and service tests for Cards microservice." />
     <MESSAGE value="Merge branch 'refs/heads/card_branch'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
     <MESSAGE value="Create LoanController and LoanControllerTest using TDD to resolve all possible issues from the start. Add some correction to the LoanDTO and using new dependency I provide @Suite to run all my tests at the same moment right before every commit." />
