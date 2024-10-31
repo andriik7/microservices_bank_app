@@ -12,7 +12,7 @@ services:
       - minio
     healthcheck:
       test: ["CMD-SHELL", "wget --no-verbose --tries=1 --spider http://localhost:3100/ready || exit 1"]
-      interval: 10s
+      interval: 20s
       timeout: 5s
       retries: 5
     networks: &loki-dns
@@ -31,7 +31,7 @@ services:
       - ../observability/loki/loki-config.yaml:/etc/loki/config.yaml
     healthcheck:
       test: ["CMD-SHELL", "wget --no-verbose --tries=1 --spider http://localhost:3100/ready || exit 1"]
-      interval: 10s
+      interval: 20s
       timeout: 5s
       retries: 5
     depends_on:
@@ -91,6 +91,19 @@ services:
       file: common-config.yml
       service: network-deploy-service
 
+  tempo:
+    image: grafana/tempo
+    container_name: tempo
+    command: -config.file /etc/tempo-config.yml
+    ports:
+      - "3110:3100" # it's not 3100 because it's used by grafana gateway
+      - "4317:4317"
+    volumes:
+      - ../observability/tempo/tempo.yml:/etc/tempo-config.yml
+    extends:
+      file: common-config.yml
+      service: network-deploy-service
+
   grafana:
     image: grafana/grafana:latest
     environment:
@@ -110,7 +123,7 @@ services:
       - ../observability/grafana/datasource.yml:/etc/grafana/provisioning/datasources/datasource.yml
     healthcheck:
       test: ["CMD-SHELL", "wget --no-verbose --tries=1 --spider http://localhost:3000/api/health || exit 1"]
-      interval: 10s
+      interval: 20s
       timeout: 5s
       retries: 5
     extends:
@@ -194,7 +207,7 @@ services:
       - "3100:3100"
     healthcheck:
       test: ["CMD", "service", "nginx", "status"]
-      interval: 10s
+      interval: 20s
       timeout: 5s
       retries: 5
     extends:
@@ -208,13 +221,13 @@ services:
     healthcheck:
       test: ["CMD-SHELL", "redis-cli ping | grep PONG"]
       timeout: 10s
-      retries: 10
+      retries: 20
     extends:
       file: common-config.yml
       service: network-deploy-service
 
   gatewayserver:
-    image: akuchera/gatewayserver:7
+    image: akuchera/gatewayserver:7.1-tempo
     container_name: gatewayserver-ms
     ports:
       - "8072:8072"
@@ -231,21 +244,22 @@ services:
       file: common-config.yml
       service: microservice-eureka-config
     environment:
+      OTEL_SERVICE_NAME: gatewayserver
       SPRING_DATA_REDIS_CONNECT_TIMEOUT: 2s
       SPRING_DATA_REDIS_HOST: redis
       SPRING_DATA_REDIS_PORT: 6379
       SPRING_DATA_REDIS_TIMEOUT: 1s
 
   eurekaserver:
-    image: akuchera/eurekaserver:7
+    image: akuchera/eurekaserver:7.1-tempo
     container_name: eurekaserver-ms
     ports:
       - "8070:8070"
     healthcheck:
       test: "curl --fail http://localhost:8070/actuator/health/readiness | grep UP || exit 1"
-      interval: 10s
+      interval: 20s
       timeout: 5s
-      retries: 10
+      retries: 20
       start_period: 10s
     depends_on:
       configserver:
@@ -253,6 +267,8 @@ services:
     extends:
       file: common-config.yml
       service: microservice-configserver-config
+    environment:
+      OTEL_SERVICE_NAME: eurekaserver
 
   rabbit:
     image: rabbitmq:4.0-management
@@ -262,9 +278,9 @@ services:
       - "15672:15672"
     healthcheck:
       test: rabbitmq-diagnostics check_port_connectivity
-      interval: 10s
+      interval: 20s
       timeout: 5s
-      retries: 10
+      retries: 20
       start_period: 10s
     extends:
       file: common-config.yml
@@ -301,17 +317,18 @@ services:
       service: microservice-db-config
 
   accounts:
-    image: akuchera/accounts:7
+    image: akuchera/accounts:7.1-tempo
     container_name: accounts-ms
     ports:
       - "8080:8080"
     healthcheck:
       test: "curl --fail http://localhost:8080/actuator/health/readiness | grep UP || exit 1"
-      interval: 10s
+      interval: 20s
       timeout: 5s
-      retries: 10
+      retries: 20
       start_period: 10s
     environment:
+      OTEL_SERVICE_NAME: accounts
       SPRING_DATASOURCE_URL: "jdbc:mysql://accountsdb:3306/accountsdb"
     depends_on:
       accountsdb:
@@ -325,17 +342,18 @@ services:
       service: microservice-eureka-config
 
   cards:
-    image: akuchera/cards:7
+    image: akuchera/cards:7.1-tempo
     container_name: cards-ms
     ports:
       - "8090:8090"
     healthcheck:
       test: "curl --fail http://localhost:8090/actuator/health/readiness | grep UP || exit 1"
-      interval: 10s
+      interval: 20s
       timeout: 5s
-      retries: 10
+      retries: 20
       start_period: 10s
     environment:
+      OTEL_SERVICE_NAME: cards
       SPRING_DATASOURCE_URL: "jdbc:mysql://cardsdb:3306/cardsdb"
     depends_on:
       cardsdb:
@@ -349,17 +367,18 @@ services:
       service: microservice-eureka-config
 
   loans:
-    image: akuchera/loans:7
+    image: akuchera/loans:7.1-tempo
     container_name: loans-ms
     ports:
       - "9000:9000"
     healthcheck:
       test: "curl --fail http://localhost:9000/actuator/health/readiness | grep UP || exit 1"
-      interval: 10s
+      interval: 20s
       timeout: 5s
-      retries: 10
+      retries: 20
       start_period: 10s
     environment:
+      OTEL_SERVICE_NAME: loans
       SPRING_DATASOURCE_URL: "jdbc:mysql://loansdb:3306/loansdb"
     depends_on:
       loansdb:
@@ -373,7 +392,7 @@ services:
       service: microservice-eureka-config
 
   configserver:
-    image: akuchera/configserver:7
+    image: akuchera/configserver:7.1-tempo
     container_name: configserver-ms
     ports:
       - "8071:8071"
@@ -382,9 +401,9 @@ services:
         condition: service_healthy
     healthcheck:
       test: "curl --fail http://localhost:8071/actuator/health/readiness | grep UP || exit 1"
-      interval: 10s
+      interval: 20s
       timeout: 5s
-      retries: 10
+      retries: 20
       start_period: 10s
     deploy:
       resources:
@@ -393,6 +412,8 @@ services:
     extends:
       file: common-config.yml
       service: microservice-base-config
+    environment:
+      OTEL_SERVICE_NAME: configserver
 
 networks:
   microservice-bank:

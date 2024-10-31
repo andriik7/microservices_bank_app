@@ -61,9 +61,11 @@ public class CustomerController {
                                                                            message = "Mobile number must be 10 digits") String mobileNumber) {
 
 //        throw new RuntimeException("Forced Exception");
-        logger.debug("microbank-correlation-id found: {}", correlationId);
+        //logger.debug("microbank-correlation-id found: {}", correlationId); // this will not be logged because since
+        // feature/observability-monitoring we use OpenTelemetry and distributed tracing
+        logger.debug("fetchCustomerDetails() method started");
         CustomerDetailsDTO customerDetailsDTO = customerService.fetchCustomerDetails(mobileNumber, correlationId);
-
+        logger.debug("fetchCustomerDetails() method ended");
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .body(customerDetailsDTO);

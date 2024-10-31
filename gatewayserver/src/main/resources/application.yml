@@ -4,7 +4,8 @@ logging:
       microservicesbank:
         gatewayserver: DEBUG
   pattern:
-    console: "${LOGGER_PATTERN:%red(%d{HH:mm:ss.SSS}) %blue(%-5level) %yellow([%thread]) %green(%logger{15}) - %msg%n}}"
+    level: "%5p [${spring.application.name},%X{trace_id},%X{span_id}]"
+    #console: "${LOGGER_PATTERN:%red(%d{HH:mm:ss.SSS}) %blue(%-5level) %yellow([%thread]) %green(%logger{15}) - %msg%n}}"
 
 spring:
   application:

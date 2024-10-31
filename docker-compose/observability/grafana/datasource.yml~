@@ -41,7 +41,7 @@ datasources:
     url: http://gateway:3100
     jsonData:
       httpHeaderName1: "X-Scope-OrgID"
-      derivedFields:
+      derivedFields: #allow access to tempo from loki logs
         - datasourceUid: tempo
           matcherRegex: "\\[.+,(.+),.+\\]"
           name: TraceID

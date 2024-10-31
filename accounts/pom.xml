@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.microservicesbank</groupId>
 	<artifactId>accounts</artifactId>
-	<version>7</version>
+	<version>7.1-tempo</version>
 	<packaging>jar</packaging>
 	<name>accounts</name>
 	<description>Demo project for Spring Boot</description>
@@ -30,11 +30,18 @@
 	<properties>
 		<java.version>21</java.version>
 		<spring-cloud.version>2023.0.3</spring-cloud.version>
+		<otelVersion>1.33.5</otelVersion>
 	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.opentelemetry.javaagent</groupId>
+			<artifactId>opentelemetry-javaagent</artifactId>
+			<version>${otelVersion}</version>
+			<scope>runtime</scope>
 		</dependency>
 		<dependency>
 			<groupId>io.micrometer</groupId>
