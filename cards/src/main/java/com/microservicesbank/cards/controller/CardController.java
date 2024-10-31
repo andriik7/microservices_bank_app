@@ -67,8 +67,9 @@ public class CardController {
                                                   @RequestParam @Pattern(regexp = "^\\d{10}$",
                                                           message = "Mobile number must be 10 digits") String mobileNumber) {
 
-        logger.debug("microbank-correlation-id found: {}", correlationId);
+        logger.debug("createCard() method started");
         cardService.createCard(mobileNumber);
+        logger.debug("createCard() method ended");
 
         return ResponseEntity
                 .status(HttpStatus.CREATED)
@@ -104,8 +105,9 @@ public class CardController {
                                                     @RequestParam @Pattern(regexp = "^\\d{10}$",
                                                             message = "Mobile number must be 10 digits") String mobileNumber) {
 
-        logger.debug("microbank-correlation-id found: {}", correlationId);
+        logger.debug("fetchCardDetails() method started");
         CardDTO fetchedCard = cardService.fetchCard(mobileNumber);
+        logger.debug("fetchCardDetails() method ended");
 
         return ResponseEntity
                 .status(HttpStatus.OK)
@@ -147,8 +149,9 @@ public class CardController {
     public ResponseEntity<ResponseDTO> updateCardDetails(@RequestHeader("microbank-correlation-id") String correlationId,
                                                          @Valid @RequestBody CardDTO cardDTO) {
 
-        logger.debug("microbank-correlation-id found: {}", correlationId);
+        logger.debug("updateCardDetails() method started");
         boolean isUpdated = cardService.updateCard(cardDTO);
+        logger.debug("updateCardDetails() method ended");
         if (isUpdated) {
             return ResponseEntity.status(HttpStatus.OK)
                                  .body(new ResponseDTO(CardConstants.STATUS_200, CardConstants.MESSAGE_200));
@@ -193,9 +196,9 @@ public class CardController {
                                                          @RequestParam @Pattern(regexp = "^\\d{10}$",
                                                                  message = "Mobile number must be 10 digits") String mobileNumber) {
 
-        logger.debug("microbank-correlation-id found: {}", correlationId);
+        logger.debug("deleteCardDetails() method started");
         boolean isDeleted = cardService.deleteCard(mobileNumber);
-
+        logger.debug("deleteCardDetails() method ended");
         if (isDeleted) {
             return ResponseEntity.status(HttpStatus.OK)
                                  .body(new ResponseDTO(CardConstants.STATUS_200, CardConstants.MESSAGE_200));
@@ -207,7 +210,8 @@ public class CardController {
     @GetMapping("/contactDetails")
     public ResponseEntity<CardsContactInfoDTO> getContactInfo(@RequestHeader("microbank-correlation-id") String correlationId) {
 
-        logger.debug("microbank-correlation-id found: {}", correlationId);
+        logger.debug("getContactInfo() method started");
+        logger.debug("getContactInfo() method ended");
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .body(cardsContactInfoDTO);

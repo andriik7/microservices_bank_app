@@ -4,7 +4,8 @@ logging:
       microservicesbank:
         cards: DEBUG
   pattern:
-    console: "${LOGGER_PATTERN:%green(%d{HH:mm:ss.SSS}) %blue(%-5level) %red([%thread]) %yellow(%logger{15}) - %msg%n}}"
+    level: "%5p [${spring.application.name},%X{trace_id},%X{span_id}]"
+    #console: "${LOGGER_PATTERN:%green(%d{HH:mm:ss.SSS}) %blue(%-5level) %red([%thread]) %yellow(%logger{15}) - %msg%n}}"
 
 server:
   port: 8090
@@ -61,6 +62,9 @@ management:
   info:
     env:
       enabled: true #to enable info details for an actuator
+  metrics:
+    tags:
+      application: ${spring.application.name}
 
 endpoints:
   shutdown:
@@ -79,4 +83,4 @@ info:
   app:
     name: cards
     description: Microservicesbank Cards microservice
-    version: 6
+    version: 7.1
