@@ -5,40 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2f272a15-b657-4e69-b58b-9c5039112b57" name="Changes" comment="Create gateway server MVP&#10;&#10;Configure pom.xml files updating versions. Create gatewayserver module with appropriate dependencies and application.yml config. Also I am connecting gateway server to the config server and eureka server to implement service discovery.">
-      <change afterPath="$PROJECT_DIR$/docker-compose/default/.data/minio/.minio.sys/tmp/71e460d4-3049-49cc-bddd-49771399b114" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-compose/observability/tempo/tempo.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/src/main/java/com/microservicesbank/accounts/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/src/main/java/com/microservicesbank/accounts/controller/CustomerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cards/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/cards/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cards/src/main/java/com/microservicesbank/cards/controller/CardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/java/com/microservicesbank/cards/controller/CardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cards/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configserver/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/configserver/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configserver/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configserver/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose/default/.data/minio/.minio.sys/buckets/.bloomcycle.bin/xl.meta" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose/default/.data/minio/.minio.sys/buckets/.bloomcycle.bin/xl.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose/default/.data/minio/.minio.sys/buckets/.usage-cache.bin.bkp/xl.meta" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose/default/.data/minio/.minio.sys/buckets/.usage-cache.bin.bkp/xl.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose/default/.data/minio/.minio.sys/buckets/.usage-cache.bin/xl.meta" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose/default/.data/minio/.minio.sys/buckets/.usage-cache.bin/xl.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose/default/.data/minio/.minio.sys/buckets/.usage.json/xl.meta" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose/default/.data/minio/.minio.sys/buckets/.usage.json/xl.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose/default/.data/minio/.minio.sys/buckets/loki-data/.usage-cache.bin.bkp/xl.meta" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose/default/.data/minio/.minio.sys/buckets/loki-data/.usage-cache.bin.bkp/xl.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose/default/.data/minio/.minio.sys/buckets/loki-data/.usage-cache.bin/xl.meta" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose/default/.data/minio/.minio.sys/buckets/loki-data/.usage-cache.bin/xl.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose/default/.data/minio/.minio.sys/buckets/loki-ruler/.usage-cache.bin.bkp/xl.meta" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose/default/.data/minio/.minio.sys/buckets/loki-ruler/.usage-cache.bin.bkp/xl.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose/default/.data/minio/.minio.sys/buckets/loki-ruler/.usage-cache.bin/xl.meta" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose/default/.data/minio/.minio.sys/buckets/loki-ruler/.usage-cache.bin/xl.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose/default/.data/minio/.minio.sys/tmp/fd7a9079-9c5b-451f-ae77-c82fea08ca4d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose/default/common-config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose/default/common-config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose/default/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose/default/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose/observability/grafana/datasource.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose/observability/grafana/datasource.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eurekaserver/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/eurekaserver/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eurekaserver/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/eurekaserver/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gatewayserver/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gatewayserver/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gatewayserver/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gatewayserver/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/loans/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/src/main/java/com/microservicesbank/loans/controller/LoanController.java" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/java/com/microservicesbank/loans/controller/LoanController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/loans/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/classes/com/microservicesbank/loans/controller/LoanController.class" beforeDir="false" afterPath="$PROJECT_DIR$/loans/target/classes/com/microservicesbank/loans/controller/LoanController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/jib-classpath-file" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/jib-main-class-file" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/layers/0288605298d41e49c99f0de9fcfb3938f66d59fa380ff50a3f9ee6dfc7c661d0/5a57e5890c40cd6fd43f07d9503d0dff6d3d4f0a239ae341664c853403549392" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/layers/03f0e708ad4a9eb557dd2977a4bb04a16894733d0d759d2e65394f447f2882cd/e8d29b3ed86700939732b4b97626126ce4325ddd1fda63fdac2e0c748385321b" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/layers/06b8c230ca35762ffcaad24e36d61ae96ceae4cfa6b2754dd62266d665d2d897/f8b735b0bd8d3bf6b848c897d2fe7bc80cd0fff1299d3eb086ff1e71bfe51edb" beforeDir="false" />
@@ -126,9 +92,6 @@
       <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/selectors/fffdf963b6a0ac77d7b8acd4f841eb653642d1ae0515fd19f9d3c6713db9fd5a" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/tmp/12008589958611735526/08ad6e51c6d3aee853d54663cf93bfa6cf9d542688d5b8b5577f3e7e88d9ba19" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/tmp/1239665525621819949/f73dbf45a490badc9b304c8c146da1b4ae0f251909f83cb2e9254d9a9b3f3082" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-image.digest" beforeDir="false" afterPath="$PROJECT_DIR$/loans/target/jib-image.digest" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-image.id" beforeDir="false" afterPath="$PROJECT_DIR$/loans/target/jib-image.id" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-image.json" beforeDir="false" afterPath="$PROJECT_DIR$/loans/target/jib-image.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
