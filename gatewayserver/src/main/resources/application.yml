@@ -25,6 +25,13 @@ spring:
       connection-timeout: 2s #how long should we wait for a connection with Redis
       host: localhost
       port: 6379
+  #Auth server configuration
+  security:
+    oauth2:
+      resourceserver:
+          jwt:
+            jwk-set-uri: http://localhost:7080/realms/dev/protocol/openid-connect/certs
+
 
 management:
   endpoints:
