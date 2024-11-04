@@ -68,8 +68,9 @@ public class LoanController {
                                                   @RequestParam @Pattern(regexp = "^\\d{10}$",
                                                           message = "Mobile number must be 10 digits") String mobileNumber) {
 
-        logger.debug("microbank-correlation-id found: {}", correlationId);
+        logger.debug("createLoan() method started");
         loanService.createLoan(mobileNumber);
+        logger.debug("createLoan() method ended");
 
         return ResponseEntity
                 .status(HttpStatus.CREATED)
@@ -105,8 +106,9 @@ public class LoanController {
                                                     @RequestParam @Pattern(regexp = "^\\d{10}$",
                                                             message = "Mobile number must be 10 digits") String mobileNumber) {
 
-        logger.debug("microbank-correlation-id found: {}", correlationId);
+        logger.debug("fetchLoan() method started");
         LoanDTO loanDTO = loanService.fetchLoan(mobileNumber);
+        logger.debug("fetchLoan() method ended");
 
         return ResponseEntity.status(HttpStatus.OK).body(loanDTO);
     }
@@ -146,8 +148,9 @@ public class LoanController {
     public ResponseEntity<ResponseDTO> updateLoanDetails(@RequestHeader("microbank-correlation-id") String correlationId,
                                                          @Valid @RequestBody LoanDTO loanDTO) {
 
-        logger.debug("microbank-correlation-id found: {}", correlationId);
+        logger.debug("updateLoanDetails() method started");
         boolean isUpdated = loanService.updateLoan(loanDTO);
+        logger.debug("updateLoanDetails() method ended");
 
         if (isUpdated) {
             return ResponseEntity
@@ -195,8 +198,9 @@ public class LoanController {
                                                          @RequestParam @Pattern(regexp = "^\\d{10}$",
                                                                  message = "Mobile number must be 10 digits") String mobileNumber) {
 
-        logger.debug("microbank-correlation-id found: {}", correlationId);
+        logger.debug("deleteLoanDetails() method started");
         boolean isDeleted = loanService.deleteLoan(mobileNumber);
+        logger.debug("deleteLoanDetails() method ended");
 
         if (isDeleted) {
             return ResponseEntity
@@ -211,7 +215,8 @@ public class LoanController {
     @GetMapping("/contactDetails")
     public ResponseEntity<LoansContactInfoDTO> getContactInfo(@RequestHeader("microbank-correlation-id") String correlationId) {
 
-        logger.debug("microbank-correlation-id found: {}", correlationId);
+        logger.debug("getContactInfo() method started");
+        logger.debug("getContactInfo() method ended");
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .body(loansContactInfoDTO);
