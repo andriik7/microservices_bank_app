@@ -5,93 +5,41 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2f272a15-b657-4e69-b58b-9c5039112b57" name="Changes" comment="Create gateway server MVP&#10;&#10;Configure pom.xml files updating versions. Create gatewayserver module with appropriate dependencies and application.yml config. Also I am connecting gateway server to the config server and eureka server to implement service discovery.">
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/layers/0288605298d41e49c99f0de9fcfb3938f66d59fa380ff50a3f9ee6dfc7c661d0/5a57e5890c40cd6fd43f07d9503d0dff6d3d4f0a239ae341664c853403549392" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/layers/03f0e708ad4a9eb557dd2977a4bb04a16894733d0d759d2e65394f447f2882cd/e8d29b3ed86700939732b4b97626126ce4325ddd1fda63fdac2e0c748385321b" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/layers/06b8c230ca35762ffcaad24e36d61ae96ceae4cfa6b2754dd62266d665d2d897/f8b735b0bd8d3bf6b848c897d2fe7bc80cd0fff1299d3eb086ff1e71bfe51edb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/layers/094f40abd655d396636a95ddaea91aac7387f48b3a39d5b41debb589f005d14e/4914695abda5f97093b54d6b93dfb5ebb1c692a54e1bc38ffd79f3882ac4f022" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/layers/0dc579311b491b240e246946fec41f6d6ecbbace8d3ae5b60ae1e5610dba898d/e7d29f24d3e5436f8bc6079838ad0ccc5c7e819a2231a1fed48120743eba8c14" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/layers/13bc24dac5d1c1eb83f9de9497d1894da9a5cef118d78d9691aef2ff343463c8/24331a6387d08ce63f41b898ca864ad708b5f0ce1c8b06977bab1db8b66fb378" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/layers/166c1db95e886665876fa6db543e332352435e1b10096b9dd85be24ea99b7152/11135f9abe3aaf589a07de8d07b3df7efde9de33818c8336235413e8e5ea566e" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/layers/1dfcae0857925b8d3fd9a31f2e88ee2f2ff951e1bb2bd1c7e8fc5d27dc5722df/08ad6e51c6d3aee853d54663cf93bfa6cf9d542688d5b8b5577f3e7e88d9ba19" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/layers/1f3cc44259542d3d54456f675e06ddcf08fd314641f96d8579f18e1bb547e0d4/13345384ef298b498512325a4914886fbb91966d889fdd0c47b33c6d8bfe1fe2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/layers/280d54c82e16964d968a89cfb71fca29946e56eab8c199b3926aa116d6a81bf0/b5671995cee58c19083f4c68789eeeb649917f0c3133a975186cdbd6893f790b" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/layers/3689d6af53c7236be8ee90d79490d0deb1d065028b0241ac212fd15712cee5be/df06840f8bf9eaac5d704025b1f09cd4f36281c227c9dad36ea90318d6f638de" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/layers/36f5161fc91b9e81ff9dda5fc4d773ba868e39621a005cde99c5db731eb5881e/cdd9ea72ec2d07b5cd814c35cdee207504943d8300ac2d63b23d8ef633977b81" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/layers/3f3c98ba617ddb22af6bd47e37550d34c58c42aaa6d8325a8bd4b37bd6ea688b/61be14890f9fab6a2b033144c75b4b378808b571854bab805869d1bb96489796" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/layers/50f8265544b245ef0e4f853181cc1b7fadce1299f501054a3702e0494677c8fa/7dd75885ef5451205e6d9fadb1416c61a4ebd92d571e43aed04aea9ab153aac6" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/layers/644da22af4840cda53e7fcce992c074967bea897d56c1697aeb48c657fe8e733/3a5b482611ceafd3051c3698a40c8f3d94c7187cdfa751076547a469664145b8" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/layers/6da567bfb7c75cd3d746c13ac0405e3c208cef4197ab0d0afcea089a195f9d7a/8b00ab9bfbcc78044964ae81e36e5dd504cacbc22955c81f040cb7c7b45aeb86" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/layers/71606fe01cecfe7440725f3823e3cb13d3d3f77e23acc581526eeb56c7f55363/734f9df9c335236f567523dd6b665acca3a8b9c65a08034d0258a5def3bd8ab8" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/layers/80ad0f897d04f32e2044486924727e80c3e83706893a1d5c8362e9506eb5c6f5/17538f35d7cd54d20bead17ce2c0930f98e31dafc2b4f9230c0d4fa1a4da2784" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/layers/8658feffc4badcaf8a2ce6e600b3f338115ff82e199fefdcc78dc7bc78ec7a5e/d2fd1243fe0bd5cc8e8c15b9a61d401e5cdce5eb40729e31bfbf536534542cc2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/layers/86fcb43fe8126a4316ca1bb4f3faddedaf1c65bbd0d123329541df9a15cb140d/1aa33e42af82415f3411345946d3c71be44ed3b83e02b7bd3a258dfda184dae9" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/layers/8cc7a59e3a36f814fbe10634bf979e1db5b80c81d48266a7628cbd32aa6591ac/1d49bd882272baa3002f4a72e0ac8b7a5fc884f773afa502c87f131ea7250ddb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/layers/93b614d8e16bada1cdd7210ee2b8c71e61271728df73c310f6a1beade0091a4a/27bbb483e41be6278dedf9d23b9cdb7b1c2c212aeab42eb04116545908e104f1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/layers/97e180bcf1b178c9475bc2ab9e6f6c2731bf675830d4dd4ac44787c583b95538/f73dbf45a490badc9b304c8c146da1b4ae0f251909f83cb2e9254d9a9b3f3082" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/layers/a7e2113cf33d70c50fc8ddaf204a7ad406996cb527ff1bbc83314663ccfe0c40/df078df8172446c54055df1b576980bcb0a101f615183d3b15558a48f7435b6f" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/layers/ad998785920c43c74198dcd259ea512e656221042f69ff6017fb1abb07172c43/4b61768fee2b508cd7133304691fb5e8303c0a7961bc77ac84c5385ebfdda8f5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/layers/af06b4e713f829d4396946af1100c3299a7680d4c34a1066bc1fb7b81a670f41/e731a4e1c419e9ad3860d4f117c939a9f61cce5b766f6cef11cd3ceba7083823" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/layers/b64e6852f52910feb842a130fae7b624c459dd5eba48e9e8ca51714fd92e0d19/1b57a610795f60bc9401a59a1c958adac9fdb0ae5db2d96545e3b7b4a86059b2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/layers/bb24815ef28f0f0f976907e51a81bbe5856154fd2cbbc588f5574cab0e0e0c5b/9a14745e026fd8d6ff77f3cb03e81121679e1af38d18d450588d20a3f70d7ba2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/layers/bf7163e550431ef07d814bcac8f7e3d6915414aac41f62ab29abde89ecc5eef3/e425458ee6ff2bf3b8f01e0ec23dc4706b19cd9e21cb1dcf2511c9057f9e38f8" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/layers/c98273874d706971cb9dc4aedc88dd32c64a8344bdece9cd46c14989d815e286/5e41ba3a2c65d6354c9d2e8cff222add8f5d14fdc6f78ceaddb641e9ff620a79" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/layers/ca718f5c4126b9179bc98fbf86c3c5d15a8d92c336af5dcb1177cf17850c9b23/5c60c323275c3d4473f70c388a09558d2d9fe4b0430c3faaee983aeafe8cd9e0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/layers/d20e8a5961d8e60cdd531605f2ad7072cf375acaa7877394cb09a0b520b04c89/c9b6f5d1e96e17ea39f7a627881a58f849a394ef59f2469ffcacd54e2008abd7" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/layers/d355c331db79b8388773bf7d91e5e053eefbdcbf47d117f0d407dacc2ba59051/f0e74ee841063b03e2fd54e63e5d9433b9c84a566c3220a3cfece75a98669a60" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/layers/d3fd70633bcd19581fe04388da806518215db7168873f13f5db013b28698c15e/015997bd8370cffc3320ab326de7ae0040e418bd9b00bd5274b219f0832c5cee" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/layers/de8af30d6563920ea839754188bcf124218bc0b5f23336f88cc1c65be8980760/71c688a82afd6e9255a1935cdf3c0bcc9cb121e49592f63486660e9c2954636d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/layers/dfc4a2adf1f9cf187330833c37b45d6e4a5a59366417d3671ae8ac029dbd2d07/4cfde654562ee7137ecdaafbcb83fdaaa47e01081d8c182c275bde8cf247bb00" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/layers/e2334515e43b33a92cac85d53e4ef2b90514600aa5c400d0dbc54a150a7d6330/96140f43a3cc2266e31247b2417417b18b31dd017fee924f4254271268232c44" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/layers/e9ebeb1ce4c7aa6ba64c4220d3962c353736b4959e5da3287d4a896535af9227/8465271bb7e52d95e8a530d407af1e61ada7a0c1ddda12315aef8f2002cc7e6c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/layers/ed736c375f478723c7d51a039b9d13a22d0a2ce7a8c0fec8ae90dc9910b00fde/64ad40c36f597203dfbd982141ba4aaf4ff0a5eb47c8282f607c3ac7e5c05ce8" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/layers/f7e097d308d11ac1e52e9cfbff3705c9c9bc93057ce9c0832ef03597fa718bab/985f127aa5238838e9257baffa2e01517e229c57196354156b41eca291d38759" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/selectors/008d01a28be4ccf9248e6dfbdd526d41af4479b3b73d7ae8243009bb48e58f9b" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/selectors/062441b9f2a20046edd462882b7ce1adc65d5fc8388c69884aa3bed375f2b793" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/selectors/07c7ef30189fac294c2498649e4796c5818b3487b71c49970fe6a6c81c359c44" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/selectors/114b5bb2bc58e37eb0449f8f1683356cc79479eb1ff29acf1b2aa1f7b9924b64" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/selectors/13d38c84abcc889c9de51e75e36f005e9f00bc7cdebd7b6962aef7310a715d8d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/selectors/14e28ca70e286f059f6cea24eba616c95ebf94d987871b16b94796af1bcb5d82" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/selectors/1509b6c8801cefc47a7c90ecd5078ba6d4f639f199e025c9cf2d19a82ac01dca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/selectors/1830ec71f8025d1b3d15ace58f01da936fd1202cb3f8324ed1f5b9f3367834a6" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/selectors/19ae487fd39d9f1f4740261bd447bca81860e5dec9eafe76a16d57e3710c3a92" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/selectors/2488d24fed621f1f80206329a0c2c3ec7bc1edbbae98bf231be4fadfba85ea57" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/selectors/2872051f5967b8ae55dc596c25abddee3d61b9dfad31cc5eefacf4e264d6bae2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/selectors/2b5e042e6a6b427bbbd1afd2636d965f52b4ac4828ae8d26a61b2e7d47c39d37" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/selectors/395dbd3dc2e9cee1b65956fb39da77572909d60cd8f6e0320d36d415464b2310" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/selectors/3bcdfa18f26ab7e553468f8d086bdab450c515133e3ae52e4c673b0dcff119f6" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/selectors/3d8053f1fbf6795a70d624e3f86889bbc6d7a593c5cdcd2de6d969489c00be5c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/selectors/3f4df69fa73b488e106cb422b38ec85a06ab575d2cd18c39a48a12fb672a60c2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/selectors/52863948478b2c3bbf0f130f1434eb78b60d1e3b64f4443a2f9e0f0d55a3f380" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/selectors/52d105c0e5f1504b0b600dd2ea192aaf7438cf1279c14f3d92b438d471c5c085" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/selectors/55ca99d46e805f309ad7d8b052fd9ea81996528f878ddb8458bc511db8f1d9e9" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/selectors/6015c3c9beedb61b0b1bbe33faf081219879b8cdf1eba2173bb0e589bf967f20" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/selectors/61a2382bd19587e0eed7e36f85abc1532640023ae00d9d827b82226104c5c1fa" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/selectors/7701a7705acca60f86e737ed1b739e82b42e18e3638d814a229a48bb6343ae92" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/selectors/7db26260fee65c3de0c704ffe523d789201047540ad6a91bcd1885c37a2578a4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/selectors/80ff054efa65e9e9d45cd6ef61a84e94eb9dbafc8a434644ae3ee43dd3524b55" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/selectors/89954e407b27fd86ea5f20f021b68b4600b55ef3984b9fe6c1cf728bbecb6d09" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/selectors/8e276aecd37baad515088f346d73fcc22b3cd811ddce4542f01ad8c6b83699eb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/selectors/8f44b83a132bb725161e904929b2daf1cfb5061aba8df8352523ee0c52873784" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/selectors/a98dbe2349b05115576f2a79e1651c914044b5d101f4dfa53002d360cbaf7c27" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/selectors/ad96b39492162aa22c9d6eb0920a4b774a3f336ff413b5a892774ce976d71d34" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/selectors/ae0abe805e8cd99365344ae8db5a097b3f5f3cc110655758975d218256f050e7" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/selectors/b3d1fd427423462d88aba907c5f37b3fa5c637f35b267a8229353556d0f5c9ec" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/selectors/b60b51bfa4413124fa74bac09a0e9abbd130d92a4d74ed90b75cd0a539bc06cb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/selectors/ba9e19788f02a9da27164066f0e2a79eb589e40e78f46549bd37853ae545baa5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/selectors/bb58159dbb808b6530b55d2e1c1fae6ce59ea59037637fb4509860a2fbd8efb3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/selectors/bc4486d4e467d420a3a35f41426f389bc1e0ecabf95fb43fdec914b047fb92e3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/selectors/c0384a6910dc332e12b57733e70d3303c0c9d7b28ae1ad9a30f3ece7441554eb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/selectors/c34adb8aa9e644856d78741cf863ed6113b51d6ee23e202d9d5069dd95433be5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/selectors/c7eb617b477e21abede7d748b86ce335daf427a9d3a03780c9262a89fce943d9" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/selectors/dbe1aacde20800e22d76d313491445af8171e521bbc63c16582c9d3ff28f0272" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/selectors/e14449e15f4d225ec8ee08f6dafd4276675eacde7d6e2162e22a3dbe0f7db1b4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/selectors/f62b14eacaac3c8246fc0cfbc67f9ad4ea92cba046fed890f100a8ed0a8694ce" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/selectors/f946214939866921f2f56d818e8c595b41c23091e078e6e578f6d1d857bcb7c9" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/selectors/fa999d53e4617efc897d88afcb3aedd34cb7ce140928e8cb8491d3cd5bd4c440" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/selectors/fef8488031b5cd13cccd1d5dc586745c5e80e7fa825b3db93b21b555293d8676" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/selectors/fffdf963b6a0ac77d7b8acd4f841eb653642d1ae0515fd19f9d3c6713db9fd5a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/tmp/12008589958611735526/08ad6e51c6d3aee853d54663cf93bfa6cf9d542688d5b8b5577f3e7e88d9ba19" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/tmp/1239665525621819949/f73dbf45a490badc9b304c8c146da1b4ae0f251909f83cb2e9254d9a9b3f3082" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/KeyCloak-realm-export/dev-realm-export-ac.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans/target/jib-cache/layers/284737b15d3c2c4e1dd2cf8d7f8b44f2e7c467cf9cd3317b17e5daa9ee6ad442/5620b95077159cf5db62baa6c05eebc54051e6285a8f0607fc10711466dc211e" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans/target/jib-cache/layers/303ada9110f4acbdf4cc764bdd09b64e3ee0a02b02a3ca8b5470e4c8aa20e87b/584d9d82006fbd792a62d2b35e49b8c45ecec31df314bfa719f6e9f290655e49" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans/target/jib-cache/layers/e85f75b39b092cbefff3464d9a658a2c706786380c5b44fc62e6d12a85f740df/def2c3adce1dcb540b2edf4602fcc75b4424897543a873a0a57163a4a47018b7" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans/target/jib-cache/selectors/1ec5dedd1ab76f7e854b4d665d6705924d19241729e5abf8f9dc5a3fb396dd3d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans/target/jib-cache/selectors/3f200532cb19f63043a9471b348ae50f88a907e4277d4b2568bf71ee77a60b99" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans/target/jib-cache/selectors/94145018db36e3ea919e690ee4fcdbe56d262946741e6e7d459bd06fc7f7b09d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans/target/jib-cache/tmp/12758723070013075774/f8c67ca55716e84716c37d7f8df565a139bef7e0e81d826837b34322ed16ecc5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_05_10_2024_20_52__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_05_10_2024_20_52__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/cards/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configserver/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/configserver/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose/default/.data/minio/.minio.sys/buckets/.bloomcycle.bin/xl.meta" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose/default/.data/minio/.minio.sys/buckets/.bloomcycle.bin/xl.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose/default/.data/minio/.minio.sys/buckets/.heal/mrf/list.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose/default/.data/minio/.minio.sys/buckets/.usage-cache.bin.bkp/xl.meta" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose/default/.data/minio/.minio.sys/buckets/.usage-cache.bin.bkp/xl.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose/default/.data/minio/.minio.sys/buckets/.usage-cache.bin/xl.meta" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose/default/.data/minio/.minio.sys/buckets/.usage-cache.bin/xl.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose/default/.data/minio/.minio.sys/buckets/.usage.json/xl.meta" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose/default/.data/minio/.minio.sys/buckets/.usage.json/xl.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose/default/.data/minio/.minio.sys/buckets/loki-data/.usage-cache.bin.bkp/xl.meta" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose/default/.data/minio/.minio.sys/buckets/loki-data/.usage-cache.bin.bkp/xl.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose/default/.data/minio/.minio.sys/buckets/loki-data/.usage-cache.bin/xl.meta" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose/default/.data/minio/.minio.sys/buckets/loki-data/.usage-cache.bin/xl.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose/default/.data/minio/.minio.sys/buckets/loki-ruler/.usage-cache.bin.bkp/xl.meta" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose/default/.data/minio/.minio.sys/buckets/loki-ruler/.usage-cache.bin.bkp/xl.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose/default/.data/minio/.minio.sys/buckets/loki-ruler/.usage-cache.bin/xl.meta" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose/default/.data/minio/.minio.sys/buckets/loki-ruler/.usage-cache.bin/xl.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose/default/.data/minio/.minio.sys/tmp/71e460d4-3049-49cc-bddd-49771399b114" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose/default/common-config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose/default/common-config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose/default/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose/default/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eurekaserver/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/eurekaserver/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gatewayserver/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gatewayserver/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/loans/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/loans/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/jib-image.digest" beforeDir="false" afterPath="$PROJECT_DIR$/loans/target/jib-image.digest" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/jib-image.id" beforeDir="false" afterPath="$PROJECT_DIR$/loans/target/jib-image.id" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/jib-image.json" beforeDir="false" afterPath="$PROJECT_DIR$/loans/target/jib-image.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,67 +92,66 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Application.AccountsApplication.executor": "Debug",
-    "Application.CardsApplication.executor": "Debug",
-    "Application.ConfigserverApplication.executor": "Run",
-    "Application.EurekaserverApplication.executor": "Run",
-    "Application.GatewayserverApplication.executor": "Run",
-    "Application.LoansApplication.executor": "Run",
-    "Docker.default: Compose Deployment.executor": "Run",
-    "Docker.docker-compose.yml.accounts: Compose Deployment.executor": "Run",
-    "Docker.docker-compose.yml.cards: Compose Deployment.executor": "Run",
-    "Docker.docker-compose.yml.loans: Compose Deployment.executor": "Run",
-    "Docker.docker-compose.yml: Compose Deployment.executor": "Run",
-    "Docker.prod.configserver: Compose Deployment.executor": "Run",
-    "Docker.prod.eurekaserver: Compose Deployment.executor": "Run",
-    "Docker.prod: Compose Deployment.executor": "Run",
-    "JUnit.AccountControllerTest.executor": "Run",
-    "JUnit.AccountControllerTest.fetchAccountDetailsTest.executor": "Run",
-    "JUnit.AccountServiceTest.executor": "Run",
-    "JUnit.All in accounts (1).executor": "Run",
-    "JUnit.All in accounts.executor": "Run",
-    "JUnit.All in cards.executor": "Run",
-    "JUnit.All in loans (1).executor": "Run",
-    "JUnit.All in loans.executor": "Run",
-    "JUnit.CardControllerTest.createCardPositiveRESTApiTest.executor": "Run",
-    "JUnit.CardControllerTest.createCardRESTApiTest.executor": "Run",
-    "JUnit.CardControllerTest.createCardRESTTest.executor": "Run",
-    "JUnit.CardControllerTest.createCardSuccessTest.executor": "Run",
-    "JUnit.CardControllerTest.executor": "Run",
-    "JUnit.CardControllerTest.fetchCardDetailsInvalidMobileNumberTest.executor": "Run",
-    "JUnit.CardControllerTest.fetchCardDetailsSuccessTest.executor": "Run",
-    "JUnit.CardControllerTest.fetchCardInvalidMobileNumberTest.executor": "Run",
-    "JUnit.CardControllerTest.testCreateCardInvalidMobileNumber.executor": "Run",
-    "JUnit.CardControllerTest.testCreateCardSuccess.executor": "Run",
-    "JUnit.CardControllerTest.updateCardInvalidMobileNumberTest.executor": "Run",
-    "JUnit.CardControllerTest.updateCardSuccessTest.executor": "Run",
-    "JUnit.CardControllerTest.сreateCardInvalidMobileNumberTest.executor": "Run",
-    "JUnit.CardServiceTest.deleteCardTest.executor": "Run",
-    "JUnit.CardServiceTest.executor": "Run",
-    "JUnit.CardServiceTest.testCreateCardMobileNumberIsNotValid.executor": "Run",
-    "JUnit.LoanApplicationTests.executor": "Run",
-    "JUnit.LoanControllerTest.executor": "Run",
-    "JUnit.LoanControllerTest.fetchLoanNotFoundTest.executor": "Run",
-    "JUnit.LoanControllerTest.fetchLoanTest.executor": "Run",
-    "JUnit.LoanControllerTest.updateLoanInvalidMobileNumberTest.executor": "Run",
-    "JUnit.LoanServiceTest.executor": "Run",
-    "JUnit.LoanServiceTest.updateLoanNotFoundTest.executor": "Run",
-    "JUnit.LoanServiceTest.updateLoanTest.executor": "Run",
-    "JUnit.LoanTestSuite.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "com.codeium.enabled": "true",
-    "git-widget-placeholder": "feature/observability-monitoring",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/ANDREW/Study/Pogramming/JAVA/Spring/Microservices/EazyBytes_Course/bank_app/docker-compose/qa",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.AccountsApplication.executor&quot;: &quot;Debug&quot;,
+    &quot;Application.CardsApplication.executor&quot;: &quot;Debug&quot;,
+    &quot;Application.ConfigserverApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.EurekaserverApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.GatewayserverApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.LoansApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.default: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yml.accounts: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yml.cards: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yml.loans: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yml: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.prod.configserver: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.prod.eurekaserver: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.prod: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AccountControllerTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AccountControllerTest.fetchAccountDetailsTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AccountServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.All in accounts (1).executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.All in accounts.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.All in cards.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.All in loans (1).executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.All in loans.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardControllerTest.createCardPositiveRESTApiTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardControllerTest.createCardRESTApiTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardControllerTest.createCardRESTTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardControllerTest.createCardSuccessTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardControllerTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardControllerTest.fetchCardDetailsInvalidMobileNumberTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardControllerTest.fetchCardDetailsSuccessTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardControllerTest.fetchCardInvalidMobileNumberTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardControllerTest.testCreateCardInvalidMobileNumber.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardControllerTest.testCreateCardSuccess.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardControllerTest.updateCardInvalidMobileNumberTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardControllerTest.updateCardSuccessTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardControllerTest.сreateCardInvalidMobileNumberTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardServiceTest.deleteCardTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardServiceTest.testCreateCardMobileNumberIsNotValid.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LoanApplicationTests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LoanControllerTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LoanControllerTest.fetchLoanNotFoundTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LoanControllerTest.fetchLoanTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LoanControllerTest.updateLoanInvalidMobileNumberTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LoanServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LoanServiceTest.updateLoanNotFoundTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LoanServiceTest.updateLoanTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LoanTestSuite.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;com.codeium.enabled&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature/OAuth2-security&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/ANDREW/Study/Pogramming/JAVA/Spring/Microservices/EazyBytes_Course/bank_app/docker-compose/qa&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\ANDREW\Study\Pogramming\JAVA\Spring\Microservices\EazyBytes_Course\bank_app\docker-compose\qa" />
@@ -214,7 +161,6 @@
       <recent name="C:\ANDREW\Study\Pogramming\JAVA\Spring\Microservices\EazyBytes_Course\bank_app\cards\src\main\resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\ANDREW\Study\Pogramming\JAVA\Spring\Microservices\EazyBytes_Course\bank_app\docker-compose\default\observability" />
       <recent name="C:\ANDREW\Study\Pogramming\JAVA\Spring\Microservices\EazyBytes_Course\bank_app\docker-compose\default" />
       <recent name="C:\ANDREW\Study\Pogramming\JAVA\Spring\Microservices\EazyBytes_Course\bank_app\docker-compose" />
     </key>
@@ -302,18 +248,18 @@
     <list>
       <item itemvalue="Application.ConfigserverApplication" />
       <item itemvalue="Application.AccountsApplication" />
-      <item itemvalue="Application.EurekaserverApplication" />
       <item itemvalue="Application.GatewayserverApplication" />
       <item itemvalue="Application.LoansApplication" />
+      <item itemvalue="Application.EurekaserverApplication" />
       <item itemvalue="Docker.default: Compose Deployment" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Docker.default: Compose Deployment" />
-        <item itemvalue="Application.LoansApplication" />
         <item itemvalue="Application.GatewayserverApplication" />
-        <item itemvalue="Application.EurekaserverApplication" />
         <item itemvalue="Application.AccountsApplication" />
+        <item itemvalue="Application.EurekaserverApplication" />
+        <item itemvalue="Application.LoansApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -397,7 +343,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="TDD with CardController and refactoring&#10;&#10;Creating CardController and CardControllerTest to get all these endpoints working properly. Also here I am updating and fixing some exception handling, services and service tests for Cards microservice." />
     <MESSAGE value="Merge branch 'refs/heads/card_branch'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
     <MESSAGE value="Create LoanController and LoanControllerTest using TDD to resolve all possible issues from the start. Add some correction to the LoanDTO and using new dependency I provide @Suite to run all my tests at the same moment right before every commit." />

@@ -4,7 +4,7 @@ logging:
       microservicesbank:
         accounts: DEBUG
   pattern:
-    level: "%5p[${spring.application.name},%X{trace_id},%X{span_id}] - %m%n"
+    level: "%5p [${spring.application.name},%X{trace_id},%X{span_id}]"
     #console: "${LOGGER_PATTERN:%green(%d{HH:mm:ss.SSS}) %blue(%-5level) %red([%thread]) %yellow(%logger{15}) - %msg%n}}"
 
 server:

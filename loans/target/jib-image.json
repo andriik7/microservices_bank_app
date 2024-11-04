@@ -1,1 +1,1 @@
-{"image":"akuchera/loans:7.1-tempo","imageId":"sha256:adfe7db2115ce59a22995e9e08dd0ec3d3e1d1b3c6ba1b064c3b590de03b4f94","imageDigest":"sha256:ed67c0c4c1a8a9d3f8773cdeb0a986a937f2e5476d2d89d2a4e10af276b0a9a2","tags":["7.1-tempo"],"imagePushed":true}
+{"image":"akuchera/loans:8","imageId":"sha256:b7eaaa0619a5752bb39af6b8d33b557e6e16628d8f6bca078d9f0331d61b478f","imageDigest":"sha256:576d9a6984364c4252f110b59183f72d053ba80996b116a4f3fc408142376668","tags":["8"],"imagePushed":true}

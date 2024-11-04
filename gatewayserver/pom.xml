@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.microservicesbank</groupId>
 	<artifactId>gatewayserver</artifactId>
-	<version>7.1-tempo</version>
+	<version>8</version>
 	<name>gatewayserver</name>
 	<description>Edge Server for microservices bank</description>
 	<url/>

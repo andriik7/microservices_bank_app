@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.microservicesbank</groupId>
 	<artifactId>configserver</artifactId>
-	<version>6</version>
+	<version>8</version>
 	<packaging>jar</packaging>
 	<name>configserver</name>
 	<description>Config server for microservices bank</description>
