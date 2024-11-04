@@ -116,4 +116,4 @@ info:
   app:
     name: accounts
     description: Microservicesbank Accounts microservice
-    version: 7.1
+    version: 8

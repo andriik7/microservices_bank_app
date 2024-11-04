@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.microservicesbank</groupId>
 	<artifactId>gatewayserver</artifactId>
-	<version>7.1-tempo</version>
+	<version>8</version>
 	<name>gatewayserver</name>
 	<description>Edge Server for microservices bank</description>
 	<url/>
@@ -61,6 +61,18 @@
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-circuitbreaker-reactor-resilience4j</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-oauth2-resource-server</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-oauth2-jose</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

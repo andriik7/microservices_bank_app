@@ -1,0 +1,86 @@
+logging:
+  level:
+    com:
+      microservicesbank:
+        loans: DEBUG
+  pattern:
+    level: "%5p [${spring.application.name},%X{trace_id},%X{span_id}]"
+    #console: "${LOGGER_PATTERN:%green(%d{HH:mm:ss.SSS}) %blue(%-5level) %red([%thread]) %yellow(%logger{15}) - %msg%n}}"
+
+server:
+  port: 9000
+spring:
+  application:
+    name: loans
+# LOCAL DEPLOY
+#  datasource:
+#    url: jdbc:h2:mem:testdb
+#    driverClassName: org.h2.Driver
+#    username: sa
+#    password: ''
+#  h2:
+#    console:
+#      enabled: true
+#  jpa:
+#    database-platform: org.hibernate.dialect.H2Dialect
+#    hibernate:
+#      ddl-auto: update
+#    show-sql: true
+
+# PRODUCTION(DOCKER) DEPLOY
+  datasource:
+    url: jdbc:mysql://localhost:3308/loansdb
+    username: root
+    password: root
+  jpa:
+    show-sql: true
+  sql:
+    init:
+      mode: always
+#
+#
+#
+  config:
+    import: optional:configserver:http://localhost:8071/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    shutdown:
+      enabled: true
+    health:
+      probes:
+        enabled: true
+  health:
+    readiness-state:
+      enabled: true
+    liveness-state:
+      enabled: true
+  info:
+    env:
+      enabled: true #to enable info details for an actuator
+  metrics:
+    tags:
+      application: ${spring.application.name}
+
+endpoints:
+  shutdown:
+    enabled: true
+
+eureka:
+  instance:
+    preferIpAddress: true #register with ip address but not with hostname because there is not any DNS mappings provided
+  client:
+    fetchRegistry: true #fetch registered services
+    registerWithEureka: true
+    serviceUrl:
+      defaultZone: http://localhost:8070/eureka/
+
+info:
+  app:
+    name: loans
+    description: Microservicesbank Loans microservice
+    version: 7.1

@@ -83,4 +83,4 @@ info:
   app:
     name: cards
     description: Microservicesbank Cards microservice
-    version: 7.1
+    version: 8
