@@ -342,6 +342,7 @@ services:
     environment:
       OTEL_SERVICE_NAME: accounts
       SPRING_DATASOURCE_URL: "jdbc:mysql://accountsdb:3306/accountsdb"
+      SPRING_RABBITMQ_HOST: rabbit
     depends_on:
       accountsdb:
         condition: service_healthy
