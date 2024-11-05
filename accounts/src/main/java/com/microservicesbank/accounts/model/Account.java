@@ -19,4 +19,7 @@ public class Account extends SuperEntity{
 
     @Column(name = "branch_address", nullable = false)
     private String branchAddress;
+
+    @Column(name = "communication_sw")
+    private boolean communicationSw;
 }

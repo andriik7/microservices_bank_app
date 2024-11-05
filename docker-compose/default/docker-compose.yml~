@@ -240,7 +240,7 @@ services:
       service: network-deploy-service
 
   gatewayserver:
-    image: akuchera/gatewayserver:8
+    image: akuchera/gatewayserver:9
     container_name: gatewayserver-ms
     ports:
       - "8072:8072"
@@ -265,7 +265,7 @@ services:
       SPRING_DATA_REDIS_TIMEOUT: 1s
 
   eurekaserver:
-    image: akuchera/eurekaserver:8
+    image: akuchera/eurekaserver:9
     container_name: eurekaserver-ms
     ports:
       - "8070:8070"
@@ -331,10 +331,8 @@ services:
       service: microservice-db-config
 
   accounts:
-    image: akuchera/accounts:8
+    image: akuchera/accounts:9
     container_name: accounts-ms
-    ports:
-      - "8080:8080"
     healthcheck:
       test: "curl --fail http://localhost:8080/actuator/health/readiness | grep UP || exit 1"
       interval: 20s
@@ -344,6 +342,7 @@ services:
     environment:
       OTEL_SERVICE_NAME: accounts
       SPRING_DATASOURCE_URL: "jdbc:mysql://accountsdb:3306/accountsdb"
+      SPRING_RABBITMQ_HOST: rabbit
     depends_on:
       accountsdb:
         condition: service_healthy
@@ -351,15 +350,15 @@ services:
         condition: service_healthy
       eurekaserver:
         condition: service_healthy
+      rabbit:
+        condition: service_healthy
     extends:
       file: common-config.yml
       service: microservice-eureka-config
 
   cards:
-    image: akuchera/cards:8
+    image: akuchera/cards:9
     container_name: cards-ms
-    ports:
-      - "8090:8090"
     healthcheck:
       test: "curl --fail http://localhost:8090/actuator/health/readiness | grep UP || exit 1"
       interval: 20s
@@ -381,10 +380,8 @@ services:
       service: microservice-eureka-config
 
   loans:
-    image: akuchera/loans:8
+    image: akuchera/loans:9
     container_name: loans-ms
-    ports:
-      - "9000:9000"
     healthcheck:
       test: "curl --fail http://localhost:9000/actuator/health/readiness | grep UP || exit 1"
       interval: 20s
@@ -405,8 +402,20 @@ services:
       file: common-config.yml
       service: microservice-eureka-config
 
+  message:
+    image: akuchera/message:9
+    container_name: message-ms
+    depends_on:
+      rabbit:
+        condition: service_healthy
+    environment:
+      SPRING_RABBITMQ_HOST: rabbit
+    extends:
+      file: common-config.yml
+      service: network-deploy-service
+
   configserver:
-    image: akuchera/configserver:8
+    image: akuchera/configserver:9
     container_name: configserver-ms
     ports:
       - "8071:8071"
@@ -419,10 +428,6 @@ services:
       timeout: 5s
       retries: 20
       start_period: 10s
-    deploy:
-      resources:
-        limits:
-          memory: 700m
     extends:
       file: common-config.yml
       service: microservice-base-config
