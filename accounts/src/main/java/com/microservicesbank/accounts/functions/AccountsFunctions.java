@@ -14,7 +14,7 @@ public class AccountsFunctions {
     private static final Logger log = LoggerFactory.getLogger(AccountsFunctions.class);
 
     @Bean
-    public Consumer<Long> updateCommunication(IAccountService accountService) {
+    public Consumer<Long> updateCreatedAccount(IAccountService accountService) {
 
         return accountNumber -> {
           log.info("Updating communication status for account number: {}", accountNumber);
@@ -22,4 +22,11 @@ public class AccountsFunctions {
         };
     }
 
+    @Bean
+    public Consumer<Long> logDeletedAccount(IAccountService accountService) {
+
+        return accountNumber -> {
+            log.info("Account was successfully deleted with account number: {}", accountNumber);
+        };
+    }
 }

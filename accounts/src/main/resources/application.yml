@@ -17,47 +17,57 @@ spring:
       circuitbreaker:
         enabled: true #to enable circuit breaker for all feign clients inside accounts microservice
     function:
-      definition: updateCommunication #function to be invoked while processing updateCommunication-in-0 (name defines the name of the function)
+      definition: updateCreatedAccount;logDeletedAccount #function to be invoked while processing updateCreatedAccount-in-0 (name defines the name of the function)
     stream:
       bindings:
-        updateCommunication-in-0:
-          destination: communication-sent #to get data from communication-sent queue(the same has to be sent)
+        sendCreatedAccount-out-0:
+          destination: created-account #to send data to send-communication queue and get data from send-communication queue in message microservice
+        updateCreatedAccount-in-0:
+          destination: created-notification-sent #to get data from communication-sent queue(the same has to be sent)
           group: ${spring.application.name}
-          #function: updateCommunication #function to be specified directly in binding
-        sendCommunication-out-0:
-          destination: send-communication #to send data to send-communication queue and get data from send-communication queue in message microservice
-  rabbitmq:
-    host: localhost
-    port: 5672
-    username: guest
-    password: guest
-    connection-timeout: 10s
+        sendDeletedAccount-out-1:
+          destination: deleted-account
+        logDeletedAccount-in-1:
+          destination: deleted-notification-sent #to get data from communication-sent queue(the same has to be sent)
+          group: ${spring.application.name}
+
+      kafka:
+        binder:
+          brokers:
+            - localhost:9092
+
+#  rabbitmq:
+#    host: localhost
+#    port: 5672
+#    username: guest
+#    password: guest
+#    connection-timeout: 10s
 
 # LOCAL DEPLOY
-#  datasource:
-#    url: jdbc:h2:mem:testdb
-#    driverClassName: org.h2.Driver
-#    username: sa
-#    password: ''
-#  h2:
-#    console:
-#      enabled: true
-#  jpa:
-#    database-platform: org.hibernate.dialect.H2Dialect
-#    hibernate:
-#      ddl-auto: update
-#    show-sql: true
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password: ''
+  h2:
+    console:
+      enabled: true
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
 
 # PRODUCTION(DOCKER) DEPLOY
-  datasource:
-    url: jdbc:mysql://localhost:3306/accountsdb
-    username: root
-    password: root
-  jpa:
-    show-sql: true
-  sql:
-    init:
-      mode: always
+#  datasource:
+#    url: jdbc:mysql://localhost:3306/accountsdb
+#    username: root
+#    password: root
+#  jpa:
+#    show-sql: true
+#  sql:
+#    init:
+#      mode: always
 #
 #
 #

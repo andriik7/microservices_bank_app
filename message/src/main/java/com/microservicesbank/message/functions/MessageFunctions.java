@@ -18,19 +18,37 @@ public class MessageFunctions {
     //Supplier when I need only output
     //Consumer when I need only input
     @Bean
-    public Function<AccountsMessageDTO, AccountsMessageDTO> email() {
+    public Function<AccountsMessageDTO, AccountsMessageDTO> accountCreatedEmail() {
 
         return accountsMessageDTO -> {
-            log.info("Sending email to " + accountsMessageDTO.toString());
+            log.info("Sending Account created email to " + accountsMessageDTO.toString());
             return accountsMessageDTO;
         };
     }
 
     @Bean
-    public Function<AccountsMessageDTO, Long> sms() {
+    public Function<AccountsMessageDTO, Long> accountCreatedSms() {
 
         return accountsMessageDTO -> {
-            log.info("Sending SMS to " + accountsMessageDTO.toString());
+            log.info("Sending Account created SMS to " + accountsMessageDTO.toString());
+            return accountsMessageDTO.accountNumber();
+        };
+    }
+
+    @Bean
+    public Function<AccountsMessageDTO, AccountsMessageDTO> accountDeletedEmail() {
+
+        return accountsMessageDTO -> {
+            log.info("Sending Account deleted email to " + accountsMessageDTO.toString());
+            return accountsMessageDTO;
+        };
+    }
+
+    @Bean
+    public Function<AccountsMessageDTO, Long> accountDeletedSms() {
+
+        return accountsMessageDTO -> {
+            log.info("Sending Account deleted SMS to " + accountsMessageDTO.toString());
             return accountsMessageDTO.accountNumber();
         };
     }

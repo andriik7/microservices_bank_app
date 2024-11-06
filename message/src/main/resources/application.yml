@@ -6,18 +6,26 @@ spring:
     name: message
   cloud:
     function:
-      definition: email|sms #function to be invoked while processing emailsms-in-0,
-                            #they are processing simultaneously but final result is the one from the last function
+      definition: accountCreatedEmail|accountCreatedSms;accountDeletedEmail|accountDeletedSms
     stream:
       bindings:
-        emailsms-in-0:
-          destination: send-communication
+        accountCreatedEmail|accountCreatedSms-in-0:
+          destination: created-account
           group: ${spring.application.name}
-        emailsms-out-0:
-          destination: communication-sent
-  rabbitmq:
-    host: localhost
-    port: 5672
-    username: guest
-    password: guest
-    connection-timeout: 10s
+        accountCreatedEmail|accountCreatedSms-out-0:
+          destination: created-notification-sent
+        accountDeletedEmail|accountDeletedSms-in-1:
+          destination: deleted-account
+          group: ${spring.application.name}
+        accountDeletedEmail|accountDeletedSms-out-1:
+          destination: deleted-notification-sent
+      kafka:
+        binder:
+          brokers:
+            - localhost:9092
+#  rabbitmq:
+#    host: localhost
+#    port: 5672
+#    username: guest
+#    password: guest
+#    connection-timeout: 10s

@@ -12,6 +12,22 @@ server:
 spring:
   application:
     name: cards
+  cloud:
+    function:
+      definition: updateCommunication #function to be invoked while processing updateCommunication-in-0 (name defines the name of the function)
+    stream:
+      bindings:
+        updateCommunication-in-0:
+          destination: communication-sent #to get data from communication-sent queue(the same has to be sent)
+          group: ${spring.application.name}
+          #function: updateCommunication #function to be specified directly in binding
+        sendCommunication-out-0:
+          destination: created-card #to send data to send-communication queue and get data from send-communication queue in message microservice
+
+      kafka:
+        binder:
+          brokers:
+            - localhost:9092
 # LOCAL DEPLOY
 #  datasource:
 #    url: jdbc:h2:mem:testdb

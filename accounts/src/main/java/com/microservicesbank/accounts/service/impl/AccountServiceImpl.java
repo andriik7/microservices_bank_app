@@ -42,15 +42,15 @@ public class AccountServiceImpl implements IAccountService {
         Customer savedCustomer = customerRepository.save(customer);
 
         Account savedAccount = accountRepository.save(createNewAccount(savedCustomer));
-        sendCommunication(savedAccount, savedCustomer);
+        sendCreatedAccountCommunication(savedAccount, savedCustomer);
     }
 
-    private void sendCommunication(Account account, Customer customer) {
+    private void sendCreatedAccountCommunication(Account account, Customer customer) {
 
         AccountsMessageDTO accountsMessageDTO = new AccountsMessageDTO(account.getAccountNumber(), customer.getName(),
                                                                        customer.getEmail(), customer.getMobileNumber());
-        log.info("Sending connection request with data: {}", accountsMessageDTO);
-        boolean result = streamBridge.send("sendCommunication-out-0", accountsMessageDTO);
+        log.info("Sending account created notification request with data: {}", accountsMessageDTO);
+        boolean result = streamBridge.send("sendCreatedAccount-out-0", accountsMessageDTO);
         log.info("Result of communication is {}", result ? "positive" : "negative");
     }
 
@@ -98,9 +98,22 @@ public class AccountServiceImpl implements IAccountService {
         Customer customer = customerRepository.findByMobileNumber(mobileNumber).orElseThrow(
                 () -> new ResourceNotFoundException("Customer", "mobileNumber", mobileNumber));
 
-        accountRepository.deleteByCustomerId(customer.getId());
+        Account account = accountRepository.findByCustomerId(customer.getId()).orElseThrow(
+                () -> new ResourceNotFoundException("Account", "customerId", customer.getId().toString()));
+        sendDeletedAccountCommunication(account, customer);
+
+        accountRepository.delete(account);
         customerRepository.delete(customer);
         return true;
+    }
+
+    private void sendDeletedAccountCommunication(Account account, Customer customer) {
+
+        AccountsMessageDTO accountsMessageDTO = new AccountsMessageDTO(account.getAccountNumber(), customer.getName(),
+                                                                       customer.getEmail(), customer.getMobileNumber());
+        log.info("Sending account deleted notification request with data: {}", accountsMessageDTO);
+        boolean result = streamBridge.send("sendDeletedAccount-out-1", accountsMessageDTO);
+        log.info("Result of communication is {}", result ? "positive" : "negative");
     }
 
     @Override
