@@ -83,4 +83,4 @@ info:
   app:
     name: loans
     description: Microservicesbank Loans microservice
-    version: k8s.0
+    version: 10
