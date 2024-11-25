@@ -20,7 +20,7 @@ appname_enabled: true
 profile_enabled: false
 config_enabled: true
 eureka_enabled: true
-resourceserver_enabled: false
+resourceserver_enabled: true
 otel_enabled: true
 rabbitmq_enabled: true
 
