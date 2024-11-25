@@ -1,0 +1,26 @@
+deploymentName: eurekaserver-deployment
+serviceName: eurekaserver
+appLabel: eurekaserver
+appName: eurekaserver
+
+replicaCount: 1
+
+image:
+    repository: akuchera/eurekaserver
+    tag: k8s.0
+
+containerPort: 8070
+
+service:
+    type: ClusterIP
+    port: 8070
+    targetPort: 8070
+
+appname_enabled: true
+profile_enabled: false
+config_enabled: true
+eureka_enabled: false
+resourceserver_enabled: false
+otel_enabled: true
+rabbitmq_enabled: true
+

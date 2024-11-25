@@ -1,0 +1,6 @@
+dependencies:
+- name: microbank-common
+  repository: file://../../microbank-common
+  version: 0.1.0
+digest: sha256:a65ab844c7f5210dcb750be38190fe4a7c086ffa108afa405f9a0e8a88fc5414
+generated: "2024-11-13T17:59:39.7835614+02:00"

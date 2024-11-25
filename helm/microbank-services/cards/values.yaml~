@@ -1,0 +1,26 @@
+deploymentName: accounts-deployment
+serviceName: accounts
+appLabel: accounts
+appName: accounts
+
+replicaCount: 1
+
+image:
+    repository: akuchera/accounts
+    tag: k8s.0
+
+containerPort: 8080
+
+service:
+    type: ClusterIP
+    port: 8080
+    targetPort: 8080
+
+appname_enabled: true
+profile_enabled: true
+config_enabled: true
+eureka_enabled: true
+resourceserver_enabled: false
+otel_enabled: true
+rabbitmq_enabled: true
+

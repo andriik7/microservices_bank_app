@@ -1,0 +1,26 @@
+deploymentName: configserver-deployment
+serviceName: configserver
+appLabel: configserver
+appName: configserver
+
+replicaCount: 1
+
+image:
+    repository: akuchera/configserver
+    tag: 9
+
+containerPort: 8071
+
+service:
+    type: ClusterIP
+    port: 8071
+    targetPort: 8071
+
+appname_enabled: true
+profile_enabled: false
+config_enabled: false
+eureka_enabled: false
+resourceserver_enabled: false
+otel_enabled: false
+rabbitmq_enabled: true
+

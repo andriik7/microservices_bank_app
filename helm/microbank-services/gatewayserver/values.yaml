@@ -1,0 +1,26 @@
+deploymentName: gatewayserver-deployment
+serviceName: gatewayserver
+appLabel: gatewayserver
+appName: gatewayserver
+
+replicaCount: 1
+
+image:
+    repository: akuchera/gatewayserver
+    tag: 9
+
+containerPort: 8072
+
+service:
+    type: LoadBalancer
+    port: 8072
+    targetPort: 8072
+
+appname_enabled: true
+profile_enabled: false
+config_enabled: true
+eureka_enabled: true
+resourceserver_enabled: false
+otel_enabled: true
+rabbitmq_enabled: true
+

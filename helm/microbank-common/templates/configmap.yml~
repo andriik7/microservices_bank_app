@@ -1,0 +1,20 @@
+{{- define "common.configmap" -}}
+
+apiVersion: "v1"
+kind: ConfigMap
+metadata:
+    name: {{ .Values.global.configMapName }}
+data:
+    SPRING_PROFILES_ACTIVE: {{ .Values.global.activeProfile }}
+    SPRING_CONFIG_IMPORT: {{ .Values.global.configServerURL }}
+    EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: {{ .Values.global.eurekaServerURL }}
+    SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_JWK-SET-URI: {{ .Values.global.keyCloakURL }}
+    JAVA_TOOL_OPTIONS: {{ .Values.global.openTelemetryJavaAgent }}
+    OTEL_EXPORTER_OTLP_ENDPOINT: {{ .Values.global.otelExporterEndPoint }}
+    OTEL_METRICS_EXPORTER: {{ .Values.global.otelMetricsExporter }}
+    SPRING_RABBITMQ_HOST: {{ .Values.global.rabbitMqHost }}
+    SPRING_RABBITMQ_PORT: {{ .Values.global.rabbitMqPort | quote }}
+    SPRING_RABBITMQ_USERNAME: {{ .Values.global.rabbitMqUsername }}
+    SPRING_RABBITMQ_PASSWORD: {{ .Values.global.rabbitMqPassword }}
+    SPRING_RABBITMQ_CONNECTION_TIMEOUT: { { .Values.global.rabbitMqConnectionTimeout | quote } }
+{{- end -}}

@@ -1,0 +1,26 @@
+deploymentName: cards-deployment
+serviceName: cards
+appLabel: cards
+appName: cards
+
+replicaCount: 1
+
+image:
+    repository: akuchera/cards
+    tag: k8s.0
+
+containerPort: 8090
+
+service:
+    type: ClusterIP
+    port: 8090
+    targetPort: 8090
+
+appname_enabled: true
+profile_enabled: true
+config_enabled: true
+eureka_enabled: true
+resourceserver_enabled: false
+otel_enabled: true
+rabbitmq_enabled: true
+
