@@ -10,20 +10,22 @@
         <module name="eurekaserver" />
         <module name="gatewayserver" />
         <module name="cards" />
+        <module name="loans" />
         <module name="accounts" />
         <module name="configserver" />
-        <module name="loans" />
+        <module name="message" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="accounts" options="-parameters" />
-      <module name="cards" options="-parameters" />
+      <module name="accounts" options="" />
+      <module name="cards" options="" />
       <module name="configserver" options="-parameters" />
       <module name="eurekaserver" options="-parameters" />
       <module name="gatewayserver" options="-parameters" />
-      <module name="loans" options="-parameters" />
+      <module name="loans" options="" />
+      <module name="message" options="" />
     </option>
   </component>
 </project>

@@ -4,42 +4,64 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2f272a15-b657-4e69-b58b-9c5039112b57" name="Changes" comment="Create gateway server MVP&#10;&#10;Configure pom.xml files updating versions. Create gatewayserver module with appropriate dependencies and application.yml config. Also I am connecting gateway server to the config server and eureka server to implement service discovery.">
-      <change afterPath="$PROJECT_DIR$/KeyCloak-realm-export/dev-realm-export-ac.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans/target/jib-cache/layers/284737b15d3c2c4e1dd2cf8d7f8b44f2e7c467cf9cd3317b17e5daa9ee6ad442/5620b95077159cf5db62baa6c05eebc54051e6285a8f0607fc10711466dc211e" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans/target/jib-cache/layers/303ada9110f4acbdf4cc764bdd09b64e3ee0a02b02a3ca8b5470e4c8aa20e87b/584d9d82006fbd792a62d2b35e49b8c45ecec31df314bfa719f6e9f290655e49" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans/target/jib-cache/layers/e85f75b39b092cbefff3464d9a658a2c706786380c5b44fc62e6d12a85f740df/def2c3adce1dcb540b2edf4602fcc75b4424897543a873a0a57163a4a47018b7" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans/target/jib-cache/selectors/1ec5dedd1ab76f7e854b4d665d6705924d19241729e5abf8f9dc5a3fb396dd3d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans/target/jib-cache/selectors/3f200532cb19f63043a9471b348ae50f88a907e4277d4b2568bf71ee77a60b99" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans/target/jib-cache/selectors/94145018db36e3ea919e690ee4fcdbe56d262946741e6e7d459bd06fc7f7b09d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loans/target/jib-cache/tmp/12758723070013075774/f8c67ca55716e84716c37d7f8df565a139bef7e0e81d826837b34322ed16ecc5" afterDir="false" />
+    <list default="true" id="2f272a15-b657-4e69-b58b-9c5039112b57" name="Changes" comment="Rollback, some unknown error appeared in gateway server keycloak configuration">
+      <change afterPath="$PROJECT_DIR$/micro-bom/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_05_10_2024_20_52__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_05_10_2024_20_52__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/accounts/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cards/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/cards/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cards/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/configserver/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/configserver/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose/default/.data/minio/.minio.sys/buckets/.bloomcycle.bin/xl.meta" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose/default/.data/minio/.minio.sys/buckets/.bloomcycle.bin/xl.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose/default/.data/minio/.minio.sys/buckets/.heal/mrf/list.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose/default/.data/minio/.minio.sys/buckets/.usage-cache.bin.bkp/xl.meta" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose/default/.data/minio/.minio.sys/buckets/.usage-cache.bin.bkp/xl.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose/default/.data/minio/.minio.sys/buckets/.usage-cache.bin/xl.meta" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose/default/.data/minio/.minio.sys/buckets/.usage-cache.bin/xl.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose/default/.data/minio/.minio.sys/buckets/.usage.json/xl.meta" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose/default/.data/minio/.minio.sys/buckets/.usage.json/xl.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose/default/.data/minio/.minio.sys/buckets/loki-data/.usage-cache.bin.bkp/xl.meta" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose/default/.data/minio/.minio.sys/buckets/loki-data/.usage-cache.bin.bkp/xl.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose/default/.data/minio/.minio.sys/buckets/loki-data/.usage-cache.bin/xl.meta" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose/default/.data/minio/.minio.sys/buckets/loki-data/.usage-cache.bin/xl.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose/default/.data/minio/.minio.sys/buckets/loki-ruler/.usage-cache.bin.bkp/xl.meta" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose/default/.data/minio/.minio.sys/buckets/loki-ruler/.usage-cache.bin.bkp/xl.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose/default/.data/minio/.minio.sys/buckets/loki-ruler/.usage-cache.bin/xl.meta" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose/default/.data/minio/.minio.sys/buckets/loki-ruler/.usage-cache.bin/xl.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose/default/.data/minio/.minio.sys/tmp/71e460d4-3049-49cc-bddd-49771399b114" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose/default/common-config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose/default/common-config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose/default/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose/default/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/eurekaserver/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/eurekaserver/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gatewayserver/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gatewayserver/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/loans/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/loans/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/loans/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-image.digest" beforeDir="false" afterPath="$PROJECT_DIR$/loans/target/jib-image.digest" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-image.id" beforeDir="false" afterPath="$PROJECT_DIR$/loans/target/jib-image.id" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/jib-image.json" beforeDir="false" afterPath="$PROJECT_DIR$/loans/target/jib-image.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/classes/application-test.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/classes/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/classes/com/microservicesbank/loans/LoansApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/classes/com/microservicesbank/loans/audit/AuditAwareImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/classes/com/microservicesbank/loans/constants/LoanConstants.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/classes/com/microservicesbank/loans/controller/LoanController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/classes/com/microservicesbank/loans/dto/ErrorResponseDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/classes/com/microservicesbank/loans/dto/LoanDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/classes/com/microservicesbank/loans/dto/LoansContactInfoDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/classes/com/microservicesbank/loans/dto/ResponseDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/classes/com/microservicesbank/loans/exception/GlobalExceptionHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/classes/com/microservicesbank/loans/exception/LoanAlreadyExistsException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/classes/com/microservicesbank/loans/exception/ResourceNotFoundException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/classes/com/microservicesbank/loans/mapper/LoanMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/classes/com/microservicesbank/loans/model/Loan.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/classes/com/microservicesbank/loans/model/SuperEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/classes/com/microservicesbank/loans/repository/LoanRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/classes/com/microservicesbank/loans/service/ILoanService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/classes/com/microservicesbank/loans/service/impl/LoanServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/classes/schema.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/jib-classpath-file" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/jib-main-class-file" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/selectors/00d237d6fb2b0f855538bdc33054156eaf1e124e27da239c6c236bc0de4072c4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/selectors/02a90785825d6fa27897b3e7081e6e33f1a26172e0e79527aff1d07f978b89f6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/selectors/1ec5dedd1ab76f7e854b4d665d6705924d19241729e5abf8f9dc5a3fb396dd3d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/selectors/35736665e5da2983ca57205726d3e89f2f9669fec41aeb6b1dd9bd21ec658f6f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/selectors/3f200532cb19f63043a9471b348ae50f88a907e4277d4b2568bf71ee77a60b99" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/selectors/4e6bf1d758fee79ca0b433fc6f55ce72d11286236ecda7757c15bc3ad5ca7bb1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/selectors/540ab01afcb165478a14c1764a37024fca497d8729c8c53cb8409259b34b976d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/selectors/94145018db36e3ea919e690ee4fcdbe56d262946741e6e7d459bd06fc7f7b09d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/selectors/9aa8ab7376e10c17f701ab5fb768453dddeecff0da76d200f66695515b94925d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/selectors/9be704b079772756ca9070107206ec6c3e219790a33bbd154034ba2a1f35beeb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/selectors/e2b4956cc4a22a2817caccb673e518854c4aebfec110f97ddc9b95f8c66dcf98" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/selectors/f57685e418f4d6e578fb5d2efcd88cd044be689fb0b43e2fb2459de70a54b836" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/jib-cache/tmp/12758723070013075774/f8c67ca55716e84716c37d7f8df565a139bef7e0e81d826837b34322ed16ecc5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/jib-image.digest" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/jib-image.id" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/jib-image.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/test-classes/microsevicesbank/loan/LoanControllerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/test-classes/microsevicesbank/loan/LoanServiceTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/test-classes/microsevicesbank/loan/LoanTestSuite.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/test-classes/microsevicesbank/loan/display/CamelCaseDisplay.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/message/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/message/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +85,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="develop" />
+        <entry key="$PROJECT_DIR$" value="feature/event-driven-microservices" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -80,6 +102,10 @@
     &quot;accountId&quot;: &quot;ed6a863c-8c50-4243-bbd4-9c708e760707&quot;
   }
 }</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/kubernetes/accounts.yml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Temp/ab649e3e-fd06-4854-8343-e3d8990b4686_postgresql-16.1.0.tgz.686/postgresql/values.yaml" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;ff3c3cff&quot;,
   &quot;associatedIndex&quot;: 7
@@ -94,6 +120,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;Application.AccountsApplication.executor&quot;: &quot;Debug&quot;,
     &quot;Application.CardsApplication.executor&quot;: &quot;Debug&quot;,
     &quot;Application.ConfigserverApplication.executor&quot;: &quot;Run&quot;,
@@ -142,10 +169,11 @@
     &quot;JUnit.LoanServiceTest.updateLoanTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.LoanTestSuite.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;com.codeium.enabled&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;feature/OAuth2-security&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature/BOM&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/ANDREW/Study/Pogramming/JAVA/Spring/Microservices/EazyBytes_Course/bank_app/docker-compose/qa&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/ANDREW/Study/Pogramming/JAVA/Spring/Microservices/EazyBytes_Course/bank_app/helm/environments&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
@@ -154,11 +182,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\ANDREW\Study\Pogramming\JAVA\Spring\Microservices\EazyBytes_Course\bank_app\helm\environments" />
+      <recent name="C:\ANDREW\Study\Pogramming\JAVA\Spring\Microservices\EazyBytes_Course\bank_app\helm\microbank-services" />
       <recent name="C:\ANDREW\Study\Pogramming\JAVA\Spring\Microservices\EazyBytes_Course\bank_app\docker-compose\qa" />
       <recent name="C:\ANDREW\Study\Pogramming\JAVA\Spring\Microservices\EazyBytes_Course\bank_app\docker-compose\prod" />
       <recent name="C:\ANDREW\Study\Pogramming\JAVA\Spring\Microservices\EazyBytes_Course\bank_app\configserver\src\main\resources\config" />
-      <recent name="C:\ANDREW\Study\Pogramming\JAVA\Spring\Microservices\EazyBytes_Course\bank_app\loans\src\main\resources" />
-      <recent name="C:\ANDREW\Study\Pogramming\JAVA\Spring\Microservices\EazyBytes_Course\bank_app\cards\src\main\resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\ANDREW\Study\Pogramming\JAVA\Spring\Microservices\EazyBytes_Course\bank_app\docker-compose\default" />
@@ -171,7 +199,7 @@
       <recent name="com.microservicesbank.accounts" />
     </key>
   </component>
-  <component name="RunManager" selected="Docker.default: Compose Deployment">
+  <component name="RunManager" selected="Application.ConfigserverApplication">
     <configuration name="AccountsApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.microservicesbank.accounts.AccountsApplication" />
       <module name="accounts" />
@@ -248,18 +276,17 @@
     <list>
       <item itemvalue="Application.ConfigserverApplication" />
       <item itemvalue="Application.AccountsApplication" />
+      <item itemvalue="Application.EurekaserverApplication" />
       <item itemvalue="Application.GatewayserverApplication" />
       <item itemvalue="Application.LoansApplication" />
-      <item itemvalue="Application.EurekaserverApplication" />
       <item itemvalue="Docker.default: Compose Deployment" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Docker.default: Compose Deployment" />
-        <item itemvalue="Application.GatewayserverApplication" />
-        <item itemvalue="Application.AccountsApplication" />
-        <item itemvalue="Application.EurekaserverApplication" />
         <item itemvalue="Application.LoansApplication" />
+        <item itemvalue="Application.GatewayserverApplication" />
+        <item itemvalue="Application.EurekaserverApplication" />
+        <item itemvalue="Application.AccountsApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -328,10 +355,54 @@
       <option name="project" value="LOCAL" />
       <updated>1728131449779</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Correct some obvious typo in values.yaml to enable resourceserver config for gateway server in helm directory. Before it leaded to changing local config of gateway server">
+      <option name="closed" value="true" />
+      <created>1732557432838</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1732557432839</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Rollback, some unknown error appeared in gateway server keycloak configuration">
+      <option name="closed" value="true" />
+      <created>1732571174005</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1732571174005</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="docker-compose.yml" />
+  </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="develop" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="main" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="HEAD" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
@@ -343,6 +414,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="TDD with CardController and refactoring&#10;&#10;Creating CardController and CardControllerTest to get all these endpoints working properly. Also here I am updating and fixing some exception handling, services and service tests for Cards microservice." />
     <MESSAGE value="Merge branch 'refs/heads/card_branch'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
     <MESSAGE value="Create LoanController and LoanControllerTest using TDD to resolve all possible issues from the start. Add some correction to the LoanDTO and using new dependency I provide @Suite to run all my tests at the same moment right before every commit." />
@@ -352,6 +424,10 @@
     <MESSAGE value="Update config server and microservices to support instant updates of config files connected through GitHub. Here are implemented 2 ways: &#10;1. Use actuator/refresh endpoint for each microservice&#10;2. Use actuator/busrefresh endpoint that uses RabbitMQ to update all the configurations at once." />
     <MESSAGE value="Add dependency to the config server to support /monitor endpoint that will be invoked after every push to the repo  of configurations. So after each push configurations on config server will be refreshed." />
     <MESSAGE value="Edit Docker Compose files to use different profiles. Also, make sure microservices don't start while other required services are down or unhealthy." />
-    <option name="LAST_COMMIT_MESSAGE" value="Edit Docker Compose files to use different profiles. Also, make sure microservices don't start while other required services are down or unhealthy." />
+    <MESSAGE value="Create docker-compose.yml files to run Kafka and perform communication between microservices via it. All current versions are already uploaded to Docker Hub with tags `9.1-kafka` each." />
+    <MESSAGE value="Upgrade K8s deployment via helm to simplify the process&#10;&#10;Added a Helm directory to manage the deployment of all components, including templates, environments, and services. This commit includes configurations for previously used technologies and services:&#10;&#10;- Grafana and its components&#10;- Microservices developed in-house&#10;- Service registry and discovery service&#10;- Configuration service&#10;- Gateway service&#10;- RabbitMQ&#10;- Keycloak&#10;&#10;External Helm implementations for third-party services are sourced from the Bitnami repository. The Helm configurations use templates to ensure abstraction and flexibility across environments." />
+    <MESSAGE value="Correct some obvious typo in values.yaml to enable resourceserver config for gateway server in helm directory. Before it leaded to changing local config of gateway server" />
+    <MESSAGE value="Rollback, some unknown error appeared in gateway server keycloak configuration" />
+    <option name="LAST_COMMIT_MESSAGE" value="Rollback, some unknown error appeared in gateway server keycloak configuration" />
   </component>
 </project>
