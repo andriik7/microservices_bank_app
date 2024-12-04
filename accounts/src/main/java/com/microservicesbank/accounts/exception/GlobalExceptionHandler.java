@@ -1,6 +1,6 @@
 package com.microservicesbank.accounts.exception;
 
-import com.microservicesbank.accounts.dto.ErrorResponseDTO;
+import com.microservicesbank.common.dto.ErrorResponseDTO;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;

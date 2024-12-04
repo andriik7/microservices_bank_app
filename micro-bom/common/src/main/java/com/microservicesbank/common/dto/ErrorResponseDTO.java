@@ -1,4 +1,4 @@
-package com.microservicesbank.loans.dto;
+package com.microservicesbank.common.dto;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;

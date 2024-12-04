@@ -1,8 +1,8 @@
 package com.microservicesbank.accounts.controller;
 
 import com.microservicesbank.accounts.dto.CustomerDetailsDTO;
-import com.microservicesbank.accounts.dto.ErrorResponseDTO;
 import com.microservicesbank.accounts.service.ICustomerService;
+import com.microservicesbank.common.dto.ErrorResponseDTO;
 import io.github.resilience4j.ratelimiter.annotation.RateLimiter;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;

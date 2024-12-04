@@ -1,11 +1,11 @@
 package com.microservicesbank.loans.controller;
 
+import com.microservicesbank.common.dto.ErrorResponseDTO;
 import com.microservicesbank.loans.constants.LoanConstants;
-import com.microservicesbank.loans.service.ILoanService;
-import com.microservicesbank.loans.dto.ErrorResponseDTO;
 import com.microservicesbank.loans.dto.LoanDTO;
 import com.microservicesbank.loans.dto.LoansContactInfoDTO;
 import com.microservicesbank.loans.dto.ResponseDTO;
+import com.microservicesbank.loans.service.ILoanService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;

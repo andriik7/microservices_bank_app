@@ -10,6 +10,7 @@
         <module name="eurekaserver" />
         <module name="gatewayserver" />
         <module name="cards" />
+        <module name="common" />
         <module name="loans" />
         <module name="accounts" />
         <module name="configserver" />
@@ -21,9 +22,9 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="accounts" options="" />
       <module name="cards" options="" />
-      <module name="configserver" options="-parameters" />
-      <module name="eurekaserver" options="-parameters" />
-      <module name="gatewayserver" options="-parameters" />
+      <module name="configserver" options="" />
+      <module name="eurekaserver" options="" />
+      <module name="gatewayserver" options="" />
       <module name="loans" options="" />
       <module name="message" options="" />
     </option>

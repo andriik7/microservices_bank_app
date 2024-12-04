@@ -20,6 +20,7 @@
         <url>https://github.com/andriik7/microservices_bank_app</url>
     </scm>
     <properties>
+        <common-lib.version>1.0.0</common-lib.version>
         <spring-boot.version>3.3.5</spring-boot.version>
         <java.version>21</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
@@ -33,6 +34,10 @@
         <jib.version>3.4.3</jib.version>
         <image>akuchera/${project.artifactId}:${project.version}</image>
     </properties>
+
+    <modules>
+        <module>common</module>
+    </modules>
 
     <dependencies>
         <dependency>

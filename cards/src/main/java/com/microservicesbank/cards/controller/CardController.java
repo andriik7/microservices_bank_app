@@ -1,11 +1,11 @@
 package com.microservicesbank.cards.controller;
 
 import com.microservicesbank.cards.constants.CardConstants;
-import com.microservicesbank.cards.dto.ErrorResponseDTO;
-import com.microservicesbank.cards.dto.ResponseDTO;
-import com.microservicesbank.cards.service.ICardService;
 import com.microservicesbank.cards.dto.CardDTO;
 import com.microservicesbank.cards.dto.CardsContactInfoDTO;
+import com.microservicesbank.cards.dto.ResponseDTO;
+import com.microservicesbank.cards.service.ICardService;
+import com.microservicesbank.common.dto.ErrorResponseDTO;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
