@@ -8,6 +8,9 @@ This project is a pseudo-banking application built with a microservices architec
 
 The application utilizes **Spring Cloud Config Server** for centralized configuration management. Instant configuration updates are managed through GitHub webhook integration and RabbitMQ, ensuring services remain up-to-date without manual intervention. Each microservice interacts via **Eureka** for service registration and discovery, and **Feign Client** for streamlined REST API calls.
 
+Additionally, the configuration repository linked to the Config Server is hosted at:  
+**[Microservices Bank Config Repository](https://github.com/andriik7/microservices-bank-config)**
+
 ## Architecture
 - **Spring Cloud Config Server**: Centralized configuration server for all microservices. This setup ensures seamless updates to configurations without restarting services.
 - **GitHub Webhook**: Used to monitor changes in the configuration repository and trigger RabbitMQ for updates.
@@ -25,6 +28,7 @@ The application utilizes **Spring Cloud Config Server** for centralized configur
 - **PostgreSQL/MySQL** (as database)
 
 ## Installation and Setup
+
 ### Requirements
 - **Java 21** or above
 - **Docker and Docker Compose** (recommended for deployment)
@@ -39,7 +43,6 @@ The application utilizes **Spring Cloud Config Server** for centralized configur
 
 2. **Set Up Infrastructure** (RabbitMQ, Eureka, Config Server, etc.) using Docker Compose:
     ```bash
-    # Use common configuration with different environments
     docker-compose -f docker-compose/default/docker-compose.yml up -d
     ```
     - For **production**:
@@ -128,6 +131,9 @@ To build Docker images using **JIB**, please follow the instructions below. You 
 ## Configuration Update with Webhooks
 The Config Server is integrated with a GitHub repository. Upon any change in the configuration files, GitHub sends a webhook, which in turn triggers a RabbitMQ message to notify all microservices about the configuration update.
 
+The linked configuration repository is available here:  
+**[Microservices Bank Config Repository](https://github.com/andriik7/microservices-bank-config)**
+
 ## Additional Branches and Configurations
 There are additional branches available that provide extended functionality and configurations:
 
@@ -147,7 +153,7 @@ To test the full feature set locally (including MySQL, Eureka, and Feign Client)
       git checkout mysql_connection_feature
       git merge mysql_connection_feature
       ```
-    - First, switch to the `service_registry_feature` branch and merge it:
+    - Then, switch to the `service_registry_feature` branch and merge it:
       ```bash
       git checkout service_registry_feature
       git merge service_registry_feature
@@ -156,10 +162,8 @@ To test the full feature set locally (including MySQL, Eureka, and Feign Client)
 2. **Set Up and Run**:
     Follow the similar Docker Compose instructions provided above to set up the environment with MySQL databases and service registry.
 
-This approach allows you to customize and extend the `main` branch with different features, depending on your specific requirements.
-
 ## API Documentation
-The API documentations for `accounts`, `cards` and `loans` are available at: `http://localhost:{port}/swagger-ui.html` after the service is up.
+The API documentations for `accounts`, `cards`, and `loans` are available at: `http://localhost:{port}/swagger-ui.html` after the service is up.
 
 ## Contributing
 We welcome contributions! Please create a pull request or open an issue for any discussion.
